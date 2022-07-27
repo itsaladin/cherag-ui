@@ -1,18 +1,21 @@
+import { multiply, PText } from 'cherag-ui';
 import * as React from 'react';
-
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'cherag-ui';
+import { StyleSheet, View } from 'react-native';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
 
   React.useEffect(() => {
-    multiply(3, 7).then(setResult);
+    multiply(3, 5).then(setResult);
   }, []);
+
+  const blackColor = 'black';
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <PText style={{ color: blackColor }} fontSize="md">
+        Result: {result}
+      </PText>
     </View>
   );
 }
@@ -20,8 +23,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    padding: 20,
   },
   box: {
     width: 60,

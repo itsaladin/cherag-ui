@@ -8,7 +8,7 @@ const PText = ({
   ...rest
 }: {
   children: any;
-  style: any;
+  style?: any;
   fontSize: any;
 }) => {
   const fSize =
@@ -17,12 +17,20 @@ const PText = ({
       : fontSize === 'md'
       ? 16
       : fontSize === 'lg'
-      ? 22
+      ? 18
       : fontSize === 'xl'
-      ? 28
-      : fontSize === 'xxl'
-      ? 38
-      : 18;
+      ? 20
+      : fontSize === '2xl'
+      ? 24
+      : fontSize === '3xl'
+      ? 30
+      : fontSize === '4xl'
+      ? 36
+      : fontSize === '5xl'
+      ? 48
+      : fontSize === '6xl'
+      ? 60
+      : 16;
 
   return (
     <View>

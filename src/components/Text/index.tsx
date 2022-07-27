@@ -9,7 +9,7 @@ const PText = ({
 }: {
   children: any;
   style?: any;
-  fontSize: any;
+  fontSize?: any;
 }) => {
   const fSize =
     fontSize === 'sm'

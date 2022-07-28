@@ -1,11 +1,12 @@
-import { Div, multiply, PText } from 'cherag-ui';
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Div, multiply, PText, Input } from 'cherag-ui';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [result, setResult] = useState<number | undefined>();
+  const [userName, setUserName] = useState<string>('');
 
-  React.useEffect(() => {
+  useEffect(() => {
     multiply(3, 5).then(setResult);
   }, []);
 
@@ -19,6 +20,14 @@ export default function App() {
       <Div bg={'gray'} w={0} h={0} p={0} m={0} style={{ color: blackColor }}>
         <Text>Div Commponent</Text>
       </Div>
+      <Input
+        //@ts-ignore
+        onChangeText={(txt) => {
+          setUserName(txt);
+        }}
+        placeholder="User name"
+        defaultValue={userName}
+      />
     </View>
   );
 }

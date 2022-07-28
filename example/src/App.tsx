@@ -1,4 +1,4 @@
-import { multiply, PText } from 'cherag-ui';
+import { Div, multiply, PText } from 'cherag-ui';
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 
@@ -16,6 +16,9 @@ export default function App() {
       <PText style={{ color: blackColor }} fontSize="md">
         Result: {result}
       </PText>
+      <Div bg={'red'} w={80} h={20} p={0} style={{ color: blackColor }}>
+        Div component
+      </Div>
     </View>
   );
 }

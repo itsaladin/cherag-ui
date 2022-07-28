@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 const Div = ({
   children,
@@ -8,6 +8,7 @@ const Div = ({
   w,
   h,
   p,
+  m,
   ...rest
 }: {
   children: any;
@@ -15,17 +16,26 @@ const Div = ({
   w?: any;
   h?: any;
   p?: any;
+  m?: any;
   bg?: any;
 }) => {
+  const height = h ? h : 40;
+  const width = w ? w : 350;
   return (
     <View
       style={[
-        { backgroundColor: bg, width: w, height: h, padding: p },
+        {
+          backgroundColor: bg,
+          width: width,
+          height: height,
+          padding: p,
+          margin: m,
+        },
         style,
         { ...rest },
       ]}
     >
-      <Text> {children}</Text>
+      {children}
     </View>
   );
 };

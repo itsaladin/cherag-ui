@@ -1,6 +1,6 @@
 import { Div, multiply, PText } from 'cherag-ui';
 import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
@@ -16,8 +16,8 @@ export default function App() {
       <PText style={{ color: blackColor }} fontSize="md">
         Result: {result}
       </PText>
-      <Div bg={'red'} w={80} h={20} p={0} style={{ color: blackColor }}>
-        Div component
+      <Div bg={'gray'} w={0} h={0} p={0} m={0} style={{ color: blackColor }}>
+        <Text>Div Commponent</Text>
       </Div>
     </View>
   );

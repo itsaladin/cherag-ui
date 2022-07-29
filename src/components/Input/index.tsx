@@ -1,8 +1,7 @@
 import React from 'react';
-import { StyleSheet, TextInput, View, TouchableOpacity } from 'react-native';
-import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { StyleSheet, TextInput, View } from 'react-native';
 
-interface props {
+export interface props {
   style?: any;
   rest?: any;
   placeholder?: string;
@@ -13,32 +12,9 @@ interface props {
   fontSize?: number;
 }
 
-const Input = ({
-  style,
-  placeholder,
-  onPressLeftIcon,
-  onPressRightIcon,
-  leftIcon,
-  rightIcon,
-  fontSize,
-  ...rest
-}: props) => {
-  const iconSize = 24;
-
+const Input = ({ style, placeholder, fontSize, ...rest }: props) => {
   return (
     <View style={styles.Container}>
-      {/* {leftIcon && (
-        <View style={styles.IconLeft}>
-          <TouchableOpacity style={{ padding: 22 }} onPress={onPressLeftIcon}>
-            <Icons
-              onPress={onPressLeftIcon}
-              name={leftIcon || 'lock'}
-              size={iconSize}
-              color={'red'}
-            />
-          </TouchableOpacity>
-        </View>
-      )} */}
       <TextInput
         {...rest}
         style={[
@@ -49,18 +25,6 @@ const Input = ({
         ]}
         placeholder={placeholder}
       />
-      {/* {rightIcon && (
-        <View style={styles.IconRight}>
-          <TouchableOpacity style={{ padding: 18 }} onPress={onPressRightIcon}>
-            <Icons
-              onPress={onPressRightIcon}
-              name={rightIcon || 'eye'}
-              size={iconSize}
-              color={'gray'}
-            />
-          </TouchableOpacity>
-        </View>
-      )} */}
     </View>
   );
 };

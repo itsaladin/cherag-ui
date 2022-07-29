@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import { COLORS, SIZES } from 'src/Theme/Index';
+import { COLORS, SIZES } from '../../Theme/Index';
 import PText from '../Text';
 
 interface props {
   style?: any;
-  otherprops?: any;
+  rest?: any;
   children?: any;
   onPress: any;
   width?: number;
@@ -30,6 +30,7 @@ const Button = ({
   borderRadius,
   borderWidth,
   fontWeight,
+  ...rest
 }: props) => {
   return (
     <TouchableOpacity
@@ -37,8 +38,7 @@ const Button = ({
       style={[
         style,
         {
-          backgroundColor: bg || COLORS.transparent,
-          borderColor: COLORS.primary,
+          backgroundColor: bg || COLORS.primary,
           width: width || 60,
           height: height || 30,
           borderWidth: borderWidth,
@@ -46,12 +46,13 @@ const Button = ({
         },
       ]}
       onPress={onPress}
+      {...rest}
     >
       <PText
         style={[
           styles.textStyle,
           {
-            color: color || COLORS.white,
+            color: color || COLORS.red,
             fontSize: fontSize || SIZES.p2,
             fontWeight: fontWeight || 'normal',
           },

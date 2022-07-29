@@ -1,4 +1,4 @@
-import { Div, Input, PText } from 'cherag-ui';
+import { Button, Div, Input, PText } from 'cherag-ui';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
@@ -23,6 +23,13 @@ export default function App() {
         defaultValue={userName}
         fontSize={15}
       />
+      <Button
+        onPress={() => {
+          console.log('Custom button pressed');
+        }}
+      >
+        asdf
+      </Button>
     </View>
   );
 }

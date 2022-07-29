@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import { COLORS, SIZES } from '../../constant/Themes';
-import Text from '../Text';
+import { COLORS, SIZES } from 'src/Theme/Index';
+import PText from '../Text';
 
 interface props {
   style?: any;
@@ -10,10 +10,11 @@ interface props {
   onPress: any;
   width?: number;
   height?: number;
-  bgColor?: string;
-  textColor?: string;
-  textSize?: number;
+  bg?: string;
+  color?: string;
+  fontSize?: number;
   borderRadius?: number;
+  borderWidth?: number;
   fontWeight?: string;
 }
 
@@ -23,40 +24,41 @@ const Button = ({
   style,
   width,
   height,
-  bgColor,
-  textColor,
-  textSize,
+  bg,
+  color,
+  fontSize,
   borderRadius,
+  borderWidth,
   fontWeight,
 }: props) => {
   return (
     <TouchableOpacity
-      activeOpacity={0.9}
+      activeOpacity={0.8}
       style={[
         style,
         {
-          backgroundColor: bgColor || COLORS.transparent,
+          backgroundColor: bg || COLORS.transparent,
           borderColor: COLORS.primary,
           width: width || 60,
           height: height || 30,
-          borderWidth: SIZES.p3 - 9,
+          borderWidth: borderWidth,
           borderRadius: borderRadius || SIZES.p3 - 10,
         },
       ]}
       onPress={onPress}
     >
-      <Text
+      <PText
         style={[
-          styles.TextStyle,
+          styles.textStyle,
           {
-            color: textColor || COLORS.white,
-            fontSize: textSize || SIZES.p2,
+            color: color || COLORS.white,
+            fontSize: fontSize || SIZES.p2,
             fontWeight: fontWeight || 'normal',
           },
         ]}
       >
         {children}
-      </Text>
+      </PText>
     </TouchableOpacity>
   );
 };
@@ -64,7 +66,7 @@ const Button = ({
 export default Button;
 
 const styles = StyleSheet.create({
-  TextStyle: {
+  textStyle: {
     lineHeight: 25,
     textAlign: 'center',
   },

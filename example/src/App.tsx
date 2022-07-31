@@ -1,4 +1,4 @@
-import { Button, Div, Input, PText } from 'cherag-ui';
+import { Button, Div, Input, PText, Radio } from 'cherag-ui';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
@@ -30,6 +30,24 @@ export default function App() {
       >
         asdf
       </Button>
+      <Radio
+        width={250}
+        style={{ marginVertical: 10 }}
+        onPress={() => {
+          console.log('onPress Radio 1');
+        }}
+      >
+        Radio Button 1
+      </Radio>
+      <Radio
+        width={250}
+        style={{ marginVertical: 10 }}
+        onPress={() => {
+          console.log('onPress Radio 2');
+        }}
+      >
+        Radio Button 2
+      </Radio>
     </View>
   );
 }

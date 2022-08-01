@@ -1,15 +1,15 @@
 import { Button, Div, Input, PText, Radio } from 'cherag-ui';
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export default function App() {
-  const [userName, setUserName] = useState<string>('');
-  const [selectItem, setSelectItem] = useState<string>('');
+  const [userName, setUserName] = useState<string>();
+  const [selectItem, setSelectItem] = useState<string>();
 
   const blackColor = 'black';
 
   return (
-    <View style={styles.container}>
+    <Div style={styles.container}>
       <PText style={{ color: blackColor }} fontSize="md">
         text Commponent
       </PText>
@@ -52,7 +52,7 @@ export default function App() {
         </Radio>
       </Div>
       <PText>{selectItem}</PText>
-    </View>
+    </Div>
   );
 }
 
@@ -66,5 +66,7 @@ const styles = StyleSheet.create({
     height: 60,
     marginVertical: 20,
   },
-  radioGroup: { flexDirection: 'row' },
+  radioGroup: {
+    flexDirection: 'row',
+  },
 });

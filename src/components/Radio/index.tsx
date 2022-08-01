@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { COLORS, SIZES } from '../../Theme/Index';
 import PText from '../Text';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 interface props {
   style?: any;

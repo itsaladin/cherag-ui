@@ -1,9 +1,11 @@
 import { Button, Div, Input, PText, Radio } from 'cherag-ui';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 export default function App() {
   const [userName, setUserName] = useState<string>('');
+  const [selectItem, setSelectItem] = useState<string>('');
+
   const blackColor = 'black';
 
   return (
@@ -12,7 +14,7 @@ export default function App() {
         text Commponent
       </PText>
       <Div bg={'gray'} w={0} h={0} p={0} m={0} style={{ color: blackColor }}>
-        <Text>Div Commponent</Text>
+        <PText>Div Commponent</PText>
       </Div>
       <Input
         //@ts-ignore
@@ -30,24 +32,26 @@ export default function App() {
       >
         asdf
       </Button>
-      <Radio
-        width={250}
-        style={{ marginVertical: 10 }}
-        onPress={() => {
-          console.log('onPress Radio 1');
-        }}
-      >
-        Radio Button 1
-      </Radio>
-      <Radio
-        width={250}
-        style={{ marginVertical: 10 }}
-        onPress={() => {
-          console.log('onPress Radio 2');
-        }}
-      >
-        Radio Button 2
-      </Radio>
+
+      <Div style={styles.radioGroup}>
+        <Radio
+          width={150}
+          onPress={() => {
+            setSelectItem('Radio button 1');
+          }}
+        >
+          Radio Button 1
+        </Radio>
+        <Radio
+          width={150}
+          onPress={() => {
+            setSelectItem('Radio button 2');
+          }}
+        >
+          Radio Button 1
+        </Radio>
+      </Div>
+      <PText>{selectItem}</PText>
     </View>
   );
 }
@@ -62,4 +66,5 @@ const styles = StyleSheet.create({
     height: 60,
     marginVertical: 20,
   },
+  radioGroup: { flexDirection: 'row' },
 });

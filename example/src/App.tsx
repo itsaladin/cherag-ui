@@ -1,4 +1,13 @@
-import { Button, Div, Input, PText, Radio } from 'cherag-ui';
+import {
+  Button,
+  Checkbox,
+  CheckboxItem,
+  CheckboxValue,
+  Div,
+  Input,
+  PText,
+  Radio,
+} from 'cherag-ui';
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 
@@ -7,6 +16,8 @@ export default function App() {
   const [selectItem, setSelectItem] = useState<string>();
 
   const blackColor = 'black';
+
+  const [checkboxes, setCheckboxes] = useState<CheckboxValue[]>([]);
 
   return (
     <Div style={styles.container}>
@@ -52,6 +63,15 @@ export default function App() {
         </Radio>
       </Div>
       <PText>{selectItem}</PText>
+      <Div>
+        <PText>Checkbox Test</PText>
+        <Checkbox values={checkboxes} onChange={setCheckboxes}>
+          <CheckboxItem value="1">Checkbox 1</CheckboxItem>
+          <CheckboxItem value="2">Checkbox 2</CheckboxItem>
+          <CheckboxItem value="3">Checkbox 3</CheckboxItem>
+        </Checkbox>
+        <PText>{checkboxes.join(', ')}</PText>
+      </Div>
     </Div>
   );
 }

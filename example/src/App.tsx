@@ -10,6 +10,8 @@ import {
 } from 'cherag-ui';
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
+import { COLORS } from '../../src/Theme/Themes';
+import Loader from '../../src/components/Loader';
 
 export default function App() {
   const [userName, setUserName] = useState<string>();
@@ -72,6 +74,7 @@ export default function App() {
         </Checkbox>
         <PText>{checkboxes.join(', ')}</PText>
       </Div>
+      <Loader color={COLORS.green} size={'large'} />
     </Div>
   );
 }

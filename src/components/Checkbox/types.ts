@@ -9,7 +9,6 @@ export interface CheckboxProps {
 
 export interface CheckboxItemProps {
   value: CheckboxValue;
-  icon: string;
 }
 
 export interface CheckboxContextValue {

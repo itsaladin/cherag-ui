@@ -1,10 +1,11 @@
 import React, { FC } from 'react';
-import { TouchableOpacity } from 'react-native';
-import { COLORS } from '../../Theme/Index';
+import { StyleSheet, TouchableOpacity } from 'react-native';
+import { COLORS, SIZES } from '../../Theme/Index';
 import Div from '../Div';
 import PText from '../Text';
 import useCheckbox from './hook';
 import { CheckboxItemProps } from './types';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const CheckboxItem: FC<CheckboxItemProps> = ({ children, value }) => {
   const context = useCheckbox();
@@ -12,10 +13,23 @@ const CheckboxItem: FC<CheckboxItemProps> = ({ children, value }) => {
 
   return (
     <TouchableOpacity onPress={() => context.handleChange(value)}>
-      <Div bg={checked ? COLORS.green : undefined}>
+      <Div style={styles.row}>
+        <Icon
+          style={{ marginRight: SIZES.p3 }}
+          name={checked ? 'md-checkbox-sharp' : 'md-checkbox-outline'}
+          size={20}
+          color={checked ? COLORS.green : undefined}
+        />
         <PText>{children}</PText>
       </Div>
     </TouchableOpacity>
   );
 };
+
+const styles = StyleSheet.create({
+  row: {
+    flexDirection: 'row',
+  },
+});
+
 export default CheckboxItem;

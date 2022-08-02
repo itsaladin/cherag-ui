@@ -16,10 +16,9 @@ import Loader from '../../src/components/Loader';
 export default function App() {
   const [userName, setUserName] = useState<string>();
   const [selectItem, setSelectItem] = useState<string>();
+  const [checkboxes, setCheckboxes] = useState<CheckboxValue[]>([]);
 
   const blackColor = 'black';
-
-  const [checkboxes, setCheckboxes] = useState<CheckboxValue[]>([]);
 
   return (
     <Div style={styles.container}>
@@ -65,12 +64,19 @@ export default function App() {
         </Radio>
       </Div>
       <PText>{selectItem}</PText>
+
       <Div>
         <PText>Checkbox Test</PText>
         <Checkbox values={checkboxes} onChange={setCheckboxes}>
-          <CheckboxItem value="1">Checkbox 1</CheckboxItem>
-          <CheckboxItem value="2">Checkbox 2</CheckboxItem>
-          <CheckboxItem value="3">Checkbox 3</CheckboxItem>
+          <CheckboxItem value="1" icon="ios-pizza">
+            Checkbox 1
+          </CheckboxItem>
+          <CheckboxItem value="2" icon="ios-pizza">
+            Checkbox 2
+          </CheckboxItem>
+          <CheckboxItem value="3" icon="ios-pizza">
+            Checkbox 3
+          </CheckboxItem>
         </Checkbox>
         <PText>{checkboxes.join(', ')}</PText>
       </Div>
@@ -83,11 +89,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
   },
   radioGroup: {
     flexDirection: 'row',

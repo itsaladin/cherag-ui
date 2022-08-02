@@ -12,6 +12,7 @@ import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { COLORS } from '../../src/Theme/Themes';
 import Loader from '../../src/components/Loader';
+import InputWithBothSideIcon from '../../src/components/Input/InputWithIcon';
 
 export default function App() {
   const [userName, setUserName] = useState<string>();
@@ -44,7 +45,6 @@ export default function App() {
       >
         asdf
       </Button>
-
       <Div style={styles.radioGroup}>
         <Radio
           width={150}
@@ -65,22 +65,14 @@ export default function App() {
       </Div>
       <PText>{selectItem}</PText>
 
-      <Div>
-        <PText>Checkbox Test</PText>
-        <Checkbox values={checkboxes} onChange={setCheckboxes}>
-          <CheckboxItem value="1" icon="ios-pizza">
-            Checkbox 1
-          </CheckboxItem>
-          <CheckboxItem value="2" icon="ios-pizza">
-            Checkbox 2
-          </CheckboxItem>
-          <CheckboxItem value="3" icon="ios-pizza">
-            Checkbox 3
-          </CheckboxItem>
-        </Checkbox>
-        <PText>{checkboxes.join(', ')}</PText>
-      </Div>
-      <Loader color={COLORS.green} size={'large'} />
+      <PText>Checkbox Test</PText>
+      <Checkbox values={checkboxes} onChange={setCheckboxes}>
+        <CheckboxItem value="1">Checkbox 1</CheckboxItem>
+        <CheckboxItem value="2">Checkbox 2</CheckboxItem>
+        <CheckboxItem value="3">Checkbox 3</CheckboxItem>
+      </Checkbox>
+      {/* <Loader color={COLORS.green} size={'large'} /> */}
+      <InputWithBothSideIcon placeholder="enter name" />
     </Div>
   );
 }

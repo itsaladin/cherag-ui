@@ -8,16 +8,24 @@ import {
   PText,
   Radio,
 } from 'cherag-ui';
-import React, { useState } from 'react';
+import { loadAsync } from 'expo-font';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function App() {
   const [userName, setUserName] = useState<string>();
   const [selectItem, setSelectItem] = useState<string>();
+  const [checkboxes, setCheckboxes] = useState<CheckboxValue[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const blackColor = 'black';
 
-  const [checkboxes, setCheckboxes] = useState<CheckboxValue[]>([]);
+  useEffect(() => {
+    loadAsync({
+      'material-community': require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf'),
+    }).then(() => setIsLoading(false));
+  });
 
   return (
     <Div style={styles.container}>
@@ -63,14 +71,22 @@ export default function App() {
         </Radio>
       </Div>
       <PText>{selectItem}</PText>
+
       <Div>
         <PText>Checkbox Test</PText>
         <Checkbox values={checkboxes} onChange={setCheckboxes}>
-          <CheckboxItem value="1">Checkbox 1</CheckboxItem>
-          <CheckboxItem value="2">Checkbox 2</CheckboxItem>
-          <CheckboxItem value="3">Checkbox 3</CheckboxItem>
+          <CheckboxItem value="1" icon="ios-pizza">
+            Checkbox 1
+          </CheckboxItem>
+          <CheckboxItem value="2" icon="ios-pizza">
+            Checkbox 2
+          </CheckboxItem>
+          <CheckboxItem value="3" icon="ios-pizza">
+            Checkbox 3
+          </CheckboxItem>
         </Checkbox>
         <PText>{checkboxes.join(', ')}</PText>
+        <Icon name="plus" size={30} color="#900" />
       </Div>
     </Div>
   );

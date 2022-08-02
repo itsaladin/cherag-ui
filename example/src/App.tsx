@@ -8,24 +8,15 @@ import {
   PText,
   Radio,
 } from 'cherag-ui';
-import { loadAsync } from 'expo-font';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function App() {
   const [userName, setUserName] = useState<string>();
   const [selectItem, setSelectItem] = useState<string>();
   const [checkboxes, setCheckboxes] = useState<CheckboxValue[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
 
   const blackColor = 'black';
-
-  useEffect(() => {
-    loadAsync({
-      'material-community': require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf'),
-    }).then(() => setIsLoading(false));
-  });
 
   return (
     <Div style={styles.container}>
@@ -86,7 +77,6 @@ export default function App() {
           </CheckboxItem>
         </Checkbox>
         <PText>{checkboxes.join(', ')}</PText>
-        <Icon name="plus" size={30} color="#900" />
       </Div>
     </Div>
   );
@@ -96,11 +86,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
   },
   radioGroup: {
     flexDirection: 'row',

@@ -10,9 +10,7 @@ import {
 } from 'cherag-ui';
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
-import { COLORS } from '../../src/Theme/Themes';
-import Loader from '../../src/components/Loader';
-import InputWithBothSideIcon from '../../src/components/Input/InputWithIcon';
+import InputWithIcon from '../../src/components/Input/InputWithIcon';
 
 export default function App() {
   const [userName, setUserName] = useState<string>();
@@ -43,8 +41,9 @@ export default function App() {
           console.log('Custom button pressed');
         }}
       >
-        asdf
+        Button
       </Button>
+
       <Div style={styles.radioGroup}>
         <Radio
           width={150}
@@ -71,16 +70,17 @@ export default function App() {
         <CheckboxItem value="2">Checkbox 2</CheckboxItem>
         <CheckboxItem value="3">Checkbox 3</CheckboxItem>
       </Checkbox>
+
       {/* <Loader color={COLORS.green} size={'large'} /> */}
-      <InputWithBothSideIcon placeholder="enter name" />
+      <InputWithIcon placeholder="enter name" leftIcon="lock" rightIcon="eye" />
     </Div>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 20,
+    // flex: 1,
+    // padding: 20,
   },
   radioGroup: {
     flexDirection: 'row',

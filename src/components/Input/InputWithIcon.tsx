@@ -11,34 +11,46 @@ interface props {
   onPressLeftIcon?: any;
   onPressRightIcon?: any;
   leftIcon?: string;
+  leftIconColor?: string;
   rightIcon?: string;
+  rightIconColor?: string;
   fontSize?: number;
+  iconSize?: number;
+  borderWidth?: number;
+  borderColor?: string;
+  inputBoxWidth?: number;
 }
 
-const InputWithBothSideIcon = ({
+const InputWithIcon = ({
   style,
   placeholder,
   onPressLeftIcon,
   onPressRightIcon,
   leftIcon,
+  leftIconColor,
   rightIcon,
+  rightIconColor,
+  iconSize,
   fontSize,
+  borderWidth,
+  borderColor,
+  inputBoxWidth,
   ...rest
 }: props) => {
-  const iconSize = 24;
+  const _iconSize = iconSize || 18;
+  const _borderWidth = borderWidth || 1;
+  const _borderColor = borderColor || 'green';
+  const _inputBoxWidth = inputBoxWidth || 200;
 
   return (
-    <Div style={styles.Container}>
+    <Div style={styles.container}>
       {leftIcon && (
-        <Div style={styles.IconLeft}>
-          <TouchableOpacity
-            style={{ padding: SIZES.p2 }}
-            onPress={onPressLeftIcon}
-          >
+        <Div style={styles.iconLeft}>
+          <TouchableOpacity onPress={onPressLeftIcon}>
             <Icons
               name={leftIcon || 'lock'}
-              size={iconSize}
-              color={COLORS.border}
+              size={_iconSize}
+              color={leftIconColor || COLORS.red}
             />
           </TouchableOpacity>
         </Div>
@@ -48,21 +60,22 @@ const InputWithBothSideIcon = ({
         style={[
           style,
           {
+            borderColor: _borderColor,
+            borderWidth: _borderWidth,
             fontSize: fontSize ? fontSize : SIZES.p1,
+            padding: SIZES.p3,
+            width: _inputBoxWidth,
           },
         ]}
         placeholder={placeholder}
       />
       {rightIcon && (
-        <Div style={styles.IconRight}>
-          <TouchableOpacity
-            style={{ padding: SIZES.p2 }}
-            onPress={onPressRightIcon}
-          >
+        <Div style={styles.iconRight}>
+          <TouchableOpacity onPress={onPressRightIcon}>
             <Icons
               name={rightIcon || 'eye'}
-              size={iconSize}
-              color={COLORS.red}
+              size={_iconSize}
+              color={rightIconColor || COLORS.red}
             />
           </TouchableOpacity>
         </Div>
@@ -71,22 +84,20 @@ const InputWithBothSideIcon = ({
   );
 };
 
-export default InputWithBothSideIcon;
+export default InputWithIcon;
 
 const styles = StyleSheet.create({
-  Container: {
-    position: 'relative',
+  container: {
+    flexDirection: 'row',
   },
-  IconLeft: {
-    position: 'absolute',
-    alignSelf: 'flex-start',
-    alignItems: 'center',
-    zIndex: 1,
+  iconLeft: {
+    width: 20,
+    justifyContent: 'center',
+    marginRight: 5,
   },
-  IconRight: {
-    position: 'absolute',
-    alignSelf: 'flex-end',
-    alignItems: 'center',
-    zIndex: 1,
+  iconRight: {
+    width: 20,
+    justifyContent: 'center',
+    marginLeft: 5,
   },
 });

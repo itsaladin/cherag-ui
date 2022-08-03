@@ -7,6 +7,8 @@ import {
   Input,
   PText,
   Radio,
+  Alert,
+  AlertItem,
 } from 'cherag-ui';
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
@@ -15,6 +17,7 @@ export default function App() {
   const [userName, setUserName] = useState<string>();
   const [selectItem, setSelectItem] = useState<string>();
   const [checkboxes, setCheckboxes] = useState<CheckboxValue[]>([]);
+  const [alert, setAlert] = useState<Boolean>(false);
 
   const blackColor = 'black';
 
@@ -26,13 +29,6 @@ export default function App() {
       <Div bg={'gray'} w={0} h={0} p={0} m={0} style={{ color: blackColor }}>
         <PText>Div Commponent</PText>
       </Div>
-      <Button
-        onPress={() => {
-          console.log('Custom button pressed');
-        }}
-      >
-        Button
-      </Button>
 
       <Div style={styles.radioGroup}>
         <Radio
@@ -64,7 +60,8 @@ export default function App() {
       {/* <Loader color={COLORS.green} size={'large'} /> */}
 
       <Input
-        onChangeText={(txt: any) => {
+        //@ts-ignore
+        onChangeText={(txt) => {
           setUserName(txt);
         }}
         value={userName}
@@ -72,6 +69,26 @@ export default function App() {
         leftIcon="lock"
         rightIcon="eye"
       />
+
+      <Alert
+        onPress={() => {
+          console.log('alert pressed');
+        }}
+        onPressRightIcon={() => {
+          console.log('alert onPressRightIcon pressed');
+        }}
+        alert={alert}
+      >
+        <AlertItem>asdf</AlertItem>
+      </Alert>
+      <Button
+        onPress={() => {
+          console.log('Custom button pressed');
+          setAlert(!alert);
+        }}
+      >
+        Button
+      </Button>
     </Div>
   );
 }

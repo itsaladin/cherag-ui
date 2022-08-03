@@ -35,16 +35,4 @@ const styles = StyleSheet.create({
   Container: {
     position: 'relative',
   },
-  IconLeft: {
-    position: 'absolute',
-    alignSelf: 'flex-start',
-    alignItems: 'center',
-    zIndex: 1,
-  },
-  IconRight: {
-    position: 'absolute',
-    alignSelf: 'flex-end',
-    alignItems: 'center',
-    zIndex: 1,
-  },
 });

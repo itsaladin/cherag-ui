@@ -10,7 +10,6 @@ import {
 } from 'cherag-ui';
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
-import InputWithIcon from '../../src/components/Input/InputWithIcon';
 
 export default function App() {
   const [userName, setUserName] = useState<string>();
@@ -27,15 +26,6 @@ export default function App() {
       <Div bg={'gray'} w={0} h={0} p={0} m={0} style={{ color: blackColor }}>
         <PText>Div Commponent</PText>
       </Div>
-      <Input
-        //@ts-ignore
-        onChangeText={(txt) => {
-          setUserName(txt);
-        }}
-        placeholder="User name"
-        defaultValue={userName}
-        fontSize={15}
-      />
       <Button
         onPress={() => {
           console.log('Custom button pressed');
@@ -72,15 +62,24 @@ export default function App() {
       </Checkbox>
 
       {/* <Loader color={COLORS.green} size={'large'} /> */}
-      <InputWithIcon placeholder="enter name" leftIcon="lock" rightIcon="eye" />
+
+      <Input
+        onChangeText={(txt: any) => {
+          setUserName(txt);
+        }}
+        value={userName}
+        placeholder="enter name"
+        leftIcon="lock"
+        rightIcon="eye"
+      />
     </Div>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // padding: 20,
+    flex: 1,
+    padding: 20,
   },
   radioGroup: {
     flexDirection: 'row',

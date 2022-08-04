@@ -8,7 +8,6 @@ import {
   PText,
   Radio,
   Alert,
-  AlertItem,
 } from 'cherag-ui';
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
@@ -29,7 +28,6 @@ export default function App() {
       <Div bg={'gray'} w={0} h={0} p={0} m={0} style={{ color: blackColor }}>
         <PText>Div Commponent</PText>
       </Div>
-
       <Div style={styles.radioGroup}>
         <Radio
           width={150}
@@ -49,16 +47,13 @@ export default function App() {
         </Radio>
       </Div>
       <PText>{selectItem}</PText>
-
       <PText>Checkbox Test</PText>
       <Checkbox values={checkboxes} onChange={setCheckboxes}>
         <CheckboxItem value="1">Checkbox 1</CheckboxItem>
         <CheckboxItem value="2">Checkbox 2</CheckboxItem>
         <CheckboxItem value="3">Checkbox 3</CheckboxItem>
       </Checkbox>
-
       {/* <Loader color={COLORS.green} size={'large'} /> */}
-
       <Input
         //@ts-ignore
         onChangeText={(txt) => {
@@ -69,18 +64,6 @@ export default function App() {
         leftIcon="lock"
         rightIcon="eye"
       />
-
-      <Alert
-        onPress={() => {
-          console.log('alert pressed');
-        }}
-        onPressRightIcon={() => {
-          console.log('alert onPressRightIcon pressed');
-        }}
-        alert={alert}
-      >
-        <AlertItem>asdf</AlertItem>
-      </Alert>
       <Button
         onPress={() => {
           console.log('Custom button pressed');
@@ -89,6 +72,7 @@ export default function App() {
       >
         Button
       </Button>
+      <Alert>Item deleted !!!</Alert>
     </Div>
   );
 }

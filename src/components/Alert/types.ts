@@ -1,17 +1,16 @@
-export type AlertValue = string | number;
+export type AlertValue = boolean;
 
 export type AlertValues = Array<AlertValue>;
 
-export interface AlertProps {
-  values: AlertValues;
-  onChange: (values: AlertValues) => void;
-}
+export interface AlertProps {}
 
 export interface AlertItemProps {
   value: AlertValue;
+  onPress: (values: AlertValues) => void;
 }
 
 export interface AlertContextValue {
   values: AlertValues;
-  handleChange: (value: AlertValue) => void;
+  onPress: (values: AlertValues) => void;
+  isOpen: boolean;
 }

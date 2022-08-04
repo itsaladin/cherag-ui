@@ -1,25 +1,49 @@
-import React, { useCallback } from 'react';
-import type { FC } from 'react';
-import CheckboxContext from './context';
-import type { AlertProps, AlertValue } from './types';
+import React, { FC, useState } from 'react';
+import { StyleSheet, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/Entypo';
+import { SIZES, COLORS } from '../../Theme/Index';
+import Div from '../Div';
+import PText from '../Text';
+import AlertContext from './context';
+import type { AlertProps } from './types';
 
-const Alert: FC<AlertProps> = ({ onChange, values, children }) => {
-  const handleChange = useCallback(
-    (value: AlertValue) => {
-      const newValues = values.includes(value)
-        ? values.filter((v) => v !== value)
-        : [...values, value];
-
-      onChange(newValues);
-    },
-    [values, onChange]
-  );
-
+const Alert: FC<AlertProps> = ({ children }) => {
+  const [isOpen, setIsOpen] = useState(true);
   return (
-    <CheckboxContext.Provider value={{ values, handleChange }}>
-      {children}
-    </CheckboxContext.Provider>
+    //@ts-ignore
+    <AlertContext.Provider value={{ isOpen, setIsOpen }}>
+      <Div style={styles.row}>
+        <Icon
+          style={{ marginRight: SIZES.p3 }}
+          name={'star'}
+          size={20}
+          color={COLORS.green}
+        />
+        <PText>{children}</PText>
+
+        <TouchableOpacity
+          onPress={() => {
+            setIsOpen(!isOpen);
+          }}
+          style={styles.row}
+        >
+          <Icon
+            style={{ marginRight: SIZES.p3 }}
+            name={'cross'}
+            size={20}
+            color={COLORS.red}
+          />
+        </TouchableOpacity>
+      </Div>
+    </AlertContext.Provider>
   );
 };
+
+const styles = StyleSheet.create({
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+});
 
 export default Alert;

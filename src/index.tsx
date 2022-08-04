@@ -9,4 +9,4 @@ export { Checkbox, CheckboxItem } from './components/Checkbox';
 export type { CheckboxValue } from './components/Checkbox';
 
 //Alert Component
-export { default as Alert } from './components/Alert/index';
+export { default as Alert } from './components/Alert/Alert';

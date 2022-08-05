@@ -72,6 +72,7 @@ export default function App() {
       >
         Button
       </Button>
+
       <Alert>Item deleted !!!</Alert>
     </Div>
   );

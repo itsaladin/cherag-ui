@@ -73,7 +73,12 @@ export default function App() {
         Button
       </Button>
 
-      <Alert>Item deleted !!!</Alert>
+      <Alert
+        status="Success"
+        paragraph="Your coupon could not be processed at this time."
+      >
+        Item deleted !!!
+      </Alert>
     </Div>
   );
 }

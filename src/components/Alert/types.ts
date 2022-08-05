@@ -1,8 +1,12 @@
 export type AlertValue = boolean;
+export type StatusValue = 'Success' | 'Error' | 'Warning' | 'Info';
 
 export type AlertValues = Array<AlertValue>;
 
-export interface AlertProps {}
+export interface AlertProps {
+  status: StatusValue;
+  paragraph: string;
+}
 
 export interface AlertItemProps {
   value: AlertValue;

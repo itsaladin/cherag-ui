@@ -54,10 +54,12 @@ export const COLORS = {
   transparent: 'transparent',
   transparentBlack: 'rgba(0, 0, 0, 0.6)',
   transparentWhite: 'rgba(255, 255, 255, 0.750)',
-  transparentError: 'rgb(254, 202, 202)',
-  transparentSuccess: 'rgb(187, 247, 208)',
-  transparentInfo: 'rgb(186, 230, 253)',
-  transparentWarning: 'rgb(254, 215, 170)',
+
+  // StatusColor
+  error: 'rgb(254, 202, 202)',
+  success: 'rgb(187, 247, 208)',
+  info: 'rgb(186, 230, 253)',
+  warning: 'rgb(254, 215, 170)',
 };
 
 const appTheme = { COLORS, SIZES };

@@ -9,23 +9,12 @@ import type { AlertProps } from './types';
 const Alert: FC<AlertProps> = ({ children, paragraph, status }) => {
   const [isOpen, setIsOpen] = useState(true);
 
-  const __backgroundColor =
-    status === 'success'
-      ? COLORS.transparentSuccess
-      : status === 'error'
-      ? COLORS.transparentError
-      : status === 'warning'
-      ? COLORS.transparentWarning
-      : status === 'info'
-      ? COLORS.transparentInfo
-      : null;
-
   return isOpen ? (
     <Div
       style={[
         styles.container,
         {
-          backgroundColor: __backgroundColor,
+          backgroundColor: COLORS[status],
         },
       ]}
     >

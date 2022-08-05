@@ -1,4 +1,5 @@
 import {
+  Alert,
   Button,
   Checkbox,
   CheckboxItem,
@@ -15,6 +16,7 @@ export default function App() {
   const [userName, setUserName] = useState<string>();
   const [selectItem, setSelectItem] = useState<string>();
   const [checkboxes, setCheckboxes] = useState<CheckboxValue[]>([]);
+  const [alert, setAlert] = useState<Boolean>(false);
 
   const blackColor = 'black';
 
@@ -26,14 +28,6 @@ export default function App() {
       <Div bg={'gray'} w={0} h={0} p={0} m={0} style={{ color: blackColor }}>
         <PText>Div Commponent</PText>
       </Div>
-      <Button
-        onPress={() => {
-          console.log('Custom button pressed');
-        }}
-      >
-        Button
-      </Button>
-
       <Div style={styles.radioGroup}>
         <Radio
           width={150}
@@ -53,18 +47,16 @@ export default function App() {
         </Radio>
       </Div>
       <PText>{selectItem}</PText>
-
       <PText>Checkbox Test</PText>
       <Checkbox values={checkboxes} onChange={setCheckboxes}>
         <CheckboxItem value="1">Checkbox 1</CheckboxItem>
         <CheckboxItem value="2">Checkbox 2</CheckboxItem>
         <CheckboxItem value="3">Checkbox 3</CheckboxItem>
       </Checkbox>
-
       {/* <Loader color={COLORS.green} size={'large'} /> */}
-
       <Input
-        onChangeText={(txt: any) => {
+        //@ts-ignore
+        onChangeText={(txt) => {
           setUserName(txt);
         }}
         value={userName}
@@ -72,6 +64,16 @@ export default function App() {
         leftIcon="lock"
         rightIcon="eye"
       />
+      <Button
+        onPress={() => {
+          console.log('Custom button pressed');
+          setAlert(!alert);
+        }}
+      >
+        Button
+      </Button>
+
+      <Alert status="warning" title="Item deleted !!!" />
     </Div>
   );
 }

@@ -13,20 +13,19 @@ export const SIZES = {
 };
 
 export const COLORS = {
-  // base colors
+  // Base colors
   primary: '#00B200', // blue
   secondary: '#5C5C5C', // gray
   border: '#9C9C9E', // border
   lightGray: '#B6C1CF', //lightgray
   darkGray: '#6C6C6E',
 
-  // colors
+  // Colors
   black: '#000000',
   white: '#FFFFFF',
   red: '#E61C53',
   sayn: '#40BDFF',
   blue: '#4D5AFF',
-  messageColor: '#707BFF',
   yellow: '#FFC014',
   orange: '#FF7821',
   green: '#7DD63C',
@@ -38,7 +37,7 @@ export const COLORS = {
   sunColor: '#F2C800',
   maroon: '#B54896',
 
-  //other colors
+  //Other colors
   lightGray2: '#F6F6F7',
   lightGray3: '#EFEFF1',
   lightGray4: '#F8F8F9',
@@ -50,14 +49,22 @@ export const COLORS = {
   softGray: '#dcdcf2',
   lightPrimary: '#CCF0CC',
   mixBlack: '#3B4964',
-  modalUnderBgColor: '#121E4499',
 
-  //transparent colors
+  //Transparent colors
   transparent: 'transparent',
   transparentBlack: 'rgba(0, 0, 0, 0.6)',
-  transparentDark: 'rgba(0, 0, 0, 0.5)',
   transparentWhite: 'rgba(255, 255, 255, 0.750)',
-  transparentImgTxt: 'rgba(0, 0, 0, 0.3)',
+
+  // StatusColor
+  success: 'rgb(187, 247, 208)',
+  error: 'rgb(254, 202, 202)',
+  info: 'rgb(186, 230, 253)',
+  warning: 'rgb(254, 215, 170)',
+
+  successIcon: 'rgb(10, 86, 49)',
+  errorIcon: 'rgb(229, 81, 81)',
+  infoIcon: 'rgb(92, 195, 252)',
+  warningIcon: 'rgb(244, 121, 71)',
 };
 
 const appTheme = { COLORS, SIZES };

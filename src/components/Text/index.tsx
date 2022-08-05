@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Text, View } from 'react-native';
+import { fontSizeProps } from './types';
 
 const PText = ({
   children,
@@ -9,7 +10,7 @@ const PText = ({
 }: {
   children: any;
   style?: any;
-  fontSize?: any;
+  fontSize?: fontSizeProps;
 }) => {
   const fSize =
     fontSize === 'sm'

@@ -7,3 +7,6 @@ export { default as Radio } from './components/Radio/index';
 // Checkbox Component
 export { Checkbox, CheckboxItem } from './components/Checkbox';
 export type { CheckboxValue } from './components/Checkbox';
+
+//Alert Component
+export { default as Alert } from './components/Alert/Alert';

@@ -1,5 +1,5 @@
 export type AlertValue = boolean;
-export type StatusValue = 'Success' | 'Error' | 'Warning' | 'Info';
+export type StatusValue = 'success' | 'error' | 'warning' | 'info';
 
 export type AlertValues = Array<AlertValue>;
 

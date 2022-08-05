@@ -54,8 +54,8 @@ export const COLORS = {
   transparent: 'transparent',
   transparentBlack: 'rgba(0, 0, 0, 0.6)',
   transparentWhite: 'rgba(255, 255, 255, 0.750)',
-  transparentRed: 'rgb(254, 202, 202)',
-  transparentGreen: 'rgb(187, 247, 208)',
+  transparentError: 'rgb(254, 202, 202)',
+  transparentSuccess: 'rgb(187, 247, 208)',
   transparentInfo: 'rgb(186, 230, 253)',
   transparentWarning: 'rgb(254, 215, 170)',
 };

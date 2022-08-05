@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/Entypo';
+import Icon from 'react-native-vector-icons/AntDesign';
 import { COLORS, SIZES } from '../../Theme/Index';
 import Div from '../Div';
 import PText from '../Text';
@@ -32,11 +32,11 @@ const Alert: FC<AlertProps> = ({ children, paragraph, status }) => {
       <Div style={styles.row}>
         <Icon
           style={{ marginRight: SIZES.p3 }}
-          name={'star'}
-          size={20}
+          name={'checkcircle'}
+          size={28}
           color={COLORS.green}
         />
-        <PText>{children}</PText>
+        <PText fontSize="2xl">{children}</PText>
 
         <TouchableOpacity
           onPress={() => {
@@ -46,7 +46,7 @@ const Alert: FC<AlertProps> = ({ children, paragraph, status }) => {
         >
           <Icon
             style={{ marginRight: SIZES.p3 }}
-            name={'cross'}
+            name={'checkcircle'}
             size={20}
             color={COLORS.white}
           />

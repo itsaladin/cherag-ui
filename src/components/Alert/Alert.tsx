@@ -9,27 +9,43 @@ import type { AlertProps } from './types';
 const Alert: FC<AlertProps> = ({ children, title, status }) => {
   const [isOpen, setIsOpen] = useState(true);
 
-  const __leftIcon =
-    status === 'success'
-      ? 'checkcircle'
-      : status === 'error'
-      ? 'lock1'
-      : status === 'warning'
-      ? 'warning'
-      : status === 'info'
-      ? 'infocirlce'
-      : 'infocirlce';
+  let __leftIcon = '';
 
-  const leftIconColor =
-    status === 'success'
-      ? COLORS.successIcon
-      : status === 'error'
-      ? COLORS.errorIcon
-      : status === 'warning'
-      ? COLORS.warningIcon
-      : status === 'info'
-      ? COLORS.infoIcon
-      : COLORS.infoIcon;
+  switch (status) {
+    case 'success':
+      __leftIcon = 'checkcircle';
+      break;
+    case 'error':
+      __leftIcon = 'lock1';
+      break;
+    case 'info':
+      __leftIcon = 'infocirlce';
+      break;
+    case 'warning':
+      __leftIcon = 'warning';
+      break;
+    default:
+      __leftIcon = 'success';
+  }
+
+  let __leftIconColor = '';
+
+  switch (status) {
+    case 'success':
+      __leftIconColor = COLORS.successIcon;
+      break;
+    case 'error':
+      __leftIconColor = COLORS.errorIcon;
+      break;
+    case 'info':
+      __leftIconColor = COLORS.infoIcon;
+      break;
+    case 'warning':
+      __leftIconColor = COLORS.warningIcon;
+      break;
+    default:
+      __leftIconColor = COLORS.successIcon;
+  }
 
   return isOpen ? (
     <Div
@@ -41,7 +57,7 @@ const Alert: FC<AlertProps> = ({ children, title, status }) => {
       ]}
     >
       <Div style={styles.subContainer}>
-        <Icon name={__leftIcon} size={28} color={leftIconColor} />
+        <Icon name={__leftIcon} size={28} color={__leftIconColor} />
         <PText fontSize="xl" style={styles.title}>
           {title}
         </PText>

@@ -5,7 +5,7 @@ export type AlertValues = Array<AlertValue>;
 
 export interface AlertProps {
   status: StatusValue;
-  paragraph?: string;
+  title?: string;
 }
 
 export interface AlertItemProps {

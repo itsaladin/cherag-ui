@@ -1,13 +1,35 @@
 import React, { FC, useState } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
-import { COLORS } from '../../Theme/Index';
+import { COLORS, SIZES } from '../../Theme/Index';
 import Div from '../Div';
 import PText from '../Text';
 import type { AlertProps } from './types';
 
-const Alert: FC<AlertProps> = ({ children, paragraph, status }) => {
+const Alert: FC<AlertProps> = ({ children, title, status }) => {
   const [isOpen, setIsOpen] = useState(true);
+
+  const __leftIcon =
+    status === 'success'
+      ? 'checkcircle'
+      : status === 'error'
+      ? 'lock1'
+      : status === 'warning'
+      ? 'warning'
+      : status === 'info'
+      ? 'infocirlce'
+      : 'infocirlce';
+
+  const leftIconColor =
+    status === 'success'
+      ? COLORS.successIcon
+      : status === 'error'
+      ? COLORS.errorIcon
+      : status === 'warning'
+      ? COLORS.warningIcon
+      : status === 'info'
+      ? COLORS.infoIcon
+      : COLORS.infoIcon;
 
   return isOpen ? (
     <Div
@@ -19,9 +41,9 @@ const Alert: FC<AlertProps> = ({ children, paragraph, status }) => {
       ]}
     >
       <Div style={styles.subContainer}>
-        <Icon name={'checkcircle'} size={28} color={COLORS.green} />
+        <Icon name={__leftIcon} size={28} color={leftIconColor} />
         <PText fontSize="xl" style={styles.title}>
-          {children}
+          {title}
         </PText>
 
         <TouchableOpacity
@@ -30,23 +52,19 @@ const Alert: FC<AlertProps> = ({ children, paragraph, status }) => {
           }}
           style={styles.closeAlert}
         >
-          <Icon
-            // style={{ marginRight: SIZES.p3 }}
-            name={'checkcircle'}
-            size={20}
-            color={COLORS.red}
-          />
+          <Icon name={'delete'} size={20} color={COLORS.red} />
         </TouchableOpacity>
       </Div>
-      <PText style={styles.paragraph}>{paragraph}</PText>
+      {children ? <PText style={styles.paragraph}>{children}</PText> : null}
     </Div>
   ) : null;
 };
 
 const styles = StyleSheet.create({
   container: {
-    height: 140,
+    height: 'auto',
     borderRadius: 5,
+    paddingVertical: 10,
   },
   subContainer: {
     flexDirection: 'row',
@@ -62,7 +80,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   paragraph: {
-    paddingHorizontal: 50,
+    paddingHorizontal: SIZES.DimensionWidth / 7.5,
     textAlign: 'justify',
   },
 });

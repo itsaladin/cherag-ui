@@ -56,10 +56,15 @@ export const COLORS = {
   transparentWhite: 'rgba(255, 255, 255, 0.750)',
 
   // StatusColor
-  error: 'rgb(254, 202, 202)',
   success: 'rgb(187, 247, 208)',
+  error: 'rgb(254, 202, 202)',
   info: 'rgb(186, 230, 253)',
   warning: 'rgb(254, 215, 170)',
+
+  successIcon: 'rgb(10, 86, 49)',
+  errorIcon: 'rgb(229, 81, 81)',
+  infoIcon: 'rgb(92, 195, 252)',
+  warningIcon: 'rgb(244, 121, 71)',
 };
 
 const appTheme = { COLORS, SIZES };

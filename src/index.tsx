@@ -10,3 +10,6 @@ export type { CheckboxValue } from './components/Checkbox';
 
 //Alert Component
 export { default as Alert } from './components/Alert/Alert';
+
+//Divider Component
+export { default as Divider } from './components/Divider';

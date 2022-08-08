@@ -8,6 +8,7 @@ import {
   Input,
   PText,
   Radio,
+  Divider,
 } from 'cherag-ui';
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
@@ -74,6 +75,8 @@ export default function App() {
       </Button>
 
       <Alert status="warning" title="Item deleted !!!" />
+
+      <Divider style={{ backgroundColor: 'red', height: 5 }} />
     </Div>
   );
 }

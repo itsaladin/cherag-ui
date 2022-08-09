@@ -13,6 +13,7 @@ import {
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { COLORS } from '../../src/Theme';
+import Loader from '../../src/components/Loader';
 
 export default function App() {
   const [userName, setUserName] = useState<string>();
@@ -55,7 +56,7 @@ export default function App() {
         <CheckboxItem value="2">Checkbox 2</CheckboxItem>
         <CheckboxItem value="3">Checkbox 3</CheckboxItem>
       </Checkbox>
-      {/* <Loader color={COLORS.green} size={'large'} /> */}
+      <Loader color={COLORS.green} size={'large'} />
       <Input
         //@ts-ignore
         onChangeText={(txt) => {

@@ -1,16 +1,21 @@
 import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
+import { COLORS } from '../../Theme';
+import { Props } from './types';
 
-const Divider = ({ style, ...rest }) => {
-  return <View {...rest} style={(styles.container, style)} />;
+const Divider = ({ style, borderColor, borderWidth, ...rest }: Props) => {
+  const __borderColor = borderColor || COLORS.green;
+  const __borderWidth = borderWidth || 2;
+
+  return (
+    <View
+      {...rest}
+      style={[
+        style,
+        { borderColor: __borderColor, borderWidth: __borderWidth },
+      ]}
+    />
+  );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    height: 2,
-    borderColor: 'red',
-    borderWidth: 2,
-  },
-});
 
 export default Divider;

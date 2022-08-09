@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
-import { COLORS, SIZES } from '../../Theme/Index';
+import { COLORS, SIZES } from '../../Theme';
 import Div from '../Div';
 import PText from '../Text';
 import type { AlertProps } from './types';

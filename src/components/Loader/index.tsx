@@ -1,6 +1,6 @@
 import React from 'react';
 import { ActivityIndicator, StyleSheet } from 'react-native';
-import { COLORS } from '../../Theme/Index';
+import { COLORS } from '../../Theme';
 
 interface props {
   style?: any;

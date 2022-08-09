@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { COLORS, SIZES } from '../../Theme/Index';
+import { COLORS, SIZES } from '../../Theme';
 import Div from '../Div';
 
 interface props {

@@ -5,10 +5,10 @@ import {
   CheckboxItem,
   CheckboxValue,
   Div,
+  Divider,
   Input,
   PText,
   Radio,
-  Divider,
 } from 'cherag-ui';
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
@@ -76,7 +76,7 @@ export default function App() {
 
       <Alert status="warning" title="Item deleted !!!" />
 
-      <Divider style={{ backgroundColor: 'red', height: 5 }} />
+      <Divider style={{}} borderColor="red" borderWidth={2} />
     </Div>
   );
 }
@@ -84,7 +84,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    paddingTop: 30,
+    backgroundColor: 'cyan',
   },
   radioGroup: {
     flexDirection: 'row',

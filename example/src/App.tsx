@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 30,
     backgroundColor: 'cyan',
+    width: '100%',
   },
   radioGroup: {
     flexDirection: 'row',

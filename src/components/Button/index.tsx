@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import { COLORS, SIZES } from '../../Theme/Index';
+import { COLORS, SIZES } from '../../Theme';
 import PText from '../Text';
 
 interface props {

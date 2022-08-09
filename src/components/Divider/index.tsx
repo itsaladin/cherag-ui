@@ -1,9 +1,14 @@
 import * as React from 'react';
 import { View } from 'react-native';
 import { COLORS } from '../../Theme';
-import { Props } from './types';
+import { DividerProps } from './types';
 
-const Divider = ({ style, borderColor, borderWidth, ...rest }: Props) => {
+const Divider = ({
+  style,
+  borderColor,
+  borderWidth,
+  ...rest
+}: DividerProps) => {
   const __borderColor = borderColor || COLORS.green;
   const __borderWidth = borderWidth || 2;
 

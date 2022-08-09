@@ -1,4 +1,4 @@
-export interface Props {
+export interface DividerProps {
   style?: any;
   borderColor?: string;
   borderWidth?: number;

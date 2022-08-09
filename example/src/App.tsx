@@ -27,7 +27,7 @@ export default function App() {
       <PText style={{ color: blackColor }} fontSize="md">
         text Commponent
       </PText>
-      <Div bg={'gray'} w={0} h={0} p={0} m={0} style={{ color: blackColor }}>
+      <Div bg={'gray'} w={0} h={0} p={0} m={0}>
         <PText>Div Commponent</PText>
       </Div>
       <Div style={styles.radioGroup}>

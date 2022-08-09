@@ -1,17 +1,8 @@
 import * as React from 'react';
 import { Text, View } from 'react-native';
-import { fontSizeProps } from './types';
+import { TextProps } from './types';
 
-const PText = ({
-  children,
-  style,
-  fontSize,
-  ...rest
-}: {
-  children: any;
-  style?: any;
-  fontSize?: fontSizeProps;
-}) => {
+const PText = ({ children, style, fontSize, ...rest }: TextProps) => {
   const fSize =
     fontSize === 'sm'
       ? 12

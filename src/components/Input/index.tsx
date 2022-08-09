@@ -3,23 +3,7 @@ import { StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { COLORS, SIZES } from '../../Theme';
 import Div from '../Div';
-
-interface props {
-  style?: any;
-  rest?: any;
-  placeholder?: string;
-  onPressLeftIcon?: any;
-  onPressRightIcon?: any;
-  leftIcon?: string;
-  leftIconColor?: string;
-  rightIcon?: string;
-  rightIconColor?: string;
-  fontSize?: number;
-  iconSize?: number;
-  borderWidth?: number;
-  borderColor?: string;
-  inputBoxWidth?: number;
-}
+import { InputProps } from './types';
 
 const Input = ({
   style,
@@ -36,7 +20,7 @@ const Input = ({
   borderColor,
   inputBoxWidth,
   ...rest
-}: props) => {
+}: InputProps) => {
   const _iconSize = iconSize || 18;
   const _borderWidth = borderWidth || 1;
   const _borderColor = borderColor || 'green';

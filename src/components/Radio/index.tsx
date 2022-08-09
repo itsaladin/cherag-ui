@@ -2,21 +2,7 @@ import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { COLORS, SIZES } from '../../Theme';
 import PText from '../Text';
-
-interface props {
-  style?: any;
-  rest?: any;
-  children?: any;
-  onPress?: any;
-  width?: number;
-  height?: number;
-  bg?: string;
-  color?: string;
-  fontSize?: number;
-  borderRadius?: number;
-  borderWidth?: number;
-  fontWeight?: string;
-}
+import { RadioButtonProps } from './types';
 
 const Radio = ({
   children,
@@ -31,7 +17,7 @@ const Radio = ({
   borderWidth,
   fontWeight,
   ...rest
-}: props) => {
+}: RadioButtonProps) => {
   return (
     <TouchableOpacity
       activeOpacity={0.8}

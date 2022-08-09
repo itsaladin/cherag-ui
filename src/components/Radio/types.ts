@@ -1,6 +1,7 @@
 import {
   GestureResponderEvent,
   StyleProp,
+  TextStyle,
   TouchableOpacityProps,
   ViewStyle,
 } from 'react-native';
@@ -16,5 +17,5 @@ export interface RadioButtonProps extends TouchableOpacityProps {
   fontSize?: number;
   borderRadius?: number;
   borderWidth?: number;
-  fontWeight?: string;
+  fontWeight?: TextStyle['fontWeight'];
 }

@@ -1,11 +1,11 @@
 import {
   GestureResponderEvent,
   StyleProp,
-  ViewProps,
+  TouchableOpacityProps,
   ViewStyle,
 } from 'react-native';
 
-export interface RadioButtonProps extends ViewProps {
+export interface RadioButtonProps extends TouchableOpacityProps {
   style?: StyleProp<ViewStyle>;
   children?: React.ReactNode;
   onPress?: (event: GestureResponderEvent) => void;

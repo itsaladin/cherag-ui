@@ -1,14 +1,9 @@
 import React from 'react';
 import { ActivityIndicator, StyleSheet } from 'react-native';
 import { COLORS } from '../../Theme';
+import { LoaderProps } from './types';
 
-interface props {
-  style?: any;
-  size?: number | 'small' | 'large';
-  color?: any;
-}
-
-const Loader = ({ color, size, style }: props) => {
+const Loader = ({ color, size, style }: LoaderProps) => {
   return (
     <ActivityIndicator
       style={style || styles.loader}
@@ -21,9 +16,7 @@ export default Loader;
 
 const styles = StyleSheet.create({
   loader: {
-    backgroundColor: COLORS.white,
     alignItems: 'center',
-    flex: 1,
     justifyContent: 'center',
   },
 });

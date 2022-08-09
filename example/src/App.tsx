@@ -12,6 +12,7 @@ import {
 } from 'cherag-ui';
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
+import { COLORS } from '../../src/Theme';
 
 export default function App() {
   const [userName, setUserName] = useState<string>();
@@ -76,7 +77,7 @@ export default function App() {
 
       <Alert status="warning" title="Item deleted !!!" />
 
-      <Divider style={{}} borderColor="red" borderWidth={2} />
+      <Divider color={COLORS.darkGray} thickness={1} />
     </Div>
   );
 }
@@ -85,7 +86,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 30,
-    backgroundColor: 'cyan',
+    // backgroundColor: 'cyan',
     width: '100%',
   },
   radioGroup: {

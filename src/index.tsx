@@ -13,3 +13,6 @@ export { default as Alert } from './components/Alert/Alert';
 
 //Divider Component
 export { default as Divider } from './components/Divider';
+
+//Dropdown Component
+export { default as Dropdown } from './components/Dropdown/Dropdown';

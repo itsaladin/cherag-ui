@@ -9,6 +9,7 @@ import {
   Input,
   PText,
   Radio,
+  Dropdown,
 } from 'cherag-ui';
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
@@ -79,6 +80,10 @@ export default function App() {
       <Alert status="warning" title="Item deleted !!!" />
 
       <Divider color={COLORS.darkGray} thickness={1} />
+
+      <Dropdown status={'success'}>
+        <PText>asdf</PText>
+      </Dropdown>
     </Div>
   );
 }
@@ -87,7 +92,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 30,
-    // backgroundColor: 'cyan',
     width: '100%',
   },
   radioGroup: {

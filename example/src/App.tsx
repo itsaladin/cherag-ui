@@ -6,14 +6,16 @@ import {
   CheckboxValue,
   Div,
   Divider,
+  Dropdown,
+  DropdownItem,
   Input,
   Text,
   Radio,
 } from 'cherag-ui';
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
-import { COLORS } from '../../src/Theme';
 import Loader from '../../src/components/Loader';
+import { COLORS } from '../../src/Theme';
 
 export default function App() {
   const [userName, setUserName] = useState<string>();
@@ -79,6 +81,16 @@ export default function App() {
       <Alert status="warning" title="Item deleted !!!" />
 
       <Divider color={COLORS.darkGray} thickness={1} />
+
+      <Dropdown
+        onChange={setSelectItem}
+        selected={selectItem}
+        header=" Choose Service"
+      >
+        <DropdownItem value="item1">item1</DropdownItem>
+        <DropdownItem value="item2">item2</DropdownItem>
+        <DropdownItem value="item3">item3</DropdownItem>
+      </Dropdown>
     </Div>
   );
 }

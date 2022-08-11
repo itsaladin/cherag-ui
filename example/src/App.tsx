@@ -12,7 +12,7 @@ import {
   Dropdown,
 } from 'cherag-ui';
 import React, { useState } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 import { COLORS } from '../../src/Theme';
 import Loader from '../../src/components/Loader';
 
@@ -21,6 +21,9 @@ export default function App() {
   const [selectItem, setSelectItem] = useState<string>();
   const [checkboxes, setCheckboxes] = useState<CheckboxValue[]>([]);
   const [alert, setAlert] = useState<Boolean>(false);
+
+  const [isItemVisible, setItemVisible] = useState<Boolean>(false);
+  const [dSelectedItem, setDSelectedItem] = useState<string>();
 
   const blackColor = 'black';
 
@@ -82,7 +85,69 @@ export default function App() {
       <Divider color={COLORS.darkGray} thickness={1} />
 
       <Dropdown status={'success'}>
-        <PText>asdf</PText>
+        <Div style={styles.dropdownBtn}>
+          <Button
+            width={350}
+            height={50}
+            fontSize={22}
+            bg={COLORS.lightGray7}
+            color={COLORS.black}
+            onPress={() => {
+              setItemVisible(!isItemVisible);
+            }}
+            style={styles.dropdown}
+          >
+            {dSelectedItem || 'choose you service'}
+          </Button>
+        </Div>
+
+        {isItemVisible && (
+          <Div>
+            <PText fontSize="lg" style={styles.dropdownItem}>
+              Choose Service
+            </PText>
+            <TouchableOpacity
+              onPress={() => {
+                setDSelectedItem('item1');
+                setItemVisible(!isItemVisible);
+              }}
+            >
+              <PText>Item 1</PText>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                setDSelectedItem('item2');
+                setItemVisible(!isItemVisible);
+              }}
+            >
+              <PText>Item 2</PText>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                setDSelectedItem('item3');
+                setItemVisible(!isItemVisible);
+              }}
+            >
+              <PText>Item 3</PText>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                setDSelectedItem('item4');
+                setItemVisible(!isItemVisible);
+              }}
+            >
+              <PText>Item 4</PText>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                setDSelectedItem('item5');
+                setItemVisible(!isItemVisible);
+              }}
+            >
+              <PText>Item 5</PText>
+            </TouchableOpacity>
+          </Div>
+        )}
       </Dropdown>
     </Div>
   );
@@ -96,5 +161,14 @@ const styles = StyleSheet.create({
   },
   radioGroup: {
     flexDirection: 'row',
+  },
+  dropdownBtn: {
+    flexDirection: 'row',
+  },
+  dropdown: {
+    justifyContent: 'center',
+  },
+  dropdownItem: {
+    color: COLORS.darkGray,
   },
 });

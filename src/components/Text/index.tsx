@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text as PText, View } from 'react-native';
+import { Text as NativeText } from 'react-native';
 import { TextProps } from './types';
 
 const Text = ({ children, style, fontSize, ...rest }: TextProps) => {
@@ -25,11 +25,9 @@ const Text = ({ children, style, fontSize, ...rest }: TextProps) => {
       : 16;
 
   return (
-    <View>
-      <PText style={[{ fontSize: fSize }, style, { ...rest }]}>
-        {children}
-      </PText>
-    </View>
+    <NativeText style={[{ fontSize: fSize }, style, { ...rest }]}>
+      {children}
+    </NativeText>
   );
 };
 

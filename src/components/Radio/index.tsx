@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { COLORS, SIZES } from '../../Theme';
-import PText from '../Text';
+import Text from '../Text';
 import { RadioButtonProps } from './types';
 
 const Radio = ({
@@ -34,7 +34,7 @@ const Radio = ({
       onPress={onPress}
       {...rest}
     >
-      <PText
+      <Text
         style={[
           styles.textStyle,
           {
@@ -45,7 +45,7 @@ const Radio = ({
         ]}
       >
         {children}
-      </PText>
+      </Text>
     </TouchableOpacity>
   );
 };

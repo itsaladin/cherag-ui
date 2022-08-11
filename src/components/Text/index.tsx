@@ -1,17 +1,8 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
-import { fontSizeProps } from './types';
+import { Text as NativeText } from 'react-native';
+import { TextProps } from './types';
 
-const PText = ({
-  children,
-  style,
-  fontSize,
-  ...rest
-}: {
-  children: any;
-  style?: any;
-  fontSize?: fontSizeProps;
-}) => {
+const Text = ({ children, style, fontSize, ...rest }: TextProps) => {
   const fSize =
     fontSize === 'sm'
       ? 12
@@ -34,10 +25,10 @@ const PText = ({
       : 16;
 
   return (
-    <View>
-      <Text style={[{ fontSize: fSize }, style, { ...rest }]}>{children}</Text>
-    </View>
+    <NativeText style={[{ fontSize: fSize }, style, { ...rest }]}>
+      {children}
+    </NativeText>
   );
 };
 
-export default PText;
+export default Text;

@@ -7,7 +7,7 @@ import {
   Div,
   Divider,
   Input,
-  PText,
+  Text,
   Radio,
 } from 'cherag-ui';
 import React, { useState } from 'react';
@@ -25,11 +25,11 @@ export default function App() {
 
   return (
     <Div style={styles.container}>
-      <PText style={{ color: blackColor }} fontSize="md">
+      <Text style={{ color: blackColor }} fontSize="md">
         text Commponent
-      </PText>
+      </Text>
       <Div bg={'gray'} w={0} h={0} p={0} m={0}>
-        <PText>Div Commponent</PText>
+        <Text>Div Commponent</Text>
       </Div>
       <Div style={styles.radioGroup}>
         <Radio
@@ -49,8 +49,8 @@ export default function App() {
           Radio Button 1
         </Radio>
       </Div>
-      <PText>{selectItem}</PText>
-      <PText>Checkbox Test</PText>
+      <Text>{selectItem}</Text>
+      <Text>Checkbox Test</Text>
       <Checkbox values={checkboxes} onChange={setCheckboxes}>
         <CheckboxItem value="1">Checkbox 1</CheckboxItem>
         <CheckboxItem value="2">Checkbox 2</CheckboxItem>
@@ -87,7 +87,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 30,
-    // backgroundColor: 'cyan',
     width: '100%',
   },
   radioGroup: {

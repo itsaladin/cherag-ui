@@ -1,6 +1,7 @@
 import {
   GestureResponderEvent,
   StyleProp,
+  TextStyle,
   ViewProps,
   ViewStyle,
 } from 'react-native';
@@ -15,5 +16,5 @@ export interface Props extends ViewProps {
   fontSize?: number;
   borderRadius?: number;
   borderWidth?: number;
-  fontWeight?: string;
+  fontWeight?: TextStyle['fontWeight'];
 }

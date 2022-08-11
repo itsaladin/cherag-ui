@@ -5,7 +5,7 @@ const useDropdown = () => {
   const context = useContext(DropdownContext);
 
   if (!context) {
-    throw new Error('useDropdown must be used within Alert');
+    throw new Error('useDropdown must be used within dropdown');
   }
 
   return context;

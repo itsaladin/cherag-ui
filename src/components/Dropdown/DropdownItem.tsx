@@ -5,23 +5,25 @@ import PText from '../Text';
 import useDropdown from './hook';
 import { DropdownItemProps } from './types';
 
-const CheckboxItem: FC<DropdownItemProps> = ({ children, value }) => {
+const DropdownItem: FC<DropdownItemProps> = ({ children, value }) => {
   const context = useDropdown();
-
   return (
-    <TouchableOpacity onPress={() => context.handleChange(value)}>
-      <Div style={styles.row}>
+    <TouchableOpacity
+      onPress={() => {
+        context.handleChange(value);
+      }}
+    >
+      <Div style={styles.divContainer}>
         <PText>{children}</PText>
-        {console.log(context)}
       </Div>
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  row: {
+  divContainer: {
     flexDirection: 'row',
   },
 });
 
-export default CheckboxItem;
+export default DropdownItem;

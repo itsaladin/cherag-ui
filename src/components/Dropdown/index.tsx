@@ -1,2 +1,3 @@
 export { default as Dropdown } from './Dropdown';
-export type { DropdownValue, DropdownContextValue } from './types';
+export { default as DropdownItem } from './DropdownItem';
+export type { DropdownContextValue } from './types';

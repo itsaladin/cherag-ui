@@ -1,19 +1,14 @@
-export type DropdownValue = boolean;
-export type StatusValue = 'success' | 'error' | 'warning' | 'info';
-
-export type DropdownValues = Array<DropdownValue>;
-
 export interface DropdownContextValue {
-  values: DropdownValues;
-  onPress: (values: DropdownValues) => void;
-  isOpen: boolean;
+  selected?: string;
+  handleChange: (value: string) => void;
 }
 
 export interface DropdownProps {
-  status: StatusValue;
-  title?: string;
+  header?: string;
+  onChange: (value: string) => void;
+  selected?: string;
 }
+
 export interface DropdownItemProps {
-  value: DropdownValue;
-  onPress: (values: DropdownValues) => void;
+  value: string;
 }

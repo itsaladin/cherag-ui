@@ -8,9 +8,10 @@ import {
   Divider,
   Dropdown,
   DropdownItem,
+  Image,
   Input,
-  Text,
   Radio,
+  Text,
 } from 'cherag-ui';
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
@@ -79,7 +80,6 @@ export default function App() {
       </Button>
 
       <Alert status="warning" title="Item deleted !!!" />
-
       <Divider color={COLORS.darkGray} thickness={1} />
 
       <Dropdown
@@ -91,6 +91,12 @@ export default function App() {
         <DropdownItem value="item2">item2</DropdownItem>
         <DropdownItem value="item3">item3</DropdownItem>
       </Dropdown>
+
+      <Image
+        w={40}
+        h={50}
+        uri="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg=="
+      />
     </Div>
   );
 }

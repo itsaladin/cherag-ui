@@ -20,3 +20,6 @@ export { DropdownItem } from './components/Dropdown';
 
 //Image Component
 export { Image } from './components/Image';
+
+//Card Component
+export { Card } from './components/Card';

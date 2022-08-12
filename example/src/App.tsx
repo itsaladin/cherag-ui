@@ -11,6 +11,7 @@ import {
   Input,
   Text,
   Radio,
+  Image,
 } from 'cherag-ui';
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
@@ -79,7 +80,6 @@ export default function App() {
       </Button>
 
       <Alert status="warning" title="Item deleted !!!" />
-
       <Divider color={COLORS.darkGray} thickness={1} />
 
       <Dropdown
@@ -91,6 +91,8 @@ export default function App() {
         <DropdownItem value="item2">item2</DropdownItem>
         <DropdownItem value="item3">item3</DropdownItem>
       </Dropdown>
+
+      <Image w={40} h={50} />
     </Div>
   );
 }

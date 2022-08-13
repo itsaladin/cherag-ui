@@ -26,36 +26,34 @@ const Card = ({
 
   return (
     <Div style={[style, styles.container]} {...rest}>
-      <Div style={styles.image}>
-        <Image
-          h={__height}
-          w={__width}
-          uri="https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg"
-        />
-        <Text style={styles.category}>{__category}</Text>
-      </Div>
+      <Image
+        h={__height}
+        w={__width}
+        style={styles.cardImg}
+        uri="https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg"
+      />
+      <Text style={styles.category}>{__category}</Text>
 
-      <Text>{__title}</Text>
-      <Text>{__subTitle}</Text>
-      <Text>{__paragraph}</Text>
-      <Text>{__activity}</Text>
+      <Text style={styles.title}>{__title}</Text>
+      <Text style={styles.subTitle}>{__subTitle}</Text>
+      <Text style={styles.paragraph}>{__paragraph}</Text>
+      <Text style={styles.activity}>{__activity}</Text>
     </Div>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     height: 'auto',
   },
-  image: {
-    position: 'relative',
-    flex: 1,
-    bottom: 0,
+  cardImg: {
+    borderRadius: 25,
   },
-  category: {
-    position: 'relative',
-  },
+  category: {},
+  title: {},
+  subTitle: {},
+  paragraph: {},
+  activity: {},
 });
 
 export default Card;

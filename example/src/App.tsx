@@ -109,14 +109,15 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 30,
+    marginTop: 30,
     width: '100%',
-    height: 'auto',
+    height: 990,
   },
   radioGroup: {
     flexDirection: 'row',
   },
   scrollView: {
-    backgroundColor: 'pink',
+    height: 990,
+    flex: 1,
   },
 });

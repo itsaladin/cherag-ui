@@ -17,7 +17,7 @@ import {
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import Loader from '../../src/components/Loader';
-import { COLORS } from '../../src/Theme';
+import { COLORS, SIZES } from '../../src/Theme';
 
 export default function App() {
   const [userName, setUserName] = useState<string>();
@@ -99,25 +99,21 @@ export default function App() {
           h={50}
           uri="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg=="
         />
-
-        <Card w={380} h={400} />
+        <Card w={340} h={400} />
       </Div>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  scrollView: {},
   container: {
     flex: 1,
-    marginTop: 30,
     width: '100%',
-    height: 990,
+    height: SIZES.DimensionHeight * 1.2,
+    marginTop: 30,
   },
   radioGroup: {
     flexDirection: 'row',
-  },
-  scrollView: {
-    height: 990,
-    flex: 1,
   },
 });

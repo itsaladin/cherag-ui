@@ -12,4 +12,5 @@ export interface CardProps {
   subTitle?: string;
   paragraph?: string;
   activity?: string;
+  categoryBgColor?: string;
 }

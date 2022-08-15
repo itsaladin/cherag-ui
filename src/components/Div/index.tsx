@@ -3,15 +3,13 @@ import { View } from 'react-native';
 import { Props } from './types';
 
 const Div = ({ children, style, bg, w, h, p, m, ...rest }: Props) => {
-  const height = h ? h : 40;
-  const width = w ? w : 350;
   return (
     <View
       style={[
         {
           backgroundColor: bg,
-          width: width,
-          height: height,
+          width: w,
+          height: h,
           padding: p,
           margin: m,
         },

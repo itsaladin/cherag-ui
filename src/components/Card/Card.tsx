@@ -18,8 +18,8 @@ const Card: FC<CardProps> = ({
   children,
   ...rest
 }) => {
-  const __height = h ? h : 250;
-  const __width = w ? w : 250;
+  const __height = h ? h : SIZES.DimensionHeight / 5;
+  const __width = w ? w : SIZES.DimensionWidth / 1.325;
   const __category = category || 'category';
   const __title = title || 'title';
   const __subTitle = subTitle || 'sub title';
@@ -76,15 +76,20 @@ const styles = StyleSheet.create({
   cardImg: {
     borderTopRightRadius: 15,
     borderTopLeftRadius: 15,
-    height: SIZES.DimensionHeight / 5,
-    width: SIZES.DimensionWidth / 1.325,
   },
   cardTxtContainer: {
     margin: 15,
   },
-  title: { fontSize: 28 },
-  subTitle: { color: COLORS.blue, marginVertical: 5 },
-  paragraph: { marginVertical: 10 },
+  title: {
+    fontSize: 28,
+  },
+  subTitle: {
+    color: COLORS.blue,
+    marginVertical: 5,
+  },
+  paragraph: {
+    marginVertical: 10,
+  },
   activity: {},
 });
 

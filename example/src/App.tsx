@@ -99,7 +99,15 @@ export default function App() {
           h={50}
           uri="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg=="
         />
-        <Card w={240} h={400} />
+        <Card
+          w={240}
+          h={400}
+          title="The Garden City"
+          subTitle="The Silicon Valley of BD"
+          paragraph="'Bengaluru (also called Bangalore) is the center of BD high-tech industry. The city is also known for its parks and nightlife Bengaluru (also called Bangalore) is the center of BD high-tech industry. The city is also known for its parks and nightlife'"
+          activity="6 mins ago"
+          category="Photo"
+        />
       </Div>
     </ScrollView>
   );

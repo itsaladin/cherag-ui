@@ -21,12 +21,10 @@ const Card = ({
   const __height = h ? h : 250;
   const __width = w ? w : 250;
   const __category = category || 'category';
-  const __title = title || 'The Garden City';
-  const __subTitle = subTitle || 'The Silicon Valley of BD';
-  const __paragraph =
-    paragraph ||
-    'Bengaluru (also called Bangalore) is the center of BD high-tech industry. The city is also known for its parks and nightlife Bengaluru (also called Bangalore) is the center of BD high-tech industry. The city is also known for its parks and nightlife';
-  const __activity = activity || '6 mins ago';
+  const __title = title || 'title';
+  const __subTitle = subTitle || 'sub title';
+  const __paragraph = paragraph || 'paragraph';
+  const __activity = activity || 'activity';
   const __categoryBgColor = categoryBgColor || COLORS.blue;
 
   return (

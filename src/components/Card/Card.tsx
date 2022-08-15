@@ -19,7 +19,7 @@ const Card = ({
   ...rest
 }: CardProps) => {
   const __height = h ? h : 250;
-  const __width = w ? w : 350;
+  const __width = w ? w : 250;
   const __category = category || 'category';
   const __title = title || 'The Garden City';
   const __subTitle = subTitle || 'The Silicon Valley of BD';
@@ -52,31 +52,38 @@ const Card = ({
 };
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    backgroundColor: COLORS.white,
+    elevation: 4,
+    shadowColor: COLORS.black,
+    marginHorizontal: 50,
+    borderRadius: 10,
+  },
   category: {
     flex: 1,
-    top: SIZES.DimensionHeight / 6.6,
+    top: SIZES.DimensionHeight / 6.2,
     position: 'absolute',
-    width: SIZES.DimensionWidth / 4,
     justifyContent: 'center',
     alignItems: 'center',
+    width: SIZES.DimensionWidth / 4,
   },
   categoryTxt: {
     textTransform: 'uppercase',
     color: COLORS.white,
+    padding: 5,
   },
   cardImg: {
     borderTopRightRadius: 15,
     borderTopLeftRadius: 15,
     height: SIZES.DimensionHeight / 5,
-    width: SIZES.DimensionWidth,
+    width: SIZES.DimensionWidth / 1.325,
   },
   cardTxtContainer: {
     margin: 15,
   },
   title: { fontSize: 28 },
-  subTitle: { color: COLORS.blue },
-  paragraph: {},
+  subTitle: { color: COLORS.blue, marginVertical: 5 },
+  paragraph: { marginVertical: 10 },
   activity: {},
 });
 

@@ -104,10 +104,14 @@ export default function App() {
           h={400}
           title="The Garden City"
           subTitle="The Silicon Valley of BD"
-          paragraph="'Bengaluru (also called Bangalore) is the center of BD high-tech industry. The city is also known for its parks and nightlife Bengaluru (also called Bangalore) is the center of BD high-tech industry. The city is also known for its parks and nightlife'"
           activity="6 mins ago"
           category="Photo"
-        />
+        >
+          'Bengaluru (also called Bangalore) is the center of BD high-tech
+          industry. The city is also known for its parks and nightlife Bengaluru
+          (also called Bangalore) is the center of BD high-tech industry. The
+          city is also known for its parks and nightlife
+        </Card>
       </Div>
     </ScrollView>
   );

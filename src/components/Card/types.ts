@@ -10,7 +10,6 @@ export interface CardProps {
   category?: string;
   title?: string;
   subTitle?: string;
-  paragraph?: string;
   activity?: string;
   categoryBgColor?: string;
 }

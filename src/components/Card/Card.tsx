@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { FC } from 'react';
 import { StyleSheet } from 'react-native';
 import { COLORS, SIZES } from '../../Theme/index';
 import Div from '../Div';
@@ -6,24 +6,23 @@ import { Image } from '../Image';
 import Text from '../Text';
 import { CardProps } from './types';
 
-const Card = ({
+const Card: FC<CardProps> = ({
   style,
   title,
   subTitle,
-  paragraph,
   activity,
   category,
   w,
   h,
   categoryBgColor,
+  children,
   ...rest
-}: CardProps) => {
+}) => {
   const __height = h ? h : 250;
   const __width = w ? w : 250;
   const __category = category || 'category';
   const __title = title || 'title';
   const __subTitle = subTitle || 'sub title';
-  const __paragraph = paragraph || 'paragraph';
   const __activity = activity || 'activity';
   const __categoryBgColor = categoryBgColor || COLORS.blue;
 
@@ -42,7 +41,11 @@ const Card = ({
       <Div style={styles.cardTxtContainer}>
         <Text style={styles.title}>{__title}</Text>
         <Text style={styles.subTitle}>{__subTitle}</Text>
-        <Text style={styles.paragraph}>{__paragraph}</Text>
+        {typeof children === 'string' ? (
+          <Text style={styles.paragraph}>{children}</Text>
+        ) : (
+          children
+        )}
         <Text style={styles.activity}>{__activity}</Text>
       </Div>
     </Div>

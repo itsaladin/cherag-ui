@@ -9,14 +9,17 @@ export { Checkbox, CheckboxItem } from './components/Checkbox';
 export type { CheckboxValue } from './components/Checkbox';
 
 //Alert Component
-export { default as Alert } from './components/Alert/Alert';
+export { Alert } from './components/Alert';
 
 //Divider Component
 export { default as Divider } from './components/Divider';
 
 //Dropdown Component
-export { default as Dropdown } from './components/Dropdown/Dropdown';
-export { default as DropdownItem } from './components/Dropdown/DropdownItem';
+export { Dropdown } from './components/Dropdown';
+export { DropdownItem } from './components/Dropdown';
 
 //Image Component
-export { default as Image } from './components/Image/Image';
+export { Image } from './components/Image';
+
+//Card Component
+export { Card } from './components/Card';

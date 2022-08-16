@@ -100,14 +100,16 @@ export default function App() {
           uri="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg=="
         />
         <Card
-          w={240}
-          h={400}
           title="The Garden City"
           subTitle="The Silicon Valley of BD"
-          paragraph="'Bengaluru (also called Bangalore) is the center of BD high-tech industry. The city is also known for its parks and nightlife Bengaluru (also called Bangalore) is the center of BD high-tech industry. The city is also known for its parks and nightlife'"
-          activity="6 mins ago"
           category="Photo"
-        />
+          footerText="6 mins ago"
+        >
+          'Bengaluru (also called Bangalore) is the center of BD high-tech
+          industry. The city is also known for its parks and nightlife Bengaluru
+          (also called Bangalore) is the center of BD high-tech industry. The
+          city is also known for its parks and nightlife
+        </Card>
       </Div>
     </ScrollView>
   );
@@ -118,7 +120,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    height: SIZES.DimensionHeight * 1.2,
+    height: SIZES.DimensionHeight * 1.1,
     marginTop: 30,
   },
   radioGroup: {

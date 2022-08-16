@@ -23,3 +23,6 @@ export { Image } from './components/Image';
 
 //Card Component
 export { Card } from './components/Card';
+
+//check type handler
+export { renderTextOrNode } from './utlis';

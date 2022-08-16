@@ -10,7 +10,10 @@ export interface CardProps {
   category?: string;
   title?: string;
   subTitle?: string;
-  paragraph?: string;
-  activity?: string;
+  footerText?: string;
   categoryBgColor?: string;
+  titleStyle?: StyleProp<TextStyle>;
+  paragraphStyle?: StyleProp<TextStyle>;
+  subTitleStyle?: StyleProp<TextStyle>;
+  footerStyle?: StyleProp<TextStyle>;
 }

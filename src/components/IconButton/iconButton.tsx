@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
-import { StyleSheet } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { TouchableWithoutFeedback } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { COLORS } from '../../Theme';
-import Div from '../Div';
 import { IconButtonProps } from './types';
 
 const IconButton: FC<IconButtonProps> = ({
@@ -19,14 +18,14 @@ const IconButton: FC<IconButtonProps> = ({
   const __size = size || 24;
 
   return (
-    <Div style={[styles.container, disabled, onPress, style]} {...rest}>
+    <TouchableWithoutFeedback
+      onPress={disabled ? undefined : onPress}
+      style={style}
+      {...rest}
+    >
       <Icon name={__icon} size={__size} color={__color} />
-    </Div>
+    </TouchableWithoutFeedback>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {},
-});
 
 export default IconButton;

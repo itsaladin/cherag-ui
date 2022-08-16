@@ -114,10 +114,10 @@ export default function App() {
         <IconButton
           icon="rocket"
           onPress={() => {
-            console.log('buttonIcon');
+            console.log('Icon Button pressed');
           }}
-          size={38}
-          color={COLORS.textColor}
+          size={68}
+          color={COLORS.green}
         />
       </Div>
     </ScrollView>
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    height: SIZES.DimensionHeight * 1.1,
+    height: SIZES.DimensionHeight * 1.5,
     marginTop: 30,
   },
   radioGroup: {

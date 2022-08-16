@@ -9,6 +9,7 @@ import {
   Divider,
   Dropdown,
   DropdownItem,
+  IconButton,
   Image,
   Input,
   Radio,
@@ -110,6 +111,14 @@ export default function App() {
           (also called Bangalore) is the center of BD high-tech industry. The
           city is also known for its parks and nightlife
         </Card>
+        <IconButton
+          icon="rocket"
+          onPress={() => {
+            console.log('buttonIcon');
+          }}
+          size={38}
+          color={COLORS.textColor}
+        />
       </Div>
     </ScrollView>
   );

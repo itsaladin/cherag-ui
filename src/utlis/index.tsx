@@ -1,1 +1,1 @@
-export { checkType } from './checkType';
+export { renderTextOrNode } from './renderTextOrNode';

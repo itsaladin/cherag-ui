@@ -25,4 +25,4 @@ export { Image } from './components/Image';
 export { Card } from './components/Card';
 
 //check type handler
-export { checkType } from './utlis';
+export { renderTextOrNode } from './utlis';

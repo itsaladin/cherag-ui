@@ -102,8 +102,8 @@ export default function App() {
         <Card
           title="The Garden City"
           subTitle="The Silicon Valley of BD"
-          footerTxt="6 mins ago"
           category="Photo"
+          footerText="6 mins ago"
         >
           'Bengaluru (also called Bangalore) is the center of BD high-tech
           industry. The city is also known for its parks and nightlife Bengaluru
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    height: SIZES.DimensionHeight * 1.2,
+    height: SIZES.DimensionHeight * 1.1,
     marginTop: 30,
   },
   radioGroup: {

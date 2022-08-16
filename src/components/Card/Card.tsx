@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { StyleSheet } from 'react-native';
-import { checkType } from '../../utlis';
+import { renderTextOrNode } from '../../utlis';
 import { COLORS, SIZES } from '../../Theme/index';
 import Div from '../Div';
 import { Image } from '../Image';
@@ -11,7 +11,7 @@ const Card: FC<CardProps> = ({
   style,
   title,
   subTitle,
-  footerTxt,
+  footerText,
   category,
   w,
   h,
@@ -19,6 +19,8 @@ const Card: FC<CardProps> = ({
   children,
   titleStyle,
   subTitleStyle,
+  paragraphStyle,
+  footerStyle,
   ...rest
 }) => {
   const __height = h ? h : SIZES.DimensionHeight / 5;
@@ -36,21 +38,21 @@ const Card: FC<CardProps> = ({
         style={styles.cardImg}
         uri="https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg"
       />
-      <Div style={[styles.category, { backgroundColor: __categoryBgColor }]}>
+      <Div
+        style={[
+          styles.category,
+          { backgroundColor: __categoryBgColor },
+          footerStyle,
+        ]}
+      >
         <Text style={styles.categoryTxt}>{__category}</Text>
       </Div>
 
       <Div style={styles.cardTxtContainer}>
         <Text style={[styles.title, titleStyle]}>{__title}</Text>
         <Text style={[styles.subTitle, subTitleStyle]}>{__subTitle}</Text>
-        {typeof children === 'string' ? (
-          <Text style={styles.paragraph}>{children}</Text>
-        ) : (
-          children
-        )}
-        {checkType(footerTxt) && (
-          <Text style={styles.footerTxt}>{footerTxt}</Text>
-        )}
+        {renderTextOrNode(children, [styles.paragraph, paragraphStyle])}
+        {renderTextOrNode(footerText, [styles.footerTxt, footerStyle])}
       </Div>
     </Div>
   );

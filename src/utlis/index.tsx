@@ -1,0 +1,1 @@
+export { checkType } from './checkType';

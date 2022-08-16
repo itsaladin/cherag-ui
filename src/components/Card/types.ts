@@ -10,6 +10,8 @@ export interface CardProps {
   category?: string;
   title?: string;
   subTitle?: string;
-  activity?: string;
+  footerTxt?: string;
   categoryBgColor?: string;
+  titleStyle?: StyleProp<TextStyle>;
+  subTitleStyle?: StyleProp<TextStyle>;
 }

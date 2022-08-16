@@ -102,7 +102,7 @@ export default function App() {
         <Card
           title="The Garden City"
           subTitle="The Silicon Valley of BD"
-          activity="6 mins ago"
+          footerTxt="6 mins ago"
           category="Photo"
         >
           'Bengaluru (also called Bangalore) is the center of BD high-tech

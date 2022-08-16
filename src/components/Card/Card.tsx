@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { StyleSheet } from 'react-native';
+import { checkType } from '../../utlis';
 import { COLORS, SIZES } from '../../Theme/index';
 import Div from '../Div';
 import { Image } from '../Image';
@@ -10,12 +11,14 @@ const Card: FC<CardProps> = ({
   style,
   title,
   subTitle,
-  activity,
+  footerTxt,
   category,
   w,
   h,
   categoryBgColor,
   children,
+  titleStyle,
+  subTitleStyle,
   ...rest
 }) => {
   const __height = h ? h : SIZES.DimensionHeight / 5;
@@ -23,7 +26,6 @@ const Card: FC<CardProps> = ({
   const __category = category || 'category';
   const __title = title || 'title';
   const __subTitle = subTitle || 'sub title';
-  const __activity = activity || 'activity';
   const __categoryBgColor = categoryBgColor || COLORS.blue;
 
   return (
@@ -39,14 +41,16 @@ const Card: FC<CardProps> = ({
       </Div>
 
       <Div style={styles.cardTxtContainer}>
-        <Text style={styles.title}>{__title}</Text>
-        <Text style={styles.subTitle}>{__subTitle}</Text>
+        <Text style={[styles.title, titleStyle]}>{__title}</Text>
+        <Text style={[styles.subTitle, subTitleStyle]}>{__subTitle}</Text>
         {typeof children === 'string' ? (
           <Text style={styles.paragraph}>{children}</Text>
         ) : (
           children
         )}
-        <Text style={styles.activity}>{__activity}</Text>
+        {checkType(footerTxt) && (
+          <Text style={styles.footerTxt}>{footerTxt}</Text>
+        )}
       </Div>
     </Div>
   );
@@ -90,7 +94,7 @@ const styles = StyleSheet.create({
   paragraph: {
     marginVertical: 10,
   },
-  activity: {},
+  footerTxt: {},
 });
 
 export default Card;

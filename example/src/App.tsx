@@ -145,6 +145,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   textAreaContainer: {
-    // marginTop: 30,
+    marginTop: 30,
   },
 });

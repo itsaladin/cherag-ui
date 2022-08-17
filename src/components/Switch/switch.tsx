@@ -6,16 +6,22 @@ import { SwitchProps } from './types';
 
 const Switch = ({
   style,
+  size,
+  disabled,
   isSwitchCheck,
   setIsSwitchCheck,
   offTrackColor,
   onTrackColor,
   thumbColor,
-  size,
   ...rest
 }: SwitchProps) => {
-  const __offTrackColor = offTrackColor || COLORS.darkGray;
-  const __onTrackColor = onTrackColor || COLORS.green;
+  const __offTrackColor = disabled
+    ? COLORS.lightGray5
+    : offTrackColor || COLORS.darkGray;
+  const __onTrackColor = disabled
+    ? COLORS.lightGray5
+    : onTrackColor || COLORS.green;
+  const __thumbColor = disabled ? COLORS.darkgray : thumbColor || COLORS.white;
 
   let __width = 0;
   let __height = 0;
@@ -55,6 +61,7 @@ const Switch = ({
 
   return (
     <TouchableOpacity
+      disabled={disabled}
       onPress={() => {
         setIsSwitchCheck(!isSwitchCheck);
       }}
@@ -78,7 +85,7 @@ const Switch = ({
             styles.switchStyle,
             {
               marginLeft: isSwitchCheck ? __marginLeft : SIZES.p3 - 10,
-              backgroundColor: thumbColor || COLORS.white,
+              backgroundColor: __thumbColor,
               width: __thumbWidth,
               height: __thumbHeight,
             },

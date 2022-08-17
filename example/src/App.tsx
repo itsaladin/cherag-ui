@@ -25,8 +25,8 @@ export default function App() {
   const [userName, setUserName] = useState<string>();
   const [selectItem, setSelectItem] = useState<string>();
   const [checkboxes, setCheckboxes] = useState<CheckboxValue[]>([]);
-  const [alert, setAlert] = useState<boolean>(false);
-  const [isSwitchCheck, setIsSwitchCheck] = useState<boolean>(false);
+  const [alert, setAlert] = useState(false);
+  const [isSwitchCheck, setIsSwitchCheck] = useState(true);
 
   const blackColor = 'black';
 
@@ -122,7 +122,8 @@ export default function App() {
           color={COLORS.green}
         />
         <Switch
-          size="sm"
+          size="lg"
+          disabled
           isSwitchCheck={isSwitchCheck}
           setIsSwitchCheck={setIsSwitchCheck}
         />

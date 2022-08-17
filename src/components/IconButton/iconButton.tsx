@@ -8,7 +8,7 @@ const IconButton: FC<IconButtonProps> = ({
   style,
   icon,
   color,
-  size = 24,
+  size,
   disabled,
   onPress,
   ...rest

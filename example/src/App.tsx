@@ -13,6 +13,7 @@ import {
   Image,
   Input,
   Radio,
+  Switch,
   Text,
 } from 'cherag-ui';
 import React, { useState } from 'react';
@@ -119,6 +120,7 @@ export default function App() {
           size={68}
           color={COLORS.green}
         />
+        <Switch />
       </Div>
     </ScrollView>
   );

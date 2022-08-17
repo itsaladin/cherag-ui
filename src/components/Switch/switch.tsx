@@ -1,16 +1,24 @@
-import React, { FC, useState } from 'react';
+import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { COLORS, SIZES } from '../../Theme';
 import Div from '../Div';
-import { IconButtonProps } from './types';
+import { SwitchProps } from './types';
 
-const Switch: FC<IconButtonProps> = ({ style, ...rest }) => {
-  const [change, setChange] = useState<Boolean>(false);
-
+const Switch = ({
+  style,
+  switchState,
+  setSwitchState,
+  offTrackColor,
+  onTrackColor,
+  thumbColor,
+  ...rest
+}: SwitchProps) => {
+  const __offTrackColor = offTrackColor || COLORS.darkGray;
+  const __onTrackColor = onTrackColor || COLORS.green;
   return (
     <TouchableOpacity
       onPress={() => {
-        setChange(!change);
+        setSwitchState(!switchState);
       }}
       activeOpacity={0.8}
       style={style}
@@ -20,13 +28,18 @@ const Switch: FC<IconButtonProps> = ({ style, ...rest }) => {
         <Div
           style={[
             styles.lineStyle,
-            { backgroundColor: change ? COLORS.green : COLORS.darkGray },
+            { backgroundColor: switchState ? __onTrackColor : __offTrackColor },
           ]}
         />
         <Div
           style={[
             styles.switchStyle,
-            { marginLeft: change ? SIZES.DimensionWidth / 10 : SIZES.p3 - 10 },
+            {
+              marginLeft: switchState
+                ? SIZES.DimensionWidth / 10
+                : SIZES.p3 - 10,
+              backgroundColor: thumbColor || COLORS.white,
+            },
           ]}
         />
       </Div>
@@ -49,7 +62,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   switchStyle: {
-    backgroundColor: COLORS.blue,
     width: 30,
     height: 30,
     flex: 1,

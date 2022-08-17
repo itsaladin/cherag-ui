@@ -6,8 +6,8 @@ import { SwitchProps } from './types';
 
 const Switch = ({
   style,
-  switchState,
-  setSwitchState,
+  isSwitchCheck,
+  setIsSwitchCheck,
   offTrackColor,
   onTrackColor,
   thumbColor,
@@ -18,7 +18,7 @@ const Switch = ({
   return (
     <TouchableOpacity
       onPress={() => {
-        setSwitchState(!switchState);
+        setIsSwitchCheck(!isSwitchCheck);
       }}
       activeOpacity={0.8}
       style={style}
@@ -28,14 +28,16 @@ const Switch = ({
         <Div
           style={[
             styles.lineStyle,
-            { backgroundColor: switchState ? __onTrackColor : __offTrackColor },
+            {
+              backgroundColor: isSwitchCheck ? __onTrackColor : __offTrackColor,
+            },
           ]}
         />
         <Div
           style={[
             styles.switchStyle,
             {
-              marginLeft: switchState
+              marginLeft: isSwitchCheck
                 ? SIZES.DimensionWidth / 10
                 : SIZES.p3 - 10,
               backgroundColor: thumbColor || COLORS.white,
@@ -54,7 +56,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     flex: 1,
     justifyContent: 'center',
-    alignSelf: 'center',
   },
   lineStyle: {
     width: 70,

@@ -26,7 +26,7 @@ export default function App() {
   const [selectItem, setSelectItem] = useState<string>();
   const [checkboxes, setCheckboxes] = useState<CheckboxValue[]>([]);
   const [alert, setAlert] = useState<boolean>(false);
-  const [switchState, setSwitchState] = useState<boolean>(false);
+  const [isSwitchCheck, setIsSwitchCheck] = useState<boolean>(false);
 
   const blackColor = 'black';
 
@@ -121,7 +121,10 @@ export default function App() {
           size={68}
           color={COLORS.green}
         />
-        <Switch switchState={switchState} setSwitchState={setSwitchState} />
+        <Switch
+          isSwitchCheck={isSwitchCheck}
+          setIsSwitchCheck={setIsSwitchCheck}
+        />
       </Div>
     </ScrollView>
   );

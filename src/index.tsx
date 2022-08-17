@@ -29,3 +29,6 @@ export { renderTextOrNode } from './utlis';
 
 //IconButton Component
 export { IconButton } from './components/IconButton';
+
+//Switch Component
+export { Switch } from './components/Switch';

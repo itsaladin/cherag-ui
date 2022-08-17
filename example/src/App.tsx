@@ -13,6 +13,7 @@ import {
   Image,
   Input,
   Radio,
+  Switch,
   Text,
 } from 'cherag-ui';
 import React, { useState } from 'react';
@@ -24,7 +25,8 @@ export default function App() {
   const [userName, setUserName] = useState<string>();
   const [selectItem, setSelectItem] = useState<string>();
   const [checkboxes, setCheckboxes] = useState<CheckboxValue[]>([]);
-  const [alert, setAlert] = useState<Boolean>(false);
+  const [alert, setAlert] = useState(false);
+  const [isSwitchCheck, setIsSwitchCheck] = useState(true);
 
   const blackColor = 'black';
 
@@ -118,6 +120,12 @@ export default function App() {
           }}
           size={68}
           color={COLORS.green}
+        />
+        <Switch
+          size="lg"
+          disabled
+          isSwitchCheck={isSwitchCheck}
+          setIsSwitchCheck={setIsSwitchCheck}
         />
       </Div>
     </ScrollView>

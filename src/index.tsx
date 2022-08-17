@@ -32,3 +32,6 @@ export { IconButton } from './components/IconButton';
 
 //Switch Component
 export { Switch } from './components/Switch';
+
+//TextArea Component
+export { TextArea } from './components/TextArea';

@@ -15,6 +15,7 @@ import {
   Radio,
   Switch,
   Text,
+  TextArea,
 } from 'cherag-ui';
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
@@ -26,12 +27,12 @@ export default function App() {
   const [selectItem, setSelectItem] = useState<string>();
   const [checkboxes, setCheckboxes] = useState<CheckboxValue[]>([]);
   const [alert, setAlert] = useState(false);
-  const [isSwitchCheck, setIsSwitchCheck] = useState(true);
+  const [isSwitchCheck, setIsSwitchCheck] = useState(false);
 
   const blackColor = 'black';
 
   return (
-    <ScrollView style={styles.scrollView}>
+    <ScrollView>
       <Div style={styles.container}>
         <Text style={{ color: blackColor }} fontSize="md">
           text Commponent
@@ -123,24 +124,27 @@ export default function App() {
         />
         <Switch
           size="lg"
-          disabled
           isSwitchCheck={isSwitchCheck}
           setIsSwitchCheck={setIsSwitchCheck}
         />
+        <Div style={styles.textAreaContainer}>
+          <TextArea />
+        </Div>
       </Div>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  scrollView: {},
   container: {
-    flex: 1,
     width: '100%',
     height: SIZES.DimensionHeight * 1.5,
     marginTop: 30,
   },
   radioGroup: {
     flexDirection: 'row',
+  },
+  textAreaContainer: {
+    // marginTop: 30,
   },
 });

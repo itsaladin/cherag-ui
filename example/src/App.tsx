@@ -122,6 +122,7 @@ export default function App() {
           color={COLORS.green}
         />
         <Switch
+          size="sm"
           isSwitchCheck={isSwitchCheck}
           setIsSwitchCheck={setIsSwitchCheck}
         />

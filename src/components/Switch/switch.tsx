@@ -11,10 +11,48 @@ const Switch = ({
   offTrackColor,
   onTrackColor,
   thumbColor,
+  size,
   ...rest
 }: SwitchProps) => {
   const __offTrackColor = offTrackColor || COLORS.darkGray;
   const __onTrackColor = onTrackColor || COLORS.green;
+
+  let __width = 0;
+  let __height = 0;
+  let __thumbHeight = 0;
+  let __thumbWidth = 0;
+  let __marginLeft = 0;
+
+  switch (size) {
+    case 'sm':
+      __width = 30;
+      __height = 10;
+      __thumbHeight = 18;
+      __thumbWidth = 18;
+      __marginLeft = SIZES.DimensionWidth / 30;
+      break;
+    case 'md':
+      __width = 45;
+      __height = 13;
+      __thumbHeight = 22;
+      __thumbWidth = 22;
+      __marginLeft = SIZES.DimensionWidth / 15;
+      break;
+    case 'lg':
+      __width = 60;
+      __height = 20;
+      __thumbHeight = 30;
+      __thumbWidth = 30;
+      __marginLeft = SIZES.DimensionWidth / 12;
+      break;
+    default:
+      __width = 40;
+      __height = 15;
+      __thumbHeight = 20;
+      __thumbWidth = 20;
+      __marginLeft = SIZES.DimensionWidth / 20;
+  }
+
   return (
     <TouchableOpacity
       onPress={() => {
@@ -30,6 +68,8 @@ const Switch = ({
             styles.lineStyle,
             {
               backgroundColor: isSwitchCheck ? __onTrackColor : __offTrackColor,
+              width: __width,
+              height: __height,
             },
           ]}
         />
@@ -37,10 +77,10 @@ const Switch = ({
           style={[
             styles.switchStyle,
             {
-              marginLeft: isSwitchCheck
-                ? SIZES.DimensionWidth / 10
-                : SIZES.p3 - 10,
+              marginLeft: isSwitchCheck ? __marginLeft : SIZES.p3 - 10,
               backgroundColor: thumbColor || COLORS.white,
+              width: __thumbWidth,
+              height: __thumbHeight,
             },
           ]}
         />
@@ -58,13 +98,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   lineStyle: {
-    width: 70,
-    height: 20,
     borderRadius: 10,
   },
   switchStyle: {
-    width: 30,
-    height: 30,
     flex: 1,
     position: 'absolute',
     borderRadius: 30,

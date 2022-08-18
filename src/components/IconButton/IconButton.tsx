@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { TouchableWithoutFeedback } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { COLORS } from '../../Theme';
+import { COLORS } from '../../theme';
 import { IconButtonProps } from './types';
 
 const IconButton: FC<IconButtonProps> = ({

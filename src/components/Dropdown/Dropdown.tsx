@@ -1,6 +1,6 @@
 import React, { FC, useCallback, useState } from 'react';
 import { StyleSheet } from 'react-native';
-import { COLORS, SIZES } from '../../Theme';
+import { COLORS, SIZES } from '../../theme';
 import Button from '../Button';
 import Div from '../Div';
 import DropdownContext from './Context';

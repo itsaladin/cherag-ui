@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { StyleSheet } from 'react-native';
 import { renderTextOrNode } from '../../utlis';
-import { COLORS, SIZES } from '../../Theme/index';
+import { COLORS, SIZES } from '../../theme/index';
 import Div from '../Div';
 import { Image } from '../Image';
 import Text from '../Text';

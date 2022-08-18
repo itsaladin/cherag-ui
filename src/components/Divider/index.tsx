@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View } from 'react-native';
-import { COLORS } from '../../Theme';
+import { COLORS } from '../../theme';
 import { DividerProps } from './types';
 
 const Divider = ({ style, color, thickness, ...rest }: DividerProps) => {

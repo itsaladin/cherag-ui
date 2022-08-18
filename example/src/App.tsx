@@ -1,6 +1,7 @@
 import {
   Alert,
-  Avatar,
+  AvatarImage,
+  AvatarText,
   Button,
   Card,
   Checkbox,
@@ -131,7 +132,13 @@ export default function App() {
         <Div style={styles.textAreaContainer}>
           <TextArea />
         </Div>
-        <Avatar source={require('./assets/aladdin.jpeg')} />
+        <AvatarImage size={60} source={require('./assets/aladdin.jpeg')} />
+        <AvatarText
+          bgColor={COLORS.orange}
+          textColor={COLORS.white}
+          size={60}
+          label="XD"
+        />
       </Div>
     </ScrollView>
   );

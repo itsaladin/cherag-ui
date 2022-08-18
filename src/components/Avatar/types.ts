@@ -4,6 +4,7 @@ import {
   ImageSourcePropType,
   ImageStyle,
   StyleProp,
+  TextStyle,
   ViewStyle,
 } from 'react-native';
 import Div from '../Div';
@@ -23,4 +24,13 @@ export type AvatarImageProps = ComponentPropsWithRef<typeof Div> & {
   onLoadEnd?: ImageProps['onLoadEnd'];
   onLoadStart?: ImageProps['onLoadStart'];
   onProgress?: ImageProps['onProgress'];
+};
+
+export type AvatarTextProps = ComponentPropsWithRef<typeof Div> & {
+  label: string;
+  size?: number;
+  bgColor?: string;
+  textColor?: string;
+  style?: StyleProp<ViewStyle>;
+  textStyle?: StyleProp<TextStyle>;
 };

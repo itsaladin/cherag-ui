@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { COLORS, SIZES } from '../../Theme';
 import Button from '../Button';
 import Div from '../Div';
-import DropdownContext from './context';
+import DropdownContext from './Context';
 import type { DropdownProps } from './types';
 import Icon from 'react-native-vector-icons/Ionicons';
 

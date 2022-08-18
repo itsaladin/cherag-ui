@@ -3,7 +3,7 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 import { COLORS, SIZES } from '../../Theme';
 import Div from '../Div';
 import PText from '../Text';
-import useCheckbox from './hook';
+import useCheckbox from './Hook';
 import { CheckboxItemProps } from './types';
 import Icon from 'react-native-vector-icons/Ionicons';
 

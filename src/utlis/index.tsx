@@ -1,1 +1,1 @@
-export { renderTextOrNode } from './renderTextOrNode';
+export { renderTextOrNode } from './RenderTextOrNode';

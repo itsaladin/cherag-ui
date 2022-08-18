@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import Div from '../Div';
 import PText from '../Text';
-import useDropdown from './hook';
+import useDropdown from './Hook';
 import { DropdownItemProps } from './types';
 
 const DropdownItem: FC<DropdownItemProps> = ({ children, value }) => {

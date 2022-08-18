@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import CheckboxContext from './context';
+import CheckboxContext from './Context';
 
 const useCheckbox = () => {
   const context = useContext(CheckboxContext);

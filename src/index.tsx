@@ -35,3 +35,6 @@ export { Switch } from './components/Switch';
 
 //TextArea Component
 export { TextArea } from './components/TextArea';
+
+//Avatar Component
+export { default as Avatar } from './components/Avatar';

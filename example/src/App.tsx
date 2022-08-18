@@ -1,5 +1,6 @@
 import {
   Alert,
+  Avatar,
   Button,
   Card,
   Checkbox,
@@ -130,6 +131,24 @@ export default function App() {
         <Div style={styles.textAreaContainer}>
           <TextArea />
         </Div>
+        <Avatar.Image
+          size={60}
+          dotSize={20}
+          dotColor={COLORS.green}
+          source={require('./assets/aladdin.jpeg')}
+        />
+        <Avatar.Text
+          bgColor={COLORS.orange}
+          textColor={COLORS.white}
+          size={60}
+          label="XD"
+        />
+        <Avatar.Icon
+          iconColor={COLORS.blue}
+          bgColor={COLORS.lightGray}
+          iconSize={35}
+          icon="file"
+        />
       </Div>
     </ScrollView>
   );
@@ -138,7 +157,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: SIZES.DimensionHeight * 1.5,
+    height: SIZES.DimensionHeight * 2,
     marginTop: 30,
   },
   radioGroup: {

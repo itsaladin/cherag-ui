@@ -133,7 +133,11 @@ export default function App() {
         <Div style={styles.textAreaContainer}>
           <TextArea />
         </Div>
-        <AvatarImage size={60} source={require('./assets/aladdin.jpeg')} />
+        <AvatarImage
+          size={60}
+          activeDotSize={20}
+          source={require('./assets/aladdin.jpeg')}
+        />
         <AvatarText
           bgColor={COLORS.orange}
           textColor={COLORS.white}

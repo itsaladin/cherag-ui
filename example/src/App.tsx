@@ -1,8 +1,6 @@
 import {
   Alert,
-  AvatarIcon,
-  AvatarImage,
-  AvatarText,
+  Avatar,
   Button,
   Card,
   Checkbox,
@@ -133,18 +131,19 @@ export default function App() {
         <Div style={styles.textAreaContainer}>
           <TextArea />
         </Div>
-        <AvatarImage
+        <Avatar.Image
           size={60}
-          activeDotSize={20}
+          dotSize={20}
+          dotColor={COLORS.green}
           source={require('./assets/aladdin.jpeg')}
         />
-        <AvatarText
+        <Avatar.Text
           bgColor={COLORS.orange}
           textColor={COLORS.white}
           size={60}
           label="XD"
         />
-        <AvatarIcon
+        <Avatar.Icon
           iconColor={COLORS.blue}
           bgColor={COLORS.lightGray}
           iconSize={35}

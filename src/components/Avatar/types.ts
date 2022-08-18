@@ -18,7 +18,8 @@ export type AvatarImageProps = ComponentPropsWithRef<typeof Div> & {
   size?: number;
   style?: StyleProp<ViewStyle>;
   imageStyle?: StyleProp<ImageStyle>;
-  activeDotSize?: number;
+  dotSize?: number;
+  dotColor?: string;
   onError?: ImageProps['onError'];
   onLayout?: ImageProps['onLayout'];
   onLoad?: ImageProps['onLoad'];

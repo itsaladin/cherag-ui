@@ -11,7 +11,8 @@ const AvatarImage = ({
   source,
   style,
   imageStyle,
-  activeDotSize,
+  dotSize,
+  dotColor,
   onError,
   onLayout,
   onLoad,
@@ -20,7 +21,7 @@ const AvatarImage = ({
   onProgress,
   ...rest
 }: AvatarImageProps) => {
-  const __activeDotSize = activeDotSize || 20;
+  const __dotColor = dotColor || COLORS.softGray;
   return (
     <View
       style={[
@@ -49,12 +50,19 @@ const AvatarImage = ({
             onLoadStart={onLoadStart}
             onProgress={onProgress}
           />
-          <Div
-            style={[
-              styles.activeDot,
-              { width: __activeDotSize, height: __activeDotSize },
-            ]}
-          />
+          {dotSize && (
+            <Div
+              style={[
+                styles.activeDot,
+                {
+                  width: dotSize,
+                  height: dotSize,
+                  backgroundColor: __dotColor,
+                  borderRadius: dotSize / 2,
+                },
+              ]}
+            />
+          )}
         </Div>
       )}
     </View>
@@ -67,8 +75,6 @@ export default AvatarImage;
 
 const styles = StyleSheet.create({
   activeDot: {
-    backgroundColor: COLORS.green,
-    borderRadius: 20,
     position: 'absolute',
     right: 0,
     bottom: 0,

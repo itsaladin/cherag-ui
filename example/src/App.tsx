@@ -71,6 +71,8 @@ export default function App() {
           rightIcon="eye"
         />
         <Button
+          bg={COLORS.softGray}
+          color={COLORS.black}
           onPress={() => {
             console.log('Custom button pressed');
             setAlert(!alert);

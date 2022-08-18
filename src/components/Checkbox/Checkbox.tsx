@@ -12,7 +12,7 @@ const Checkbox: FC<CheckboxProps> = ({ onChange, values, children }) => {
 
       onChange(newValues);
     },
-    [values]
+    [values, onChange]
   );
 
   return (

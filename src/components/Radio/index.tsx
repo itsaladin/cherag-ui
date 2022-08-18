@@ -1,51 +1,40 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { COLORS, SIZES } from '../../theme';
+import Div from '../Div';
 import Text from '../Text';
 import { RadioButtonProps } from './types';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Radio = ({
   children,
   onPress,
   style,
-  width,
-  height,
-  bg,
   color,
+  btnColor,
   fontSize,
-  borderRadius,
-  borderWidth,
   fontWeight,
   ...rest
 }: RadioButtonProps) => {
+  const __btnColor = btnColor || COLORS.red;
+
   return (
-    <TouchableOpacity
-      activeOpacity={0.8}
-      style={[
-        style,
-        {
-          backgroundColor: bg || COLORS.secondary,
-          width: width || 60,
-          height: height || 30,
-          borderWidth: borderWidth,
-          borderRadius: borderRadius || SIZES.p3 - 10,
-        },
-      ]}
-      onPress={onPress}
-      {...rest}
-    >
-      <Text
-        style={[
-          styles.textStyle,
-          {
-            color: color || COLORS.white,
-            fontSize: fontSize || SIZES.p2,
-            fontWeight: fontWeight || 'normal',
-          },
-        ]}
-      >
-        {children}
-      </Text>
+    <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
+      <Div style={[style, styles.container]} {...rest}>
+        <Icon name={'radiobox-marked'} size={24} color={__btnColor} />
+        <Text
+          style={[
+            styles.textStyle,
+            {
+              color: color || COLORS.black,
+              fontSize: fontSize || SIZES.p2,
+              fontWeight: fontWeight || 'normal',
+            },
+          ]}
+        >
+          {children}
+        </Text>
+      </Div>
     </TouchableOpacity>
   );
 };
@@ -53,8 +42,12 @@ const Radio = ({
 export default Radio;
 
 const styles = StyleSheet.create({
+  container: {
+    // justifyContent: 'center',
+    flexDirection: 'row',
+  },
   textStyle: {
     lineHeight: 25,
-    textAlign: 'center',
+    marginLeft: 5,
   },
 });

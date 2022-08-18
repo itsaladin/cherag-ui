@@ -41,7 +41,6 @@ export default function App() {
         </Div>
         <Div style={styles.radioGroup}>
           <Radio
-            width={150}
             onPress={() => {
               setSelectItem('Radio button 1');
             }}
@@ -49,7 +48,6 @@ export default function App() {
             Radio Button 1
           </Radio>
           <Radio
-            width={150}
             onPress={() => {
               setSelectItem('Radio button 2');
             }}
@@ -57,8 +55,6 @@ export default function App() {
             Radio Button 1
           </Radio>
         </Div>
-        <Text>{selectItem}</Text>
-        <Text>Checkbox Test</Text>
         <Checkbox values={checkboxes} onChange={setCheckboxes}>
           <CheckboxItem value="1">Checkbox 1</CheckboxItem>
           <CheckboxItem value="2">Checkbox 2</CheckboxItem>
@@ -66,8 +62,7 @@ export default function App() {
         </Checkbox>
         <Loader color={COLORS.green} size={'large'} />
         <Input
-          //@ts-ignore
-          onChangeText={(txt) => {
+          onChangeText={(txt: string) => {
             setUserName(txt);
           }}
           value={userName}

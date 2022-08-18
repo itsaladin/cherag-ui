@@ -93,11 +93,14 @@ export default function App() {
           <DropdownItem value="item2">item2</DropdownItem>
           <DropdownItem value="item3">item3</DropdownItem>
         </Dropdown>
-
         <Image
-          w={40}
-          h={50}
-          uri="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg=="
+          w={120}
+          h={120}
+          size={10}
+          source={require('./assets/aladdin.jpeg')}
+          // source={{
+          //   uri: 'https://avatars.githubusercontent.com/u/6187401?v=4',
+          // }}
         />
         <Card
           title="The Garden City"

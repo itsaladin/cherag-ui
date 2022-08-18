@@ -35,8 +35,11 @@ const Card: FC<CardProps> = ({
       <Image
         h={__height}
         w={__width}
+        size={20}
         style={styles.cardImg}
-        uri="https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg"
+        source={{
+          uri: 'https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg',
+        }}
       />
       <Div
         style={[

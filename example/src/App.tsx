@@ -66,7 +66,7 @@ export default function App() {
             setUserName(txt);
           }}
           value={userName}
-          placeholder="enter name"
+          placeholder="Enter name"
           leftIcon="lock"
           rightIcon="eye"
         />
@@ -152,7 +152,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: SIZES.DimensionHeight * 2,
+    height: SIZES.DimensionHeight * 1.6,
     marginTop: 30,
   },
   radioGroup: {

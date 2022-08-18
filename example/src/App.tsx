@@ -30,13 +30,11 @@ export default function App() {
   const [alert, setAlert] = useState(false);
   const [isSwitchCheck, setIsSwitchCheck] = useState(false);
 
-  const blackColor = 'black';
-
   return (
     <ScrollView>
       <Div style={styles.container}>
-        <Text style={{ color: blackColor }} fontSize="md">
-          text Commponent
+        <Text style={{ color: COLORS.black }} fontSize="md">
+          Cherag-UI
         </Text>
         <Div bg={'gray'} w={0} h={0} p={0} m={0}>
           <Text>Div Commponent</Text>

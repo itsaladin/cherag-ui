@@ -1,7 +1,5 @@
 import { StyleProp, TextStyle } from 'react-native';
 
-export type SwitchSizeProps = 'sm' | 'md' | 'lg';
-
 export interface TextAreaProps {
   style?: StyleProp<TextStyle>;
   borderWidth?: number;

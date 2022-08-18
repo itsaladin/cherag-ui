@@ -1,5 +1,6 @@
 import {
   Alert,
+  Avatar,
   Button,
   Card,
   Checkbox,
@@ -130,6 +131,7 @@ export default function App() {
         <Div style={styles.textAreaContainer}>
           <TextArea />
         </Div>
+        <Avatar source={require('./assets/aladdin.jpeg')} />
       </Div>
     </ScrollView>
   );

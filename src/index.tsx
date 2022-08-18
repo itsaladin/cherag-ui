@@ -41,3 +41,6 @@ export { AvatarImage } from './components/Avatar';
 
 //Avatar.Text Component
 export { AvatarText } from './components/Avatar';
+
+//Avatar.Icon Component
+export { AvatarIcon } from './components/Avatar';

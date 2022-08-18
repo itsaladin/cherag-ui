@@ -1,5 +1,6 @@
 import {
   Alert,
+  AvatarIcon,
   AvatarImage,
   AvatarText,
   Button,
@@ -139,6 +140,12 @@ export default function App() {
           size={60}
           label="XD"
         />
+        <AvatarIcon
+          iconColor={COLORS.blue}
+          bgColor={COLORS.lightGray}
+          iconSize={35}
+          icon="file"
+        />
       </Div>
     </ScrollView>
   );
@@ -147,7 +154,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: SIZES.DimensionHeight * 1.5,
+    height: SIZES.DimensionHeight * 2,
     marginTop: 30,
   },
   radioGroup: {

@@ -34,3 +34,12 @@ export type AvatarTextProps = ComponentPropsWithRef<typeof Div> & {
   style?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
 };
+
+export type AvatarIconProps = ComponentPropsWithRef<typeof Div> & {
+  style?: StyleProp<ViewStyle>;
+  bgSize?: number;
+  iconSize?: number;
+  icon: string;
+  iconColor?: string;
+  bgColor?: string;
+};

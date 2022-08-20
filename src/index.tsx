@@ -3,6 +3,9 @@ export { default as Div } from './components/Div';
 export { default as Input } from './components/Input';
 export { default as Button } from './components/Button';
 
+//Theme COLORS, SIZES
+export { SIZES, COLORS } from './theme';
+
 // Checkbox Component
 export { Checkbox, CheckboxItem } from './components/Checkbox';
 export type { CheckboxValue } from './components/Checkbox';
@@ -45,5 +48,5 @@ export {
   RadioButtonValue,
 } from './components/RadioButton';
 
-//Theme COLORS, SIZES
-export { SIZES, COLORS } from './theme';
+//Spinner Component
+export { Spinner } from './components/Spinner';

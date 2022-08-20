@@ -18,13 +18,13 @@ import {
   RadioButtonItem,
   RadioButtonValue,
   SIZES,
+  Spinner,
   Switch,
   Text,
   TextArea,
 } from 'cherag-ui';
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
-import Loader from '../../src/components/Loader';
 
 export default function App() {
   const [userName, setUserName] = useState<string>();
@@ -58,7 +58,7 @@ export default function App() {
           <CheckboxItem value="2">Checkbox 2</CheckboxItem>
           <CheckboxItem value="3">Checkbox 3</CheckboxItem>
         </Checkbox>
-        <Loader color={COLORS.green} size={'large'} />
+        <Spinner color={COLORS.green} size={'large'} />
         <Input
           onChangeText={(txt: string) => {
             setUserName(txt);

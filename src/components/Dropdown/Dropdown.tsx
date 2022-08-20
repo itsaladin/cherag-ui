@@ -68,7 +68,5 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     backgroundColor: COLORS.white,
   },
-  dropdown: {
-    // justifyContent: 'center',
-  },
+  dropdown: {},
 });

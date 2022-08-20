@@ -60,9 +60,7 @@ export default function App() {
         </Checkbox>
         <Spinner color={COLORS.green} size={'large'} />
         <Input
-          onChangeText={(txt: string) => {
-            setUserName(txt);
-          }}
+          onChangeText={setUserName}
           value={userName}
           placeholder="Enter name"
           leftIcon="lock"

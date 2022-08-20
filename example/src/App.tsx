@@ -6,6 +6,7 @@ import {
   Checkbox,
   CheckboxItem,
   CheckboxValue,
+  COLORS,
   Div,
   Divider,
   Dropdown,
@@ -16,6 +17,7 @@ import {
   RadioButton,
   RadioButtonItem,
   RadioButtonValue,
+  SIZES,
   Switch,
   Text,
   TextArea,
@@ -23,7 +25,6 @@ import {
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import Loader from '../../src/components/Loader';
-import { COLORS, SIZES } from '../../src/theme';
 
 export default function App() {
   const [userName, setUserName] = useState<string>();

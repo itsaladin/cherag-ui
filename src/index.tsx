@@ -44,3 +44,6 @@ export {
   RadioButtonItem,
   RadioButtonValue,
 } from './components/RadioButton';
+
+//Theme COLORS, SIZES
+export { SIZES, COLORS } from './theme';

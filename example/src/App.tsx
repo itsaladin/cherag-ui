@@ -93,10 +93,15 @@ export default function App() {
           w={120}
           h={120}
           size={10}
-          source={require('./assets/aladdin.jpeg')}
-          // source={{
-          //   uri: 'https://avatars.githubusercontent.com/u/6187401?v=4',
-          // }}
+          source={require('./assets/aladdin.jpg')}
+        />
+        <Image
+          w={120}
+          h={120}
+          size={10}
+          source={{
+            uri: 'https://avatars.githubusercontent.com/u/6187401?v=4',
+          }}
         />
         <Card
           title="The Garden City"
@@ -129,7 +134,7 @@ export default function App() {
           size={60}
           dotSize={20}
           dotColor={COLORS.green}
-          source={require('./assets/aladdin.jpeg')}
+          source={require('./assets/alauddin.jpg')}
         />
         <Avatar.Text
           bgColor={COLORS.orange}
@@ -151,7 +156,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: SIZES.DimensionHeight * 1.6,
+    height: SIZES.DimensionHeight * 2,
     marginTop: 30,
   },
   radioBtnGroup: {

@@ -39,5 +39,4 @@ export { TextArea } from './components/TextArea';
 export { default as Avatar } from './components/Avatar';
 
 //Radio Button Component
-export { Radio } from './components/Radio';
-export { RadioButtonItem } from './components/Radio';
+export { RadioButton, RadioButtonItem } from './components/RadioButton';

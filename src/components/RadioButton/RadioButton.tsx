@@ -2,7 +2,11 @@ import React, { FC } from 'react';
 import RadioButtonContext from './Context';
 import { RadioButtonProps } from './types';
 
-const Radio: FC<RadioButtonProps> = ({ children, onChange, selected }) => {
+const RadioButton: FC<RadioButtonProps> = ({
+  children,
+  onChange,
+  selected,
+}) => {
   return (
     <RadioButtonContext.Provider
       value={{
@@ -15,4 +19,4 @@ const Radio: FC<RadioButtonProps> = ({ children, onChange, selected }) => {
   );
 };
 
-export default Radio;
+export default RadioButton;

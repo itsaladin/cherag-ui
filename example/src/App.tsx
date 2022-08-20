@@ -13,7 +13,7 @@ import {
   IconButton,
   Image,
   Input,
-  Radio,
+  RadioButton,
   RadioButtonItem,
   Switch,
   Text,
@@ -21,7 +21,7 @@ import {
 } from 'cherag-ui';
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
-import { RadioButtonValue } from 'src/components/Radio/types';
+import { RadioButtonValue } from 'src/components/RadioButton/types';
 import Loader from '../../src/components/Loader';
 import { COLORS, SIZES } from '../../src/theme';
 
@@ -43,14 +43,14 @@ export default function App() {
           <Text>Div Commponent</Text>
         </Div>
         <Div style={styles.radioBtnGroup}>
-          <Radio onChange={setIsRadioBtnCheck} selected={isRadioBtnCheck}>
+          <RadioButton onChange={setIsRadioBtnCheck} selected={isRadioBtnCheck}>
             <RadioButtonItem value={1} btnColor={COLORS.green}>
               Radio button
             </RadioButtonItem>
             <RadioButtonItem value={2} btnColor={COLORS.green}>
               Radio button
             </RadioButtonItem>
-          </Radio>
+          </RadioButton>
         </Div>
         <Checkbox values={checkboxes} onChange={setCheckboxes}>
           <CheckboxItem value="1">Checkbox 1</CheckboxItem>

@@ -1,11 +1,10 @@
 import React, { FC, useCallback, useState } from 'react';
-import { StyleSheet } from 'react-native';
-import { COLORS, SIZES } from '../../Theme';
-import Button from '../Button';
-import Div from '../Div';
-import DropdownContext from './context';
-import type { DropdownProps } from './types';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { COLORS, SIZES } from '../../theme';
+import Button from '../Button';
+import DropdownContext from './Context';
+import type { DropdownProps } from './types';
 
 const Dropdown: FC<DropdownProps> = ({
   children,
@@ -28,15 +27,18 @@ const Dropdown: FC<DropdownProps> = ({
 
   return (
     <DropdownContext.Provider value={{ handleChange, selected }}>
-      <Div style={[styles.dropdownBtn, { width: __widht + 100 }]}>
+      <TouchableOpacity
+        activeOpacity={0.6}
+        onPress={() => {
+          setItemVisible(!isItemVisible);
+        }}
+        style={[styles.dropdownBtn, { width: __widht + 100 }]}
+      >
         <Button
           width={__widht}
           fontSize={__fontSize}
           bg={COLORS.white}
           color={COLORS.black}
-          onPress={() => {
-            setItemVisible(!isItemVisible);
-          }}
           style={styles.dropdown}
         >
           {selected || 'choose you service'}
@@ -47,10 +49,10 @@ const Dropdown: FC<DropdownProps> = ({
             marginRight: SIZES.p3,
           }}
           name={'ios-arrow-down-outline'}
-          size={28}
+          size={22}
           color={COLORS.black}
         />
-      </Div>
+      </TouchableOpacity>
       {isItemVisible && children}
     </DropdownContext.Provider>
   );
@@ -66,7 +68,5 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     backgroundColor: COLORS.white,
   },
-  dropdown: {
-    justifyContent: 'center',
-  },
+  dropdown: {},
 });

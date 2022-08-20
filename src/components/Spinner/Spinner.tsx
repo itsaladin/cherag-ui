@@ -1,9 +1,9 @@
 import React from 'react';
 import { ActivityIndicator, StyleSheet } from 'react-native';
-import { COLORS } from '../../Theme';
-import { LoaderProps } from './types';
+import { COLORS } from '../../theme';
+import { SpinnerProps } from './types';
 
-const Loader = ({ color, size, style, ...rest }: LoaderProps) => {
+const Spinner = ({ color, size, style, ...rest }: SpinnerProps) => {
   return (
     <ActivityIndicator
       style={style || styles.loader}
@@ -13,7 +13,7 @@ const Loader = ({ color, size, style, ...rest }: LoaderProps) => {
     />
   );
 };
-export default Loader;
+export default Spinner;
 
 const styles = StyleSheet.create({
   loader: {

@@ -1,9 +1,9 @@
 import React, { FC, useState } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
-import { COLORS, SIZES } from '../../Theme';
+import { COLORS, SIZES } from '../../theme';
 import Div from '../Div';
-import PText from '../Text';
+import Text from '../Text';
 import type { AlertProps } from './types';
 
 const Alert: FC<AlertProps> = ({ children, title, status }) => {
@@ -58,9 +58,9 @@ const Alert: FC<AlertProps> = ({ children, title, status }) => {
     >
       <Div style={styles.subContainer}>
         <Icon name={__leftIcon} size={28} color={__leftIconColor} />
-        <PText fontSize="xl" style={styles.title}>
+        <Text fontSize="xl" style={styles.title}>
           {title}
-        </PText>
+        </Text>
 
         <TouchableOpacity
           onPress={() => {
@@ -71,7 +71,7 @@ const Alert: FC<AlertProps> = ({ children, title, status }) => {
           <Icon name={'delete'} size={20} color={COLORS.red} />
         </TouchableOpacity>
       </Div>
-      {children ? <PText style={styles.paragraph}>{children}</PText> : null}
+      {children ? <Text style={styles.paragraph}>{children}</Text> : null}
     </Div>
   ) : null;
 };

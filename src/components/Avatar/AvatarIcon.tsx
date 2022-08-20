@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { COLORS } from '../../Theme';
+import { COLORS } from '../../theme';
 import { AvatarIconProps } from './types';
 
 const AvatarIcon = ({

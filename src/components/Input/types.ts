@@ -1,11 +1,12 @@
+import { ComponentProps } from 'react';
 import {
   GestureResponderEvent,
   StyleProp,
-  ViewProps,
+  TextInput,
   ViewStyle,
 } from 'react-native';
 
-export interface InputProps extends ViewProps {
+export interface InputProps extends ComponentProps<typeof TextInput> {
   style?: StyleProp<ViewStyle>;
   placeholder?: string;
   onPressLeftIcon?: (event: GestureResponderEvent) => void;

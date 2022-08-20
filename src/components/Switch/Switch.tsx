@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import { COLORS, SIZES } from '../../Theme';
+import { COLORS, SIZES } from '../../theme';
 import Div from '../Div';
 import { SwitchProps } from './types';
 

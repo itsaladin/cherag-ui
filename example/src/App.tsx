@@ -6,6 +6,7 @@ import {
   Checkbox,
   CheckboxItem,
   CheckboxValue,
+  COLORS,
   Div,
   Divider,
   Dropdown,
@@ -13,15 +14,17 @@ import {
   IconButton,
   Image,
   Input,
-  Radio,
+  RadioButton,
+  RadioButtonItem,
+  RadioButtonValue,
+  SIZES,
+  Spinner,
   Switch,
   Text,
   TextArea,
 } from 'cherag-ui';
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
-import Loader from '../../src/components/Loader';
-import { COLORS, SIZES } from '../../src/Theme';
 
 export default function App() {
   const [userName, setUserName] = useState<string>();
@@ -29,55 +32,43 @@ export default function App() {
   const [checkboxes, setCheckboxes] = useState<CheckboxValue[]>([]);
   const [alert, setAlert] = useState(false);
   const [isSwitchCheck, setIsSwitchCheck] = useState(false);
-
-  const blackColor = 'black';
+  const [selectedRadio, setSelectedRadio] = useState<RadioButtonValue>(1);
 
   return (
     <ScrollView>
       <Div style={styles.container}>
-        <Text style={{ color: blackColor }} fontSize="md">
-          text Commponent
+        <Text style={{ color: COLORS.black }} fontSize="md">
+          Cherag-UI
         </Text>
         <Div bg={'gray'} w={0} h={0} p={0} m={0}>
           <Text>Div Commponent</Text>
         </Div>
-        <Div style={styles.radioGroup}>
-          <Radio
-            width={150}
-            onPress={() => {
-              setSelectItem('Radio button 1');
-            }}
+        <Div style={styles.radioBtnGroup}>
+          <RadioButton
+            btnColor={COLORS.green}
+            onChange={setSelectedRadio}
+            selected={selectedRadio}
           >
-            Radio Button 1
-          </Radio>
-          <Radio
-            width={150}
-            onPress={() => {
-              setSelectItem('Radio button 2');
-            }}
-          >
-            Radio Button 1
-          </Radio>
+            <RadioButtonItem value={1}>Radio button</RadioButtonItem>
+            <RadioButtonItem value={2}>Radio button</RadioButtonItem>
+          </RadioButton>
         </Div>
-        <Text>{selectItem}</Text>
-        <Text>Checkbox Test</Text>
         <Checkbox values={checkboxes} onChange={setCheckboxes}>
           <CheckboxItem value="1">Checkbox 1</CheckboxItem>
           <CheckboxItem value="2">Checkbox 2</CheckboxItem>
           <CheckboxItem value="3">Checkbox 3</CheckboxItem>
         </Checkbox>
-        <Loader color={COLORS.green} size={'large'} />
+        <Spinner color={COLORS.green} size={'large'} />
         <Input
-          //@ts-ignore
-          onChangeText={(txt) => {
-            setUserName(txt);
-          }}
+          onChangeText={setUserName}
           value={userName}
-          placeholder="enter name"
+          placeholder="Enter name"
           leftIcon="lock"
           rightIcon="eye"
         />
         <Button
+          bg={COLORS.softGray}
+          color={COLORS.black}
           onPress={() => {
             console.log('Custom button pressed');
             setAlert(!alert);
@@ -98,11 +89,19 @@ export default function App() {
           <DropdownItem value="item2">item2</DropdownItem>
           <DropdownItem value="item3">item3</DropdownItem>
         </Dropdown>
-
         <Image
-          w={40}
-          h={50}
-          uri="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg=="
+          w={120}
+          h={120}
+          size={10}
+          source={require('./assets/aladdin.jpg')}
+        />
+        <Image
+          w={120}
+          h={120}
+          size={10}
+          source={{
+            uri: 'https://avatars.githubusercontent.com/u/6187401?v=4',
+          }}
         />
         <Card
           title="The Garden City"
@@ -135,7 +134,7 @@ export default function App() {
           size={60}
           dotSize={20}
           dotColor={COLORS.green}
-          source={require('./assets/aladdin.jpeg')}
+          source={require('./assets/alauddin.jpg')}
         />
         <Avatar.Text
           bgColor={COLORS.orange}
@@ -160,7 +159,7 @@ const styles = StyleSheet.create({
     height: SIZES.DimensionHeight * 2,
     marginTop: 30,
   },
-  radioGroup: {
+  radioBtnGroup: {
     flexDirection: 'row',
   },
   textAreaContainer: {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
-import { COLORS } from '../../Theme';
+import { COLORS } from '../../theme';
 import Div from '../Div';
 import Text from '../Text';
 import { AvatarTextProps } from './types';

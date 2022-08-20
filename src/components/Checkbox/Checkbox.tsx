@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import type { FC } from 'react';
-import CheckboxContext from './context';
+import CheckboxContext from './Context';
 import type { CheckboxProps, CheckboxValue } from './types';
 
 const Checkbox: FC<CheckboxProps> = ({ onChange, values, children }) => {
@@ -12,7 +12,7 @@ const Checkbox: FC<CheckboxProps> = ({ onChange, values, children }) => {
 
       onChange(newValues);
     },
-    [values]
+    [values, onChange]
   );
 
   return (

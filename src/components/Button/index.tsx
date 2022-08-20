@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import { COLORS, SIZES } from '../../Theme';
+import { COLORS, SIZES } from '../../theme';
 import Text from '../Text';
-import { Props } from './types';
+import { ButtonProps } from './types';
 
 const Button = ({
   children,
@@ -17,7 +17,7 @@ const Button = ({
   borderWidth,
   fontWeight,
   ...rest
-}: Props) => {
+}: ButtonProps) => {
   return (
     <TouchableOpacity
       activeOpacity={0.8}

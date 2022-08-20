@@ -32,7 +32,7 @@ export default function App() {
   const [checkboxes, setCheckboxes] = useState<CheckboxValue[]>([]);
   const [alert, setAlert] = useState(false);
   const [isSwitchCheck, setIsSwitchCheck] = useState(false);
-  const [isRadioBtnCheck, setIsRadioBtnCheck] = useState<RadioButtonValue>(1);
+  const [selectedRadio, setSelectedRadio] = useState<RadioButtonValue>(1);
 
   return (
     <ScrollView>
@@ -44,7 +44,7 @@ export default function App() {
           <Text>Div Commponent</Text>
         </Div>
         <Div style={styles.radioBtnGroup}>
-          <RadioButton onChange={setIsRadioBtnCheck} selected={isRadioBtnCheck}>
+          <RadioButton onChange={setSelectedRadio} selected={selectedRadio}>
             <RadioButtonItem value={1} btnColor={COLORS.green}>
               Radio button
             </RadioButtonItem>

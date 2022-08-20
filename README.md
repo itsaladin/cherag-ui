@@ -58,6 +58,10 @@ export default function App() {
 }
 ```
 
+## Documentation
+
+For more examples and usages, see [our documentation](https://aladdinstudios.github.io/cherag/)
+
 ## Development
 
 This project integrates with `react-native-builder-bob`. To get started:

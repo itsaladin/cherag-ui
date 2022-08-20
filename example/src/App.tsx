@@ -14,12 +14,14 @@ import {
   Image,
   Input,
   Radio,
+  RadioButtonItem,
   Switch,
   Text,
   TextArea,
 } from 'cherag-ui';
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
+import { RadioButtonValue } from 'src/components/Radio/types';
 import Loader from '../../src/components/Loader';
 import { COLORS, SIZES } from '../../src/theme';
 
@@ -29,6 +31,7 @@ export default function App() {
   const [checkboxes, setCheckboxes] = useState<CheckboxValue[]>([]);
   const [alert, setAlert] = useState(false);
   const [isSwitchCheck, setIsSwitchCheck] = useState(false);
+  const [isRadioBtnCheck, setIsRadioBtnCheck] = useState<RadioButtonValue>(1);
 
   return (
     <ScrollView>
@@ -39,22 +42,17 @@ export default function App() {
         <Div bg={'gray'} w={0} h={0} p={0} m={0}>
           <Text>Div Commponent</Text>
         </Div>
-        <Div style={styles.radioGroup}>
-          <Radio
-            onPress={() => {
-              setSelectItem('Radio button 1');
-            }}
-          >
-            Radio Button 1
-          </Radio>
-          <Radio
-            onPress={() => {
-              setSelectItem('Radio button 2');
-            }}
-          >
-            Radio Button 1
+        <Div style={styles.radioBtnGroup}>
+          <Radio onChange={setIsRadioBtnCheck} selected={isRadioBtnCheck}>
+            <RadioButtonItem value={1} btnColor={COLORS.green}>
+              Radio button
+            </RadioButtonItem>
+            <RadioButtonItem value={2} btnColor={COLORS.green}>
+              Radio button
+            </RadioButtonItem>
           </Radio>
         </Div>
+        <Text>{isRadioBtnCheck}</Text>
         <Checkbox values={checkboxes} onChange={setCheckboxes}>
           <CheckboxItem value="1">Checkbox 1</CheckboxItem>
           <CheckboxItem value="2">Checkbox 2</CheckboxItem>
@@ -158,7 +156,7 @@ const styles = StyleSheet.create({
     height: SIZES.DimensionHeight * 1.6,
     marginTop: 30,
   },
-  radioGroup: {
+  radioBtnGroup: {
     flexDirection: 'row',
   },
   textAreaContainer: {

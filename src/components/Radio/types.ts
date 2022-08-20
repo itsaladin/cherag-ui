@@ -1,8 +1,11 @@
-import { TextStyle, TouchableOpacityProps } from 'react-native';
+export type RadioButtonValue = string | number;
 
-export interface RadioButtonProps extends TouchableOpacityProps {
-  fontSize?: TextStyle['fontSize'];
-  color?: TextStyle['color'];
-  btnColor?: TextStyle['color'];
-  fontWeight?: TextStyle['fontWeight'];
+export interface RadioButtonProps {
+  selected: RadioButtonValue;
+  onChange: (value: RadioButtonValue) => void;
+}
+
+export interface RadioButtonItemProps {
+  value: RadioButtonValue;
+  btnColor?: string;
 }

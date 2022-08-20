@@ -15,13 +15,13 @@ import {
   Input,
   RadioButton,
   RadioButtonItem,
+  RadioButtonValue,
   Switch,
   Text,
   TextArea,
 } from 'cherag-ui';
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
-import { RadioButtonValue } from 'src/components/RadioButton/types';
 import Loader from '../../src/components/Loader';
 import { COLORS, SIZES } from '../../src/theme';
 

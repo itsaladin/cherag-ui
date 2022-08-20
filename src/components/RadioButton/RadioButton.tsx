@@ -6,12 +6,14 @@ const RadioButton: FC<RadioButtonProps> = ({
   children,
   onChange,
   selected,
+  btnColor,
 }) => {
   return (
     <RadioButtonContext.Provider
       value={{
         onChange,
         selected,
+        btnColor,
       }}
     >
       {children}

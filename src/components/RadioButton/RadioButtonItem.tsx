@@ -7,12 +7,8 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { COLORS } from '../../theme';
 import { renderTextOrNode } from '../../utlis';
 
-const RadioButtonItem: FC<RadioButtonItemProps> = ({
-  children,
-  value,
-  btnColor,
-}) => {
-  const { onChange, selected } = useDropdown();
+const RadioButtonItem: FC<RadioButtonItemProps> = ({ children, value }) => {
+  const { onChange, selected, btnColor } = useDropdown();
   return (
     <TouchableOpacity
       activeOpacity={0.8}

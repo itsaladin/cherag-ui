@@ -44,13 +44,13 @@ export default function App() {
           <Text>Div Commponent</Text>
         </Div>
         <Div style={styles.radioBtnGroup}>
-          <RadioButton onChange={setSelectedRadio} selected={selectedRadio}>
-            <RadioButtonItem value={1} btnColor={COLORS.green}>
-              Radio button
-            </RadioButtonItem>
-            <RadioButtonItem value={2} btnColor={COLORS.green}>
-              Radio button
-            </RadioButtonItem>
+          <RadioButton
+            btnColor={COLORS.green}
+            onChange={setSelectedRadio}
+            selected={selectedRadio}
+          >
+            <RadioButtonItem value={1}>Radio button</RadioButtonItem>
+            <RadioButtonItem value={2}>Radio button</RadioButtonItem>
           </RadioButton>
         </Div>
         <Checkbox values={checkboxes} onChange={setCheckboxes}>

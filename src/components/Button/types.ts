@@ -6,9 +6,9 @@ import {
   ViewStyle,
 } from 'react-native';
 
-export interface Props extends ViewProps {
+export interface ButtonProps extends ViewProps {
   style?: StyleProp<ViewStyle>;
-  onPress: (event: GestureResponderEvent) => void;
+  onPress?: (event: GestureResponderEvent) => void;
   width?: number;
   height?: number;
   bg?: string;

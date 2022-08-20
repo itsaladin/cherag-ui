@@ -52,7 +52,6 @@ export default function App() {
             </RadioButtonItem>
           </Radio>
         </Div>
-        <Text>{isRadioBtnCheck}</Text>
         <Checkbox values={checkboxes} onChange={setCheckboxes}>
           <CheckboxItem value="1">Checkbox 1</CheckboxItem>
           <CheckboxItem value="2">Checkbox 2</CheckboxItem>

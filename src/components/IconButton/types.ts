@@ -1,4 +1,4 @@
-import { GestureResponderEvent, StyleProp, TextStyle } from 'react-native';
+import type { GestureResponderEvent, StyleProp, TextStyle } from 'react-native';
 
 export interface IconButtonProps {
   style?: StyleProp<TextStyle>;

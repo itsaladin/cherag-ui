@@ -1,13 +1,14 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
-import { renderTextOrNode } from '../../utlis';
 import { COLORS, SIZES } from '../../theme/index';
-import Div from '../Div';
+import type { FCWithChildren } from '../../types/compat/react';
+import { renderTextOrNode } from '../../utlis';
+import { Div } from '../Div';
 import { Image } from '../Image';
-import Text from '../Text';
-import { CardProps } from './types';
+import Text from '../Text/Text';
+import type { CardProps } from './types';
 
-const Card: FC<CardProps> = ({
+const Card: FCWithChildren<CardProps> = ({
   style,
   title,
   subTitle,

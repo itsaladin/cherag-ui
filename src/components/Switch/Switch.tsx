@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { COLORS, SIZES } from '../../theme';
-import Div from '../Div';
-import { SwitchProps } from './types';
+import { Div } from '../Div';
+import type { SwitchProps } from './types';
 
 const Switch = ({
   style,

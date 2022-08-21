@@ -1,7 +1,6 @@
-import { StyleProp, ViewProps, ViewStyle } from 'react-native';
+import type { StyleProp, ViewProps, ViewStyle } from 'react-native';
 
-export interface Props extends ViewProps {
-  children?: React.ReactNode;
+export interface DivProps extends ViewProps {
   style?: StyleProp<ViewStyle>;
   w?: number;
   h?: number;

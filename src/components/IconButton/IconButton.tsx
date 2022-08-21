@@ -1,10 +1,11 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { TouchableWithoutFeedback } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { COLORS } from '../../theme';
-import { IconButtonProps } from './types';
+import type { FCWithChildren } from '../../types/compat/react';
+import type { IconButtonProps } from './types';
 
-const IconButton: FC<IconButtonProps> = ({
+const IconButton: FCWithChildren<IconButtonProps> = ({
   style,
   icon,
   color,

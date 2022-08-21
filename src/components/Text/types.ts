@@ -1,4 +1,4 @@
-import {
+import type {
   StyleProp,
   TextProps as NativeTextProps,
   TextStyle,

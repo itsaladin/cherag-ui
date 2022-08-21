@@ -1,52 +1,81 @@
-export { default as Text } from './components/Text';
-export { default as Div } from './components/Div';
-export { default as Input } from './components/Input';
-export { default as Button } from './components/Button';
+// Alert Component
+export { Alert } from './components/Alert';
+export type { AlertProps } from './components/Alert';
 
-//Theme COLORS, SIZES
-export { SIZES, COLORS } from './theme';
+// Avatar Component
+export { Avatar } from './components/Avatar';
+export type {
+  AvatarIconProps,
+  AvatarImageProps,
+  AvatarTextProps,
+} from './components/Avatar';
+
+// Button Component
+export { Button } from './components/Button';
+export type { ButtonProps } from './components/Button';
+
+// Card Component
+export { Card } from './components/Card';
+export type { CardProps } from './components/Card';
 
 // Checkbox Component
 export { Checkbox, CheckboxItem } from './components/Checkbox';
-export type { CheckboxValue } from './components/Checkbox';
+export type {
+  CheckboxProps,
+  CheckboxItemProps,
+  CheckboxValue,
+  CheckboxValues,
+} from './components/Checkbox';
 
-//Alert Component
-export { Alert } from './components/Alert';
+// Div Component
+export { Div } from './components/Div';
+export type { DivProps } from './components/Div';
 
-//Divider Component
-export { default as Divider } from './components/Divider';
+// Divider Component
+export { Divider } from './components/Divider';
+export type { DividerProps } from './components/Divider';
 
-//Dropdown Component
-export { Dropdown } from './components/Dropdown';
-export { DropdownItem } from './components/Dropdown';
+// Dropdown Component
+export { Dropdown, DropdownItem } from './components/Dropdown';
+export type { DropdownProps, DropdownItemProps } from './components/Dropdown';
 
-//Image Component
-export { Image } from './components/Image';
-
-//Card Component
-export { Card } from './components/Card';
-
-//check type handler
-export { renderTextOrNode } from './utlis';
-
-//IconButton Component
+// IconButton Component
 export { IconButton } from './components/IconButton';
+export type { IconButtonProps } from './components/IconButton';
 
-//Switch Component
-export { Switch } from './components/Switch';
+// Image Component
+export { Image } from './components/Image';
+export type { ImageProps } from './components/Image';
 
-//TextArea Component
-export { TextArea } from './components/TextArea';
+export { Input } from './components/Input';
+export type { InputProps } from './components/Input';
 
-//Avatar Component
-export { default as Avatar } from './components/Avatar';
-
-//Radio Button Component
-export {
-  RadioButton,
-  RadioButtonItem,
+// Radio Button Component
+export { RadioButton, RadioButtonItem } from './components/RadioButton';
+export type {
+  RadioButtonProps,
+  RadioButtonItemProps,
   RadioButtonValue,
 } from './components/RadioButton';
 
-//Spinner Component
+// Spinner Component
 export { Spinner } from './components/Spinner';
+export type { SpinnerProps } from './components/Spinner';
+
+// Switch Component
+export { Switch } from './components/Switch';
+export type { SwitchProps } from './components/Switch';
+
+// Text Component
+export { Text } from './components/Text';
+export type { TextProps } from './components/Text';
+
+// TextArea Component
+export { TextArea } from './components/TextArea';
+export type { TextAreaProps } from './components/TextArea';
+
+// Theme COLORS, SIZES
+export { COLORS, SIZES } from './theme';
+
+// check type handler
+export { renderTextOrNode } from './utlis';

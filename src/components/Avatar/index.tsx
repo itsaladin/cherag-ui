@@ -7,10 +7,14 @@ import { default as AvatarText } from './AvatarText';
 //Avatar.Icon Component
 import { default as AvatarIcon } from './AvatarIcon';
 
-const Avatar = {
+export const Avatar = {
   Image: AvatarImage,
   Text: AvatarText,
   Icon: AvatarIcon,
 };
 
-export default Avatar;
+export type {
+  AvatarIconProps,
+  AvatarTextProps,
+  AvatarImageProps,
+} from './types';

@@ -1,12 +1,13 @@
-import React, { FC, useState } from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { COLORS, SIZES } from '../../theme';
-import Div from '../Div';
-import Text from '../Text';
+import type { FCWithChildren } from '../../types/compat/react';
+import { Div } from '../Div';
+import Text from '../Text/Text';
 import type { AlertProps } from './types';
 
-const Alert: FC<AlertProps> = ({ children, title, status }) => {
+const Alert: FCWithChildren<AlertProps> = ({ children, title, status }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   let __leftIcon = '';

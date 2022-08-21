@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 import { COLORS } from '../../theme';
-import Div from '../Div';
-import { AvatarImageProps } from './types';
+import { Div } from '../Div';
+import type { AvatarImageProps } from './types';
 
 const defaultSize = 60;
 

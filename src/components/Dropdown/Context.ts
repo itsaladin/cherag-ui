@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { DropdownContextValue } from './types';
+import type { DropdownContextValue } from './types';
 
 const DropdownContext = createContext<DropdownContextValue | null>(null);
 

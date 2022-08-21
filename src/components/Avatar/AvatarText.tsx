@@ -1,9 +1,9 @@
-import * as React from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
 import { COLORS } from '../../theme';
-import Div from '../Div';
-import Text from '../Text';
-import { AvatarTextProps } from './types';
+import { Div } from '../Div';
+import Text from '../Text/Text';
+import type { AvatarTextProps } from './types';
 
 const defaultSize = 60;
 

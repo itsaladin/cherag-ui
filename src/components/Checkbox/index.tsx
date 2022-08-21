@@ -1,3 +1,8 @@
 export { default as Checkbox } from './Checkbox';
 export { default as CheckboxItem } from './CheckboxItem';
-export type { CheckboxValue } from './types';
+export type {
+  CheckboxItemProps,
+  CheckboxProps,
+  CheckboxValue,
+  CheckboxValues,
+} from './types';

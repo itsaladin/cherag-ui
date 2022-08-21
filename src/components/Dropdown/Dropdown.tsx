@@ -1,12 +1,13 @@
-import React, { FC, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { COLORS, SIZES } from '../../theme';
-import Button from '../Button';
+import type { FCWithChildren } from '../../types/compat/react';
+import { Button } from '../Button';
 import DropdownContext from './Context';
 import type { DropdownProps } from './types';
 
-const Dropdown: FC<DropdownProps> = ({
+const Dropdown: FCWithChildren<DropdownProps> = ({
   children,
   onChange,
   selected,

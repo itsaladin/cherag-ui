@@ -1,11 +1,15 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import Div from '../Div';
-import Text from '../Text';
+import type { FCWithChildren } from '../../types/compat/react';
+import { Div } from '../Div';
+import { Text } from '../Text';
 import useDropdown from './Hook';
-import { DropdownItemProps } from './types';
+import type { DropdownItemProps } from './types';
 
-const DropdownItem: FC<DropdownItemProps> = ({ children, value }) => {
+const DropdownItem: FCWithChildren<DropdownItemProps> = ({
+  children,
+  value,
+}) => {
   const context = useDropdown();
   return (
     <TouchableOpacity

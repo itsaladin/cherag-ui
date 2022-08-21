@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
-import { ImageSourcePropType, ImageStyle, StyleProp } from 'react-native';
+import type { ReactNode } from 'react';
+import type { ImageSourcePropType, ImageStyle, StyleProp } from 'react-native';
 
 export type AvatarImageSource =
   | ImageSourcePropType

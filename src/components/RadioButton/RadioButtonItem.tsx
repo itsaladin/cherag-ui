@@ -1,13 +1,17 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import Div from '../Div';
-import useDropdown from './Hook';
-import { RadioButtonItemProps } from './types';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { COLORS } from '../../theme';
+import type { FCWithChildren } from '../../types/compat/react';
 import { renderTextOrNode } from '../../utlis';
+import { Div } from '../Div';
+import useDropdown from './Hook';
+import type { RadioButtonItemProps } from './types';
 
-const RadioButtonItem: FC<RadioButtonItemProps> = ({ children, value }) => {
+const RadioButtonItem: FCWithChildren<RadioButtonItemProps> = ({
+  children,
+  value,
+}) => {
   const { onChange, selected, btnColor } = useDropdown();
   return (
     <TouchableOpacity

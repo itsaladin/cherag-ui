@@ -1,5 +1,5 @@
-import { ComponentPropsWithRef, ReactNode } from 'react';
-import {
+import type { ReactNode } from 'react';
+import type {
   ImageProps,
   ImageSourcePropType,
   ImageStyle,
@@ -7,13 +7,13 @@ import {
   TextStyle,
   ViewStyle,
 } from 'react-native';
-import Div from '../Div';
+import type { DivProps } from '../Div';
 
 export type AvatarImageSource =
   | ImageSourcePropType
   | ((props: { size: number }) => ReactNode);
 
-export type AvatarImageProps = ComponentPropsWithRef<typeof Div> & {
+export interface AvatarImageProps extends DivProps {
   source: AvatarImageSource;
   size?: number;
   style?: StyleProp<ViewStyle>;
@@ -26,22 +26,22 @@ export type AvatarImageProps = ComponentPropsWithRef<typeof Div> & {
   onLoadEnd?: ImageProps['onLoadEnd'];
   onLoadStart?: ImageProps['onLoadStart'];
   onProgress?: ImageProps['onProgress'];
-};
+}
 
-export type AvatarTextProps = ComponentPropsWithRef<typeof Div> & {
+export interface AvatarTextProps extends DivProps {
   label: string;
   size?: number;
   bgColor?: string;
   textColor?: string;
   style?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
-};
+}
 
-export type AvatarIconProps = ComponentPropsWithRef<typeof Div> & {
+export interface AvatarIconProps extends DivProps {
   style?: StyleProp<ViewStyle>;
   bgSize?: number;
   iconSize?: number;
   icon: string;
   iconColor?: string;
   bgColor?: string;
-};
+}

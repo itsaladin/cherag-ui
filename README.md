@@ -18,6 +18,12 @@ Using NPM:
 npm i cherag-ui
 ```
 
+### Install Peer Dependencies
+
+Cherag UI uses `reaact-native-vector-icons` for icons. You must install it and configure it for your project. See its [documentation](https://github.com/oblador/react-native-vector-icons#installation) for more information about setting it up for Android, IOS or Web.
+
+Follow Native Web's [documentation](https://necolas.github.io/react-native-web/docs/) to use Cherag UI on Web.
+
 ## Usage
 
 Now import and use various components from the Cherag-UI library.

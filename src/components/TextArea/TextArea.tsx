@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, TextInput } from 'react-native';
 import { COLORS } from '../../theme';
-import Div from '../Div';
-import { TextAreaProps } from './types';
+import { Div } from '../Div';
+import type { TextAreaProps } from './types';
 
 const TextArea = ({
   style,

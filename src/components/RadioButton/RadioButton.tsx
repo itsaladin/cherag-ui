@@ -1,8 +1,9 @@
-import React, { FC } from 'react';
+import React from 'react';
+import type { FCWithChildren } from '../../types/compat/react';
 import RadioButtonContext from './Context';
-import { RadioButtonProps } from './types';
+import type { RadioButtonProps } from './types';
 
-const RadioButton: FC<RadioButtonProps> = ({
+const RadioButton: FCWithChildren<RadioButtonProps> = ({
   children,
   onChange,
   selected,

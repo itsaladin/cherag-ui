@@ -9,6 +9,7 @@ export interface ImageProps {
   w?: number;
   h?: number;
   uri?: string;
+  alt: string;
   style?: StyleProp<ImageStyle>;
   source: AvatarImageSource;
   size: number;

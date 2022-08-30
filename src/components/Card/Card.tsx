@@ -41,6 +41,7 @@ const Card: FCWithChildren<CardProps> = ({
         source={{
           uri: 'https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg',
         }}
+        alt="Image not found"
       />
       <Div
         style={[

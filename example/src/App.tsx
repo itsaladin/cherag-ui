@@ -78,10 +78,8 @@ export default function App() {
         >
           Button
         </Button>
-
         <Alert status="warning" title="Item deleted !!!" />
         <Divider color={COLORS.darkGray} thickness={1} />
-
         <Dropdown
           onChange={setSelectItem}
           selected={selectItem}
@@ -95,14 +93,16 @@ export default function App() {
           w={120}
           h={120}
           size={10}
-          source={require('./assets/aladdin.jpg')}
+          alt="Image not found"
+          source={require('./assets/cat.jpg')}
         />
         <Image
           w={120}
           h={120}
           size={10}
+          alt="Image not found"
           source={{
-            uri: 'https://avatars.githubusercontent.com/u/6187401?v=4',
+            uri: 'https://images.unsplas.com/photo-1598589290625-9b04630ec5d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2F0JTIwZmFjZXxlbnwwfHwwfHw%3D&w=1000&q=80',
           }}
         />
         <Card

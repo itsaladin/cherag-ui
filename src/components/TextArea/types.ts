@@ -8,4 +8,5 @@ export interface TextAreaProps {
   placeholderTextColor?: string;
   numberOfLines?: number;
   h?: number;
+  w?: number;
 }

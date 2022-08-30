@@ -9,13 +9,15 @@ const TextArea = ({
   borderWidth,
   borderRadious,
   h,
+  w,
   placeholder,
   placeholderTextColor,
   numberOfLines,
 }: TextAreaProps) => {
   const __borderWidth = borderWidth || 1;
-  const __borderRadious = borderRadious || 10;
+  const __borderRadious = borderRadious || 5;
   const __h = h || 150;
+  const __w = w || 150;
   const __placeholder = placeholder || 'placeholder text';
   const __placeholderTextColor = placeholderTextColor || COLORS.textColor;
   const __numberOfLines = numberOfLines || 10;
@@ -35,6 +37,7 @@ const TextArea = ({
           styles.textArea,
           {
             height: __h,
+            width: __w,
           },
         ]}
         underlineColorAndroid="transparent"

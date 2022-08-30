@@ -21,13 +21,15 @@ const Switch = ({
   const __onTrackColor = disabled
     ? COLORS.lightGray5
     : onTrackColor || COLORS.green;
-  const __thumbColor = disabled ? COLORS.darkgray : thumbColor || COLORS.white;
+  const __thumbColor = disabled
+    ? COLORS.darkgray
+    : thumbColor || COLORS.lightGray;
 
   let __width = 0;
   let __height = 0;
   let __thumbHeight = 0;
   let __thumbWidth = 0;
-  let __marginLeft = 0;
+  let __marginLeft = '';
 
   switch (size) {
     case 'sm':
@@ -35,28 +37,28 @@ const Switch = ({
       __height = 10;
       __thumbHeight = 18;
       __thumbWidth = 18;
-      __marginLeft = SIZES.DimensionWidth / 30;
+      __marginLeft = '50%';
       break;
     case 'md':
       __width = 45;
       __height = 13;
       __thumbHeight = 22;
       __thumbWidth = 22;
-      __marginLeft = SIZES.DimensionWidth / 15;
+      __marginLeft = '50%';
       break;
     case 'lg':
       __width = 60;
       __height = 20;
       __thumbHeight = 30;
       __thumbWidth = 30;
-      __marginLeft = SIZES.DimensionWidth / 12;
+      __marginLeft = '50%';
       break;
     default:
       __width = 40;
       __height = 15;
       __thumbHeight = 20;
       __thumbWidth = 20;
-      __marginLeft = SIZES.DimensionWidth / 20;
+      __marginLeft = '50%';
   }
 
   return (

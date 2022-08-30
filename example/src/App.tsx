@@ -89,13 +89,20 @@ export default function App() {
           <DropdownItem value="item2">item2</DropdownItem>
           <DropdownItem value="item3">item3</DropdownItem>
         </Dropdown>
-        <Image w={120} h={120} size={10} source={require('./assets/cat.jpg')} />
         <Image
           w={120}
           h={120}
           size={10}
+          alt="Image not found"
+          source={require('./assets/cat.jpg')}
+        />
+        <Image
+          w={120}
+          h={120}
+          size={10}
+          alt="Image not found"
           source={{
-            uri: 'https://images.unsplash.com/photo-1598589290625-9b04630ec5d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2F0JTIwZmFjZXxlbnwwfHwwfHw%3D&w=1000&q=80',
+            uri: 'https://images.unsplas.com/photo-1598589290625-9b04630ec5d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2F0JTIwZmFjZXxlbnwwfHwwfHw%3D&w=1000&q=80',
           }}
         />
         <Card

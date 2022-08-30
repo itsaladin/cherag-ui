@@ -18,13 +18,18 @@ const Input = ({
   fontSize,
   borderWidth,
   borderColor,
-  inputBoxWidth,
+  w,
+  h,
+  textPadding,
   ...rest
 }: InputProps) => {
   const _iconSize = iconSize || 18;
-  const _borderWidth = borderWidth || 1;
-  const _borderColor = borderColor || 'green';
-  const _inputBoxWidth = inputBoxWidth || 200;
+  const __borderWidth = borderWidth || 1;
+  const __borderColor = borderColor || 'green';
+  const __w = w || 200;
+  const __h = h || 35;
+  const __center = 'center';
+  const __textPadding = textPadding || 0;
 
   return (
     <Div style={styles.container}>
@@ -44,11 +49,13 @@ const Input = ({
         style={[
           style,
           {
-            borderColor: _borderColor,
-            borderWidth: _borderWidth,
+            borderColor: __borderColor,
+            borderWidth: __borderWidth,
             fontSize: fontSize ? fontSize : SIZES.p1,
-            padding: SIZES.p3,
-            width: _inputBoxWidth,
+            padding: __textPadding,
+            width: __w,
+            height: __h,
+            justifyContent: __center,
           },
         ]}
         placeholder={placeholder}

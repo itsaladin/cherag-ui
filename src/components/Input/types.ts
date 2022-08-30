@@ -20,5 +20,7 @@ export interface InputProps
   iconSize?: number;
   borderWidth?: number;
   borderColor?: string;
-  inputBoxWidth?: number;
+  w?: number;
+  h?: number;
+  textPadding?: number;
 }

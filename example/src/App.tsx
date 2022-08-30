@@ -65,6 +65,8 @@ export default function App() {
           placeholder="Enter name"
           leftIcon="lock"
           rightIcon="eye"
+          w={200}
+          h={40}
         />
         <Button
           bg={COLORS.softGray}

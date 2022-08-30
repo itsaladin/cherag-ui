@@ -40,9 +40,9 @@ export default function App() {
         <Text style={{ color: COLORS.black }} fontSize="md">
           Cherag-UI
         </Text>
-        {/* <Div w={0} h={0} p={0} m={0}>
+        <Div w={0} h={0} p={0} m={0}>
           <Text>Div Commponent</Text>
-        </Div> */}
+        </Div>
         <Div style={styles.radioBtnGroup}>
           <RadioButton
             btnColor={COLORS.green}

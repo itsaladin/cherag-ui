@@ -26,7 +26,7 @@ const RadioButtonItem: FCWithChildren<RadioButtonItemProps> = ({
           size={24}
           color={selected === value ? btnColor || COLORS.border : COLORS.border}
         />
-        {renderTextOrNode(children, [styles.itemText])}
+        {renderTextOrNode(children, styles.itemText)}
       </Div>
     </TouchableOpacity>
   );

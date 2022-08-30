@@ -26,7 +26,7 @@ const RadioButtonItem: FCWithChildren<RadioButtonItemProps> = ({
           size={24}
           color={selected === value ? btnColor || COLORS.border : COLORS.border}
         />
-        {renderTextOrNode(children, [styles.container])}
+        {renderTextOrNode(children, [styles.itemText])}
       </Div>
     </TouchableOpacity>
   );
@@ -35,6 +35,11 @@ const RadioButtonItem: FCWithChildren<RadioButtonItemProps> = ({
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
+    marginRight: 10,
+  },
+  itemText: {
+    alignSelf: 'center',
+    marginLeft: 2,
   },
 });
 

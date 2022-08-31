@@ -102,7 +102,7 @@ export default function App() {
           size={10}
           alt="Image not found"
           source={{
-            uri: 'https://images.unsplas.com/photo-1598589290625-9b04630ec5d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2F0JTIwZmFjZXxlbnwwfHwwfHw%3D&w=1000&q=80',
+            uri: 'https://images.unsplash.com/photo-1598589290625-9b04630ec5d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2F0JTIwZmFjZXxlbnwwfHwwfHw%3D&w=1000&q=80',
           }}
         />
         <Card
@@ -116,14 +116,32 @@ export default function App() {
           (also called Bangalore) is the center of BD high-tech industry. The
           city is also known for its parks and nightlife
         </Card>
-        <IconButton
-          icon="rocket"
-          onPress={() => {
-            console.log('Icon Button pressed');
-          }}
-          size={68}
-          color={COLORS.green}
-        />
+        <Div style={styles.radioBtnGroup}>
+          <IconButton
+            icon="rocket"
+            onPress={() => {
+              console.log('Test IconButton pressed');
+            }}
+            size={68}
+            color={COLORS.green}
+          />
+          <IconButton
+            icon="heart"
+            onPress={() => {
+              console.log('Test IconButton pressed');
+            }}
+            size={68}
+            color={COLORS.red}
+          />
+          <IconButton
+            icon="clover"
+            onPress={() => {
+              console.log('Test IconButton pressed');
+            }}
+            size={68}
+            color={COLORS.green}
+          />
+        </Div>
         <Switch
           size="lg"
           isSwitchCheck={isSwitchCheck}
@@ -163,6 +181,7 @@ const styles = StyleSheet.create({
   },
   radioBtnGroup: {
     flexDirection: 'row',
+    marginVertical: 10,
   },
   textAreaContainer: {
     marginTop: 30,

@@ -3,12 +3,16 @@ export interface DropdownContextValue {
   handleChange: (value: string) => void;
 }
 
+export type WidthHeightValue = string | number;
+
 export interface DropdownProps {
   header?: string;
   onChange: (value: string) => void;
   selected?: string;
-  width?: number;
+  w?: WidthHeightValue;
+  h?: WidthHeightValue;
   fontSize?: number;
+  borderColor?: string;
 }
 
 export interface DropdownItemProps {

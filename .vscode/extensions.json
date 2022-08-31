@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "dsznajder.es7-react-js-snippets",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-rename-tag",
+    "vincaslt.highlight-matching-tag",
+    "2gua.rainbow-brackets"
+  ]
+}

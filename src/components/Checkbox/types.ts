@@ -13,6 +13,8 @@ export interface CheckboxItemProps {
   value: CheckboxValue;
   iconSize?: number;
   textStyle?: StyleProp<TextStyle>;
+  checkedIconColor?: string;
+  uncheckedIconColor?: string;
 }
 
 export interface CheckboxContextValue {

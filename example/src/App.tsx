@@ -54,9 +54,15 @@ export default function App() {
           </RadioButton>
         </Div>
         <Checkbox values={checkboxes} onChange={setCheckboxes}>
-          <CheckboxItem value="1">Checkbox 1</CheckboxItem>
-          <CheckboxItem value="2">Checkbox 2</CheckboxItem>
-          <CheckboxItem value="3">Checkbox 3</CheckboxItem>
+          <CheckboxItem iconSize={22} textStyle={styles.checkboxText} value="1">
+            Checkbox item 1
+          </CheckboxItem>
+          <CheckboxItem iconSize={22} textStyle={styles.checkboxText} value="2">
+            Checkbox item 2
+          </CheckboxItem>
+          <CheckboxItem iconSize={22} textStyle={styles.checkboxText} value="3">
+            Checkbox item 3
+          </CheckboxItem>
         </Checkbox>
         <Spinner color={COLORS.green} size={'large'} />
         <Input
@@ -187,5 +193,8 @@ const styles = StyleSheet.create({
   },
   textAreaContainer: {
     marginTop: 30,
+  },
+  checkboxText: {
+    fontSize: 16,
   },
 });

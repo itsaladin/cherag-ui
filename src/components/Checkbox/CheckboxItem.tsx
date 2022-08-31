@@ -11,6 +11,8 @@ import type { CheckboxItemProps } from './types';
 const CheckboxItem: FCWithChildren<CheckboxItemProps> = ({
   children,
   value,
+  iconSize,
+  textStyle,
 }) => {
   const context = useCheckbox();
   const checked = context.values.includes(value);
@@ -21,10 +23,10 @@ const CheckboxItem: FCWithChildren<CheckboxItemProps> = ({
         <Icon
           style={{ marginRight: SIZES.p3 }}
           name={checked ? 'md-checkbox-sharp' : 'md-checkbox-outline'}
-          size={20}
+          size={iconSize || 20}
           color={checked ? COLORS.green : undefined}
         />
-        <Text>{children}</Text>
+        <Text style={textStyle}>{children}</Text>
       </Div>
     </TouchableOpacity>
   );

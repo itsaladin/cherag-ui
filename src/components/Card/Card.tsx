@@ -22,6 +22,7 @@ const Card: FCWithChildren<CardProps> = ({
   subTitleStyle,
   paragraphStyle,
   footerStyle,
+  shadow,
   ...rest
 }) => {
   const __height = h ? h : SIZES.DimensionHeight / 5;
@@ -30,9 +31,17 @@ const Card: FCWithChildren<CardProps> = ({
   const __title = title || 'title';
   const __subTitle = subTitle || 'sub title';
   const __categoryBgColor = categoryBgColor || COLORS.blue;
+  const __shadow = shadow || 5;
 
   return (
-    <Div style={[style, styles.container]} {...rest}>
+    <Div
+      style={[
+        style,
+        styles.container,
+        { shadowRadius: __shadow, elevation: __shadow },
+      ]}
+      {...rest}
+    >
       <Image
         h={__height}
         w={__width}
@@ -52,7 +61,6 @@ const Card: FCWithChildren<CardProps> = ({
       >
         <Text style={styles.categoryTxt}>{__category}</Text>
       </Div>
-
       <Div style={styles.cardTxtContainer}>
         <Text style={[styles.title, titleStyle]}>{__title}</Text>
         <Text style={[styles.subTitle, subTitleStyle]}>{__subTitle}</Text>
@@ -66,10 +74,11 @@ const Card: FCWithChildren<CardProps> = ({
 const styles = StyleSheet.create({
   container: {
     backgroundColor: COLORS.white,
-    elevation: 4,
     shadowColor: COLORS.black,
     marginHorizontal: 50,
-    borderRadius: 10,
+    borderRadius: 15,
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.8,
   },
   category: {
     flex: 1,

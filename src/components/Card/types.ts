@@ -7,6 +7,7 @@ export interface CardProps {
   h?: number;
   p?: number;
   m?: number;
+  shadow?: number;
   category?: string;
   title?: string;
   subTitle?: string;

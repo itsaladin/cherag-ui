@@ -83,7 +83,8 @@ export default function App() {
         <Dropdown
           onChange={setSelectItem}
           selected={selectItem}
-          header=" Choose Service"
+          header="Choose your service"
+          w={'50%'}
         >
           <DropdownItem value="item1">item1</DropdownItem>
           <DropdownItem value="item2">item2</DropdownItem>

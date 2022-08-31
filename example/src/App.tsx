@@ -87,9 +87,9 @@ export default function App() {
           w={'50%'}
           borderColor={COLORS.softGray}
         >
-          <DropdownItem value="item1">item1</DropdownItem>
-          <DropdownItem value="item2">item2</DropdownItem>
-          <DropdownItem value="item3">item3</DropdownItem>
+          <DropdownItem value="Audio device">Audio device</DropdownItem>
+          <DropdownItem value="Video device">Video device</DropdownItem>
+          <DropdownItem value="Wifi device">Wifi device</DropdownItem>
         </Dropdown>
         <Image
           w={120}

@@ -27,6 +27,7 @@ const DropdownItem: FCWithChildren<DropdownItemProps> = ({
 const styles = StyleSheet.create({
   divContainer: {
     flexDirection: 'row',
+    paddingHorizontal: 5,
   },
 });
 

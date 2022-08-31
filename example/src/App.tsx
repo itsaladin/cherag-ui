@@ -79,7 +79,8 @@ export default function App() {
           Button
         </Button>
         <Alert status="warning" title="Item deleted !!!" />
-        <Divider color={COLORS.darkGray} thickness={1} />
+        <Divider color={COLORS.black} thickness={1} w={410} />
+        <Divider color={COLORS.errorIcon} thickness={3} w={410} />
         <Dropdown
           onChange={setSelectItem}
           selected={selectItem}

@@ -1,6 +1,6 @@
 import React from 'react';
-import { View } from 'react-native';
 import { COLORS } from '../../theme';
+import Div from '../Div/Div';
 import type { DividerProps } from './types';
 
 const Divider = ({ style, color, w, thickness, ...rest }: DividerProps) => {
@@ -9,7 +9,7 @@ const Divider = ({ style, color, w, thickness, ...rest }: DividerProps) => {
   const __w = w || 300;
 
   return (
-    <View
+    <Div
       {...rest}
       style={[
         style,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { COLORS, SIZES } from '../../theme';
 import type { FCWithChildren } from '../../types/compat/react';
 import { Div } from '../Div';
@@ -11,6 +11,10 @@ import type { CheckboxItemProps } from './types';
 const CheckboxItem: FCWithChildren<CheckboxItemProps> = ({
   children,
   value,
+  iconSize,
+  textStyle,
+  checkedIconColor,
+  uncheckedIconColor,
 }) => {
   const context = useCheckbox();
   const checked = context.values.includes(value);
@@ -20,11 +24,15 @@ const CheckboxItem: FCWithChildren<CheckboxItemProps> = ({
       <Div style={styles.row}>
         <Icon
           style={{ marginRight: SIZES.p3 }}
-          name={checked ? 'md-checkbox-sharp' : 'md-checkbox-outline'}
-          size={20}
-          color={checked ? COLORS.green : undefined}
+          name={checked ? 'checkbox-outline' : 'checkbox-blank-outline'}
+          size={iconSize || 20}
+          color={
+            checked
+              ? checkedIconColor || COLORS.green
+              : uncheckedIconColor || COLORS.darkgray
+          }
         />
-        <Text>{children}</Text>
+        <Text style={textStyle}>{children}</Text>
       </Div>
     </TouchableOpacity>
   );

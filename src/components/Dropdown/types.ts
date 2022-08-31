@@ -12,6 +12,7 @@ export interface DropdownProps {
   w?: WidthHeightValue;
   h?: WidthHeightValue;
   fontSize?: number;
+  borderColor?: string;
 }
 
 export interface DropdownItemProps {

@@ -15,12 +15,14 @@ const Dropdown: FCWithChildren<DropdownProps> = ({
   h,
   fontSize,
   header,
+  borderColor,
 }) => {
   const [isItemVisible, setItemVisible] = useState<boolean>(false);
   const __width = w || '50%';
   const __height = h || '2%';
   const __fontSize = fontSize || 16;
   const __header = header || 'Choose you service';
+  const __borderColor = borderColor || COLORS.softGray;
 
   const handleChange = useCallback(
     (value: string) => {
@@ -37,7 +39,10 @@ const Dropdown: FCWithChildren<DropdownProps> = ({
         onPress={() => {
           setItemVisible(!isItemVisible);
         }}
-        style={[styles.dropdownBtn, { width: __width, height: __height }]}
+        style={[
+          styles.dropdownBtn,
+          { width: __width, height: __height, borderColor: __borderColor },
+        ]}
       >
         <Text style={{ fontSize: __fontSize }}>{selected || __header}</Text>
         <Icon name={'ios-arrow-down-outline'} size={22} color={COLORS.black} />
@@ -51,7 +56,6 @@ export default Dropdown;
 
 const styles = StyleSheet.create({
   dropdownBtn: {
-    borderColor: COLORS.darkGray,
     flexDirection: 'row',
     borderWidth: 1,
     justifyContent: 'space-between',

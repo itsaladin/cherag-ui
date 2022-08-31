@@ -85,6 +85,7 @@ export default function App() {
           selected={selectItem}
           header="Choose your service"
           w={'50%'}
+          borderColor={COLORS.softGray}
         >
           <DropdownItem value="item1">item1</DropdownItem>
           <DropdownItem value="item2">item2</DropdownItem>

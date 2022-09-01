@@ -75,12 +75,11 @@ export default function App() {
           h={40}
         />
         <Button
+          w={'30%'}
+          h={'3%'}
           bg={COLORS.softGray}
           color={COLORS.black}
-          onPress={() => {
-            console.log('Custom button pressed');
-            setAlert(!alert);
-          }}
+          onPress={() => console.log('Custom button pressed')}
         >
           Button
         </Button>

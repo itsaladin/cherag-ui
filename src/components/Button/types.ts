@@ -9,8 +9,8 @@ import type {
 export interface ButtonProps extends ViewProps {
   style?: StyleProp<ViewStyle>;
   onPress?: (event: GestureResponderEvent) => void;
-  width?: number;
-  height?: number;
+  w?: string;
+  h?: string;
   bg?: string;
   color?: string;
   fontSize?: number;

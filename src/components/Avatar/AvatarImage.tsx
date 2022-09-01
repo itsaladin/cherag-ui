@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet } from 'react-native';
+import { Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { COLORS } from '../../theme';
 import { Div } from '../Div';
 import type { AvatarImageProps } from './types';
@@ -13,6 +13,7 @@ const AvatarImage = ({
   imageStyle,
   dotSize,
   dotColor,
+  onPress,
   onError,
   onLayout,
   onLoad,
@@ -23,49 +24,51 @@ const AvatarImage = ({
 }: AvatarImageProps) => {
   const __dotColor = dotColor || COLORS.softGray;
   return (
-    <Div
-      style={[
-        {
-          width: size,
-          height: size,
-          borderRadius: size / 2,
-        },
-        style,
-      ]}
-      {...rest}
-    >
-      {typeof source === 'function' && source({ size })}
-      {typeof source !== 'function' && (
-        <>
-          <Image
-            source={source}
-            style={[
-              imageStyle,
-              { width: size, height: size, borderRadius: size / 2 },
-            ]}
-            onError={onError}
-            onLayout={onLayout}
-            onLoad={onLoad}
-            onLoadEnd={onLoadEnd}
-            onLoadStart={onLoadStart}
-            onProgress={onProgress}
-          />
-          {dotSize && (
-            <Div
+    <TouchableOpacity activeOpacity={1} onPress={onPress}>
+      <Div
+        style={[
+          {
+            width: size,
+            height: size,
+            borderRadius: size / 2,
+          },
+          style,
+        ]}
+        {...rest}
+      >
+        {typeof source === 'function' && source({ size })}
+        {typeof source !== 'function' && (
+          <>
+            <Image
+              source={source}
               style={[
-                styles.activeDot,
-                {
-                  width: dotSize,
-                  height: dotSize,
-                  backgroundColor: __dotColor,
-                  borderRadius: dotSize / 2,
-                },
+                imageStyle,
+                { width: size, height: size, borderRadius: size / 2 },
               ]}
+              onError={onError}
+              onLayout={onLayout}
+              onLoad={onLoad}
+              onLoadEnd={onLoadEnd}
+              onLoadStart={onLoadStart}
+              onProgress={onProgress}
             />
-          )}
-        </>
-      )}
-    </Div>
+            {dotSize && (
+              <Div
+                style={[
+                  styles.activeDot,
+                  {
+                    width: dotSize,
+                    height: dotSize,
+                    backgroundColor: __dotColor,
+                    borderRadius: dotSize / 2,
+                  },
+                ]}
+              />
+            )}
+          </>
+        )}
+      </Div>
+    </TouchableOpacity>
   );
 };
 

@@ -21,6 +21,7 @@ export interface AvatarImageProps extends DivProps {
   imageStyle?: StyleProp<ImageStyle>;
   dotSize?: number;
   dotColor?: string;
+  onPress?: (event: GestureResponderEvent) => void;
   onError?: ImageProps['onError'];
   onLayout?: ImageProps['onLayout'];
   onLoad?: ImageProps['onLoad'];

@@ -160,6 +160,7 @@ export default function App() {
           <TextArea />
         </Div>
         <Avatar.Image
+          onPress={() => console.log('Test Avatar.Image component')}
           size={60}
           dotSize={20}
           dotColor={COLORS.green}

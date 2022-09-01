@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { COLORS, SIZES } from '../../theme';
@@ -7,11 +7,15 @@ import { Div } from '../Div';
 import Text from '../Text/Text';
 import type { AlertProps } from './types';
 
-const Alert: FCWithChildren<AlertProps> = ({ children, title, status }) => {
-  const [isOpen, setIsOpen] = useState(true);
-
+const Alert: FCWithChildren<AlertProps> = ({
+  children,
+  title,
+  status,
+  alert,
+  setAlert,
+}) => {
   let __leftIcon = '';
-
+  let __leftIconColor = '';
   switch (status) {
     case 'success':
       __leftIcon = 'checkcircle';
@@ -28,9 +32,6 @@ const Alert: FCWithChildren<AlertProps> = ({ children, title, status }) => {
     default:
       __leftIcon = 'success';
   }
-
-  let __leftIconColor = '';
-
   switch (status) {
     case 'success':
       __leftIconColor = COLORS.successIcon;
@@ -48,7 +49,7 @@ const Alert: FCWithChildren<AlertProps> = ({ children, title, status }) => {
       __leftIconColor = COLORS.successIcon;
   }
 
-  return isOpen ? (
+  return alert ? (
     <Div
       style={[
         styles.container,
@@ -62,10 +63,9 @@ const Alert: FCWithChildren<AlertProps> = ({ children, title, status }) => {
         <Text fontSize="xl" style={styles.title}>
           {title}
         </Text>
-
         <TouchableOpacity
           onPress={() => {
-            setIsOpen(!isOpen);
+            setAlert(!alert);
           }}
           style={styles.closeAlert}
         >

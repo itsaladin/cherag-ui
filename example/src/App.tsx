@@ -176,6 +176,7 @@ export default function App() {
           bgColor={COLORS.lightGray}
           iconSize={35}
           icon="file"
+          onPress={() => console.log('Test Avatar.Icon component')}
         />
       </Div>
     </ScrollView>

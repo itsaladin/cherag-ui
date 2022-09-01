@@ -36,7 +36,7 @@ const AvatarImage = ({
     >
       {typeof source === 'function' && source({ size })}
       {typeof source !== 'function' && (
-        <Div>
+        <>
           <Image
             source={source}
             style={[
@@ -63,7 +63,7 @@ const AvatarImage = ({
               ]}
             />
           )}
-        </Div>
+        </>
       )}
     </View>
   );

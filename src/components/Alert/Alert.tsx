@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/AntDesign';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { COLORS, SIZES } from '../../theme';
 import type { FCWithChildren } from '../../types/compat/react';
 import { Div } from '../Div';
@@ -18,16 +18,16 @@ const Alert: FCWithChildren<AlertProps> = ({
   let __leftIconColor = '';
   switch (status) {
     case 'success':
-      __leftIcon = 'checkcircle';
+      __leftIcon = 'checkbox-marked-circle-outline';
       break;
     case 'error':
-      __leftIcon = 'lock1';
+      __leftIcon = 'alien-outline';
       break;
     case 'info':
-      __leftIcon = 'infocirlce';
+      __leftIcon = 'alert-circle-outline';
       break;
     case 'warning':
-      __leftIcon = 'warning';
+      __leftIcon = 'alert-rhombus-outline';
       break;
     default:
       __leftIcon = 'success';
@@ -69,7 +69,7 @@ const Alert: FCWithChildren<AlertProps> = ({
           }}
           style={styles.closeAlert}
         >
-          <Icon name={'delete'} size={20} color={COLORS.red} />
+          <Icon name={'close'} size={24} color={COLORS.red} />
         </TouchableOpacity>
       </Div>
       {children ? <Text style={styles.paragraph}>{children}</Text> : null}

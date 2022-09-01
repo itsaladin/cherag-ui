@@ -100,7 +100,7 @@ export default function App() {
         <Alert
           alert={alert}
           setAlert={setAlert}
-          status="success"
+          status="warning"
           title="Product add successfully"
         >
           Product add successfully, this is message paragraph.Product add

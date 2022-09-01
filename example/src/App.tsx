@@ -75,13 +75,27 @@ export default function App() {
           h={40}
         />
         <Button
-          w={'30%'}
-          h={'3%'}
-          bg={COLORS.softGray}
-          color={COLORS.black}
-          onPress={() => console.log('Custom button pressed')}
+          w={'35%'}
+          h={'2%'}
+          bg={COLORS.primary}
+          color={COLORS.white}
+          onPress={() => {
+            setAlert(!alert);
+            console.log('Button component test');
+          }}
         >
-          Button
+          Test Alert component
+        </Button>
+        <Button
+          w={'45%'}
+          h={'3%'}
+          borderRadius={5}
+          fontSize={18}
+          bg={COLORS.blue}
+          color={COLORS.white}
+          onPress={() => console.log('Button component test')}
+        >
+          Add product
         </Button>
         <Alert status="warning" title="Item deleted !!!" />
         <Divider color={COLORS.black} thickness={1} w={410} />

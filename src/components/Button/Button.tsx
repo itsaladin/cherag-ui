@@ -8,8 +8,8 @@ const Button = ({
   children,
   onPress,
   style,
-  width,
-  height,
+  w,
+  h,
   bg,
   color,
   fontSize,
@@ -18,6 +18,7 @@ const Button = ({
   fontWeight,
   ...rest
 }: ButtonProps) => {
+  const __center = 'center';
   return (
     <TouchableOpacity
       activeOpacity={0.8}
@@ -25,10 +26,11 @@ const Button = ({
         style,
         {
           backgroundColor: bg || COLORS.primary,
-          width: width || 60,
-          height: height || 30,
+          width: w || '30%',
+          height: h || '5',
           borderWidth: borderWidth,
           borderRadius: borderRadius || SIZES.p3 - 10,
+          justifyContent: __center,
         },
       ]}
       onPress={onPress}

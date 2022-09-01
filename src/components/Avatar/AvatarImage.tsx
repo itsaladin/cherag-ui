@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, StyleSheet } from 'react-native';
 import { COLORS } from '../../theme';
 import { Div } from '../Div';
 import type { AvatarImageProps } from './types';
@@ -23,7 +23,7 @@ const AvatarImage = ({
 }: AvatarImageProps) => {
   const __dotColor = dotColor || COLORS.softGray;
   return (
-    <View
+    <Div
       style={[
         {
           width: size,
@@ -65,7 +65,7 @@ const AvatarImage = ({
           )}
         </>
       )}
-    </View>
+    </Div>
   );
 };
 

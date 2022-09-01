@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 import { COLORS } from '../../theme';
 import { Div } from '../Div';
 import Text from '../Text/Text';
@@ -14,38 +14,42 @@ const AvatarText = ({
   textStyle,
   bgColor,
   textColor,
+  onPress,
   ...rest
 }: AvatarTextProps) => {
   const __bgcolor = bgColor || COLORS.primary;
   const __textColor = textColor || COLORS.black;
   return (
-    <Div
-      style={[
-        {
-          width: size,
-          height: size,
-          borderRadius: size / 2,
-          backgroundColor: __bgcolor,
-        },
-        style,
-      ]}
-      {...rest}
-    >
-      <Text
+    <TouchableOpacity activeOpacity={1} onPress={onPress}>
+      <Div
         style={[
-          textStyle,
           {
             width: size,
             height: size,
             borderRadius: size / 2,
-            color: __textColor,
+            backgroundColor: __bgcolor,
           },
-          styles.textStyle,
+          style,
+          styles.container,
         ]}
+        {...rest}
       >
-        {label}
-      </Text>
-    </Div>
+        <Text
+          style={[
+            textStyle,
+            {
+              width: size,
+              height: size,
+              borderRadius: size / 2,
+              color: __textColor,
+            },
+            styles.textContainer,
+          ]}
+        >
+          {label}
+        </Text>
+      </Div>
+    </TouchableOpacity>
   );
 };
 
@@ -54,7 +58,11 @@ AvatarText.displayName = 'Avatar.Text';
 export default AvatarText;
 
 const styles = StyleSheet.create({
-  textStyle: {
+  container: {
+    justifyContent: 'center',
+    alignContent: 'center',
+  },
+  textContainer: {
     textAlign: 'center',
     textAlignVertical: 'center',
   },

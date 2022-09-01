@@ -37,6 +37,7 @@ export interface AvatarTextProps extends DivProps {
   textColor?: string;
   style?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
+  onPress?: (event: GestureResponderEvent) => void;
 }
 
 export interface AvatarIconProps extends DivProps {

@@ -38,9 +38,6 @@ const AvatarText = ({
           style={[
             textStyle,
             {
-              width: size,
-              height: size,
-              borderRadius: size / 2,
               color: __textColor,
             },
             styles.textContainer,
@@ -60,10 +57,8 @@ export default AvatarText;
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
-    alignContent: 'center',
   },
   textContainer: {
     textAlign: 'center',
-    textAlignVertical: 'center',
   },
 });

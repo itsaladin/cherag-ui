@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import type {
+  GestureResponderEvent,
   ImageProps,
   ImageSourcePropType,
   ImageStyle,
@@ -44,4 +45,5 @@ export interface AvatarIconProps extends DivProps {
   icon: string;
   iconColor?: string;
   bgColor?: string;
+  onPress?: (event: GestureResponderEvent) => void;
 }

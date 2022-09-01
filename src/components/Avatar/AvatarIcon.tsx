@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
+import { StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { COLORS } from '../../theme';
+import { Div } from '../Div';
 import type { AvatarIconProps } from './types';
 
 const AvatarIcon = ({
@@ -11,6 +12,7 @@ const AvatarIcon = ({
   iconSize,
   iconColor,
   bgColor,
+  onPress,
   ...rest
 }: AvatarIconProps) => {
   const __icon = icon || 'file';
@@ -20,8 +22,9 @@ const AvatarIcon = ({
   const __iconSize = iconSize || 35;
 
   return (
-    <View
+    <Div
       style={[
+        styles.container,
         {
           width: __bgSize,
           height: __bgSize,
@@ -32,15 +35,10 @@ const AvatarIcon = ({
       ]}
       {...rest}
     >
-      <TouchableWithoutFeedback {...rest}>
-        <Icon
-          name={__icon}
-          size={__iconSize}
-          style={styles.icon}
-          color={__iconColor}
-        />
+      <TouchableWithoutFeedback onPress={onPress} {...rest}>
+        <Icon name={__icon} size={__iconSize} color={__iconColor} />
       </TouchableWithoutFeedback>
-    </View>
+    </Div>
   );
 };
 
@@ -49,9 +47,9 @@ AvatarIcon.displayName = 'Avatar.Image';
 export default AvatarIcon;
 
 const styles = StyleSheet.create({
-  icon: {
-    flex: 1,
-    alignSelf: 'center',
-    textAlignVertical: 'center',
+  container: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
   },
 });

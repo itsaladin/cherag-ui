@@ -129,7 +129,7 @@ export default function App() {
           <IconButton
             icon="rocket"
             onPress={() => {
-              console.log('Test IconButton pressed');
+              console.log('Test IconButton component');
             }}
             size={68}
             color={COLORS.green}
@@ -137,7 +137,7 @@ export default function App() {
           <IconButton
             icon="heart"
             onPress={() => {
-              console.log('Test IconButton pressed');
+              console.log('Test IconButton component');
             }}
             size={68}
             color={COLORS.red}
@@ -145,7 +145,7 @@ export default function App() {
           <IconButton
             icon="clover"
             onPress={() => {
-              console.log('Test IconButton pressed');
+              console.log('Test IconButton component');
             }}
             size={68}
             color={COLORS.green}

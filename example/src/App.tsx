@@ -119,11 +119,15 @@ export default function App() {
           subTitle="The Silicon Valley of BD"
           category="Photo"
           footerText="6 mins ago"
+          w={200}
+          h={300}
+          imgH={3}
+          categoryBgColor={COLORS.primary}
+          categoryTextColor={COLORS.white}
         >
-          'Bengaluru (also called Bangalore) is the center of BD high-tech
-          industry. The city is also known for its parks and nightlife Bengaluru
-          (also called Bangalore) is the center of BD high-tech industry. The
-          city is also known for its parks and nightlife
+          'Bangladesh is the center of BD high-tech industry. The city is also
+          known for its parks and nightlife Bangladesh is the center of BD
+          high-tech industry.
         </Card>
         <Div style={styles.radioBtnGroup}>
           <IconButton

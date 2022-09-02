@@ -142,7 +142,7 @@ export default function App() {
           <IconButton
             icon="rocket"
             onPress={() => {
-              console.log('Test IconButton pressed');
+              console.log('Test IconButton component');
             }}
             size={68}
             color={COLORS.green}
@@ -150,7 +150,7 @@ export default function App() {
           <IconButton
             icon="heart"
             onPress={() => {
-              console.log('Test IconButton pressed');
+              console.log('Test IconButton component');
             }}
             size={68}
             color={COLORS.red}
@@ -158,7 +158,7 @@ export default function App() {
           <IconButton
             icon="clover"
             onPress={() => {
-              console.log('Test IconButton pressed');
+              console.log('Test IconButton component');
             }}
             size={68}
             color={COLORS.green}
@@ -177,18 +177,21 @@ export default function App() {
           dotSize={20}
           dotColor={COLORS.green}
           source={require('./assets/alauddin.jpg')}
+          onPress={() => console.log('Test Avatar.Image component')}
         />
         <Avatar.Text
           bgColor={COLORS.orange}
           textColor={COLORS.white}
           size={60}
           label="XD"
+          onPress={() => console.log('Test Avatar.Text component')}
         />
         <Avatar.Icon
           iconColor={COLORS.blue}
           bgColor={COLORS.lightGray}
           iconSize={35}
           icon="file"
+          onPress={() => console.log('Test Avatar.Icon component')}
         />
       </Div>
     </ScrollView>

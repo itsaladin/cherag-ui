@@ -1,36 +1,37 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/AntDesign';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { COLORS, SIZES } from '../../theme';
 import type { FCWithChildren } from '../../types/compat/react';
 import { Div } from '../Div';
 import Text from '../Text/Text';
 import type { AlertProps } from './types';
 
-const Alert: FCWithChildren<AlertProps> = ({ children, title, status }) => {
-  const [isOpen, setIsOpen] = useState(true);
-
+const Alert: FCWithChildren<AlertProps> = ({
+  children,
+  title,
+  status,
+  alert,
+  setAlert,
+}) => {
   let __leftIcon = '';
-
+  let __leftIconColor = '';
   switch (status) {
     case 'success':
-      __leftIcon = 'checkcircle';
+      __leftIcon = 'checkbox-marked-circle-outline';
       break;
     case 'error':
-      __leftIcon = 'lock1';
+      __leftIcon = 'alien-outline';
       break;
     case 'info':
-      __leftIcon = 'infocirlce';
+      __leftIcon = 'alert-circle-outline';
       break;
     case 'warning':
-      __leftIcon = 'warning';
+      __leftIcon = 'alert-rhombus-outline';
       break;
     default:
       __leftIcon = 'success';
   }
-
-  let __leftIconColor = '';
-
   switch (status) {
     case 'success':
       __leftIconColor = COLORS.successIcon;
@@ -48,7 +49,7 @@ const Alert: FCWithChildren<AlertProps> = ({ children, title, status }) => {
       __leftIconColor = COLORS.successIcon;
   }
 
-  return isOpen ? (
+  return alert ? (
     <Div
       style={[
         styles.container,
@@ -62,14 +63,13 @@ const Alert: FCWithChildren<AlertProps> = ({ children, title, status }) => {
         <Text fontSize="xl" style={styles.title}>
           {title}
         </Text>
-
         <TouchableOpacity
           onPress={() => {
-            setIsOpen(!isOpen);
+            setAlert(!alert);
           }}
           style={styles.closeAlert}
         >
-          <Icon name={'delete'} size={20} color={COLORS.red} />
+          <Icon name={'close'} size={24} color={COLORS.red} />
         </TouchableOpacity>
       </Div>
       {children ? <Text style={styles.paragraph}>{children}</Text> : null}

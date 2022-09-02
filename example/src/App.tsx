@@ -97,7 +97,15 @@ export default function App() {
         >
           Add product
         </Button>
-        <Alert status="warning" title="Item deleted !!!" />
+        <Alert
+          alert={alert}
+          setAlert={setAlert}
+          status="warning"
+          title="Product add successfully"
+        >
+          Product add successfully, this is message paragraph.Product add
+          successfully, this is message paragraph.
+        </Alert>
         <Divider color={COLORS.black} thickness={1} w={410} />
         <Divider color={COLORS.errorIcon} thickness={3} w={410} />
         <Dropdown

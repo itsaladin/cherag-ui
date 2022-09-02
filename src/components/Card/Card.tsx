@@ -16,12 +16,15 @@ const Card: FCWithChildren<CardProps> = ({
   category,
   w,
   h,
+  imgH,
   categoryBgColor,
+  categoryTextColor,
   children,
   titleStyle,
   subTitleStyle,
   paragraphStyle,
   footerStyle,
+  shadow,
   ...rest
 }) => {
   const __height = h ? h : SIZES.DimensionHeight / 5;
@@ -30,30 +33,42 @@ const Card: FCWithChildren<CardProps> = ({
   const __title = title || 'title';
   const __subTitle = subTitle || 'sub title';
   const __categoryBgColor = categoryBgColor || COLORS.blue;
+  const __categoryTextColor = categoryTextColor || COLORS.white;
+  const __shadow = shadow || 5;
+  const __imgH = imgH || 3;
 
   return (
-    <Div style={[style, styles.container]} {...rest}>
-      <Image
-        h={__height}
-        w={__width}
-        size={20}
-        style={styles.cardImg}
-        source={{
-          uri: 'https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg',
-        }}
-        alt="Image not found"
-      />
-      <Div
-        style={[
-          styles.category,
-          { backgroundColor: __categoryBgColor },
-          footerStyle,
-        ]}
-      >
-        <Text style={styles.categoryTxt}>{__category}</Text>
+    <Div
+      style={[
+        style,
+        styles.container,
+        {
+          shadowRadius: __shadow,
+          elevation: __shadow,
+          width: __width,
+          height: __height,
+        },
+      ]}
+      {...rest}
+    >
+      <Div>
+        <Image
+          h={__height / __imgH}
+          w={__width}
+          size={20}
+          style={styles.cardImg}
+          source={{
+            uri: 'https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg',
+          }}
+          alt="Image not found"
+        />
+        <Div style={[styles.category, { backgroundColor: __categoryBgColor }]}>
+          <Text style={[styles.categoryTxt, { color: __categoryTextColor }]}>
+            {__category}
+          </Text>
+        </Div>
       </Div>
-
-      <Div style={styles.cardTxtContainer}>
+      <Div style={styles.cardTextContainer}>
         <Text style={[styles.title, titleStyle]}>{__title}</Text>
         <Text style={[styles.subTitle, subTitleStyle]}>{__subTitle}</Text>
         {renderTextOrNode(children, [styles.paragraph, paragraphStyle])}
@@ -66,42 +81,45 @@ const Card: FCWithChildren<CardProps> = ({
 const styles = StyleSheet.create({
   container: {
     backgroundColor: COLORS.white,
-    elevation: 4,
     shadowColor: COLORS.black,
-    marginHorizontal: 50,
-    borderRadius: 10,
+    borderRadius: 15,
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.8,
   },
   category: {
     flex: 1,
-    top: SIZES.DimensionHeight / 6.2,
     position: 'absolute',
-    justifyContent: 'center',
+    bottom: 0,
     alignItems: 'center',
-    width: SIZES.DimensionWidth / 4,
+    width: '40%',
   },
   categoryTxt: {
     textTransform: 'uppercase',
-    color: COLORS.white,
     padding: 5,
+    fontSize: 14,
   },
   cardImg: {
     borderTopRightRadius: 15,
     borderTopLeftRadius: 15,
   },
-  cardTxtContainer: {
-    margin: 15,
+  cardTextContainer: {
+    paddingVertical: 10,
+    paddingHorizontal: 5,
   },
   title: {
-    fontSize: 28,
+    fontSize: 18,
   },
   subTitle: {
     color: COLORS.blue,
-    marginVertical: 5,
+    fontSize: 14,
   },
   paragraph: {
     marginVertical: 10,
+    fontSize: 14,
   },
-  footerTxt: {},
+  footerTxt: {
+    fontSize: 16,
+  },
 });
 
 export default Card;

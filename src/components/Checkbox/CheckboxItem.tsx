@@ -20,7 +20,10 @@ const CheckboxItem: FCWithChildren<CheckboxItemProps> = ({
   const checked = context.values.includes(value);
 
   return (
-    <TouchableOpacity onPress={() => context.handleChange(value)}>
+    <TouchableOpacity
+      activeOpacity={0.8}
+      onPress={() => context.handleChange(value)}
+    >
       <Div style={styles.row}>
         <Icon
           style={{ marginRight: SIZES.p3 }}

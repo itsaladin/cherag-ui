@@ -71,28 +71,32 @@ const Switch = ({
       style={style}
       {...rest}
     >
-      <Div style={styles.container}>
-        <Div
-          style={[
-            styles.lineStyle,
-            {
-              backgroundColor: isSwitchCheck ? __onTrackColor : __offTrackColor,
-              width: __width,
-              height: __height,
-            },
-          ]}
-        />
-        <Div
-          style={[
-            styles.switchStyle,
-            {
-              marginLeft: isSwitchCheck ? __marginLeft : SIZES.p3 - 10,
-              backgroundColor: __thumbColor,
-              width: __thumbWidth,
-              height: __thumbHeight,
-            },
-          ]}
-        />
+      <Div style={styles.wrapper}>
+        <Div style={styles.container}>
+          <Div
+            style={[
+              styles.lineStyle,
+              {
+                backgroundColor: isSwitchCheck
+                  ? __onTrackColor
+                  : __offTrackColor,
+                width: __width,
+                height: __height,
+              },
+            ]}
+          />
+          <Div
+            style={[
+              styles.switchStyle,
+              {
+                marginLeft: isSwitchCheck ? __marginLeft : SIZES.p3 - 10,
+                backgroundColor: __thumbColor,
+                width: __thumbWidth,
+                height: __thumbHeight,
+              },
+            ]}
+          />
+        </Div>
       </Div>
     </TouchableOpacity>
   );
@@ -101,6 +105,9 @@ const Switch = ({
 export default Switch;
 
 const styles = StyleSheet.create({
+  wrapper: {
+    marginBottom: 20,
+  },
   container: {
     position: 'absolute',
     flex: 1,

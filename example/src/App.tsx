@@ -181,9 +181,7 @@ export default function App() {
           isSwitchCheck={isSwitchCheck}
           setIsSwitchCheck={setIsSwitchCheck}
         />
-        <Div style={styles.textAreaContainer}>
-          <TextArea />
-        </Div>
+        <TextArea w={'80%'} numberOfLines={10} />
         <Avatar.Image
           size={60}
           dotSize={20}
@@ -213,14 +211,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: SIZES.DimensionHeight * 2,
+    height: '100%',
     marginTop: 30,
   },
   radioBtnGroup: {
     flexDirection: 'row',
-  },
-  textAreaContainer: {
-    marginTop: 30,
   },
   checkboxText: {
     fontSize: 16,

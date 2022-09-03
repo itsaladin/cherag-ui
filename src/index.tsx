@@ -77,5 +77,5 @@ export type { TextAreaProps } from './components/TextArea';
 // Theme COLORS, SIZES
 export { COLORS, SIZES } from './theme';
 
-// check type handler
+// Check type handler
 export { renderTextOrNode } from './utlis';

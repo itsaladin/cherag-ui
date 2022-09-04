@@ -17,7 +17,6 @@ import {
   RadioButton,
   RadioButtonItem,
   RadioButtonValue,
-  SIZES,
   Spinner,
   Switch,
   Text,
@@ -135,6 +134,11 @@ export default function App() {
             uri: 'https://images.unsplash.com/photo-1598589290625-9b04630ec5d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2F0JTIwZmFjZXxlbnwwfHwwfHw%3D&w=1000&q=80',
           }}
         />
+        <Switch
+          size="lg"
+          isSwitchCheck={isSwitchCheck}
+          setIsSwitchCheck={setIsSwitchCheck}
+        />
         <Card
           title="The Garden City"
           subTitle="The Silicon Valley of BD"
@@ -176,14 +180,7 @@ export default function App() {
             color={COLORS.green}
           />
         </Div>
-        <Switch
-          size="lg"
-          isSwitchCheck={isSwitchCheck}
-          setIsSwitchCheck={setIsSwitchCheck}
-        />
-        <Div style={styles.textAreaContainer}>
-          <TextArea />
-        </Div>
+        <TextArea w={'80%'} numberOfLines={10} />
         <Avatar.Image
           size={60}
           dotSize={20}
@@ -213,14 +210,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: SIZES.DimensionHeight * 2,
+    height: '100%',
     marginTop: 30,
   },
   radioBtnGroup: {
     flexDirection: 'row',
-  },
-  textAreaContainer: {
-    marginTop: 30,
   },
   checkboxText: {
     fontSize: 16,

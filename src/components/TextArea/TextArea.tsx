@@ -1,14 +1,13 @@
 import React from 'react';
 import { StyleSheet, TextInput } from 'react-native';
 import { COLORS } from '../../theme';
-import { Div } from '../Div';
 import type { TextAreaProps } from './types';
 
 const TextArea = ({
   style,
   borderWidth,
   borderRadious,
-  h,
+  borderColor,
   w,
   placeholder,
   placeholderTextColor,
@@ -16,28 +15,22 @@ const TextArea = ({
 }: TextAreaProps) => {
   const __borderWidth = borderWidth || 1;
   const __borderRadious = borderRadious || 5;
-  const __h = h || 150;
-  const __w = w || 150;
+  const __borderColor = borderColor || COLORS.border;
+  const __w = w || '80%';
   const __placeholder = placeholder || 'placeholder text';
   const __placeholderTextColor = placeholderTextColor || COLORS.textColor;
   const __numberOfLines = numberOfLines || 10;
   return (
-    <Div
-      style={[
-        style,
-        styles.textAreaContainer,
-        {
-          borderWidth: __borderWidth,
-          borderRadius: __borderRadious,
-        },
-      ]}
-    >
+    <>
       <TextInput
         style={[
+          style,
           styles.textArea,
           {
-            height: __h,
             width: __w,
+            borderWidth: __borderWidth,
+            borderRadius: __borderRadious,
+            borderColor: __borderColor,
           },
         ]}
         underlineColorAndroid="transparent"
@@ -46,18 +39,16 @@ const TextArea = ({
         numberOfLines={__numberOfLines}
         multiline={true}
       />
-    </Div>
+    </>
   );
 };
 
 export default TextArea;
 
 const styles = StyleSheet.create({
-  textAreaContainer: {
-    borderColor: COLORS.softGray,
-    padding: 5,
-  },
   textArea: {
-    justifyContent: 'flex-start',
+    backgroundColor: COLORS.white,
+    padding: 5,
+    textAlignVertical: 'top',
   },
 });

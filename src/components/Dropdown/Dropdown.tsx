@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { COLORS } from '../../theme';
 import type { FCWithChildren } from '../../types/compat/react';
 import { Div } from '../Div';
@@ -46,7 +46,7 @@ const Dropdown: FCWithChildren<DropdownProps> = ({
         ]}
       >
         <Text style={{ fontSize: __fontSize }}>{selected || __header}</Text>
-        <Icon name={'ios-arrow-down-outline'} size={22} color={COLORS.black} />
+        <Icon name={'arrow-down-thin'} size={22} color={COLORS.black} />
       </TouchableOpacity>
       {isItemVisible && <Div style={styles.childrenContainer}>{children}</Div>}
     </DropdownContext.Provider>

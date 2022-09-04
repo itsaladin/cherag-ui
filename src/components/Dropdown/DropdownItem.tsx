@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
+import { COLORS } from '../../theme';
 import type { FCWithChildren } from '../../types/compat/react';
 import { Div } from '../Div';
 import { Text } from '../Text';
@@ -13,12 +14,13 @@ const DropdownItem: FCWithChildren<DropdownItemProps> = ({
   const context = useDropdown();
   return (
     <TouchableOpacity
+      activeOpacity={0.6}
       onPress={() => {
         context.handleChange(value);
       }}
     >
       <Div style={styles.divContainer}>
-        <Text>{children}</Text>
+        <Text style={{ color: COLORS.blackish }}>{children}</Text>
       </Div>
     </TouchableOpacity>
   );

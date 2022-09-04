@@ -3,6 +3,7 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { COLORS } from '../../theme';
 import type { FCWithChildren } from '../../types/compat/react';
+import { Div } from '../Div';
 import { Text } from '../Text';
 import DropdownContext from './Context';
 import type { DropdownProps } from './types';
@@ -35,7 +36,7 @@ const Dropdown: FCWithChildren<DropdownProps> = ({
   return (
     <DropdownContext.Provider value={{ handleChange, selected }}>
       <TouchableOpacity
-        activeOpacity={0.6}
+        activeOpacity={0.8}
         onPress={() => {
           setItemVisible(!isItemVisible);
         }}
@@ -47,7 +48,7 @@ const Dropdown: FCWithChildren<DropdownProps> = ({
         <Text style={{ fontSize: __fontSize }}>{selected || __header}</Text>
         <Icon name={'ios-arrow-down-outline'} size={22} color={COLORS.black} />
       </TouchableOpacity>
-      {isItemVisible && children}
+      {isItemVisible && <Div style={styles.childrenContainer}>{children}</Div>}
     </DropdownContext.Provider>
   );
 };
@@ -62,5 +63,14 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
     alignItems: 'center',
     paddingHorizontal: 5,
+  },
+  childrenContainer: {
+    position: 'absolute',
+    top: '20%',
+    left: 0,
+    right: '50%',
+    bottom: '75%',
+    zIndex: 10,
+    backgroundColor: COLORS.transparentWhite,
   },
 });

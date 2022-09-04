@@ -30,18 +30,21 @@ Now import and use various components from the Cherag-UI library.
 
 ```tsx
 // App.tsx
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Checkbox,
   CheckboxItem,
   CheckboxValue,
+  COLORS,
   Div,
   RadioButton,
   RadioButtonItem,
   RadioButtonValue,
 } from 'cherag-ui';
-
+import { StyleSheet } from 'react-native';
 export default function App() {
+  const [checkboxes, setCheckboxes] = useState<CheckboxValue[]>([]);
+  const [selectedRadio, setSelectedRadio] = useState<RadioButtonValue>(1);
   return (
     <Div style={styles.container}>
       <Div style={styles.radioBtnGroup}>
@@ -55,13 +58,32 @@ export default function App() {
         </RadioButton>
       </Div>
       <Checkbox values={checkboxes} onChange={setCheckboxes}>
-        <CheckboxItem value="1">Checkbox 1</CheckboxItem>
-        <CheckboxItem value="2">Checkbox 2</CheckboxItem>
-        <CheckboxItem value="3">Checkbox 3</CheckboxItem>
+        <CheckboxItem iconSize={22} textStyle={styles.checkboxText} value="1">
+          Checkbox item 1
+        </CheckboxItem>
+        <CheckboxItem iconSize={22} textStyle={styles.checkboxText} value="2">
+          Checkbox item 2
+        </CheckboxItem>
+        <CheckboxItem iconSize={22} textStyle={styles.checkboxText} value="3">
+          Checkbox item 3
+        </CheckboxItem>
       </Checkbox>
     </Div>
   );
 }
+const styles = StyleSheet.create({
+  container: {
+    width: '100%',
+    height: '100%',
+    marginTop: 30,
+  },
+  radioBtnGroup: {
+    flexDirection: 'row',
+  },
+  checkboxText: {
+    fontSize: 16,
+  },
+});
 ```
 
 ## Documentation

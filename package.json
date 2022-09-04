@@ -1,6 +1,6 @@
 {
   "name": "cherag-ui",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An easy-to-use UI library for React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

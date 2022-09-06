@@ -49,4 +49,4 @@ jobs:
       - name: Run ESLint
         run: yarn lint
       - name: Run TypeScript Compiler (TSC)
-        run: yarn type-check
+        run: yarn typescript

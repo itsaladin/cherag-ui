@@ -34,7 +34,7 @@ export default function App() {
   const [selectedRadio, setSelectedRadio] = useState<RadioButtonValue>(1);
 
   return (
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <Div style={styles.container}>
         <Text style={{ color: COLORS.black }} fontSize="md">
           Cherag-UI

@@ -1,14 +1,14 @@
-import React from 'react';
-import { render } from '@testing-library/react-native';
-import App from '../App';
+// import { render } from '@testing-library/react-native';
+// import React from 'react';
+// import App from '../App';
 
-describe('App', () => {
-  it('should show hello world', () => {
-    const { debug } = render(<App />);
+// describe('App', () => {
+//   test('form submits two answers', () => {
+//     render(<App />);
+//     console.log('example test case');
+//   });
+// });
 
-    // const foundHelloWorldText = getByText('Cherag-UI');
-
-    // expect(foundHelloWorldText).toBeNull();
-    debug();
-  });
+test('it works', () => {
+  expect(2 + 2).toEqual(4);
 });

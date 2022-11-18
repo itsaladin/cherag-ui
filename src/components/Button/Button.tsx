@@ -22,6 +22,7 @@ const Button = ({
   return (
     <TouchableOpacity
       activeOpacity={0.8}
+      testID={'testButtonId'}
       style={[
         style,
         {

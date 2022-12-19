@@ -1,13 +1,11 @@
 name: Check testing for components
-
 on:
   pull_request:
     branches: [main]
   push:
     branches: [main]
-
 jobs:
-  run-test: yarn-test
+  run-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code

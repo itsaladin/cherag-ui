@@ -18,7 +18,5 @@ jobs:
           cache-dependency-path: yarn.lock
       - name: Install Dependency
         run: yarn install --frozen-lockfile
-      - name: Build Project
-        run: yarn build
       - name: Run Test
         run: yarn test

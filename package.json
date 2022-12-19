@@ -51,6 +51,8 @@
     "@commitlint/config-conventional": "^17.0.2",
     "@react-native-community/eslint-config": "^3.0.2",
     "@release-it/conventional-changelog": "^5.0.0",
+    "@testing-library/jest-native": "^5.3.3",
+    "@testing-library/react-native": "^11.5.0",
     "@types/jest": "^28.1.2",
     "@types/react": "~17.0.21",
     "@types/react-native": "0.68.0",
@@ -73,10 +75,10 @@
     "@types/react": "17.0.21"
   },
   "peerDependencies": {
+    "@expo/vector-icons": "*",
     "react": "*",
     "react-native": "*",
-    "react-native-vector-icons": ">=6",
-    "@expo/vector-icons": "*"
+    "react-native-vector-icons": ">=6"
   },
   "jest": {
     "preset": "react-native",
@@ -151,5 +153,10 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "flow-typed": "^3.8.0",
+    "install": "^0.13.0",
+    "react-test-renderer": "17.0.2"
   }
 }

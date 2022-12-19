@@ -16,13 +16,14 @@ const Button = ({
   borderRadius,
   borderWidth,
   fontWeight,
+  testID,
   ...rest
 }: ButtonProps) => {
   const __center = 'center';
   return (
     <TouchableOpacity
       activeOpacity={0.8}
-      testID={'testButtonId'}
+      testID={testID || 'testButtonId'}
       style={[
         style,
         {

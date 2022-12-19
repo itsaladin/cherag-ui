@@ -153,5 +153,10 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "flow-typed": "^3.8.0",
+    "install": "^0.13.0",
+    "react-test-renderer": "17.0.2"
   }
 }

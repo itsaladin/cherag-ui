@@ -9,7 +9,7 @@ describe('Button component', () => {
   it('should find the button component via testId', () => {
     const { getByTestId } = render(<Button testID={testIdName} />);
     const foundButton = getByTestId(testIdName);
-    expect(foundButton).toBeTruthy();
+    expect(foundButton).toBeFalsy();
   });
 
   it('should call onPress function when pressed', () => {

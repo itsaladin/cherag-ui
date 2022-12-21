@@ -7,6 +7,7 @@ import type { IconButtonProps } from './types';
 
 const IconButton: FCWithChildren<IconButtonProps> = ({
   style,
+  testID,
   icon,
   color,
   size,
@@ -21,6 +22,7 @@ const IconButton: FCWithChildren<IconButtonProps> = ({
   return (
     <TouchableWithoutFeedback
       onPress={disabled ? undefined : onPress}
+      testID={testID || 'IconButtonTestId'}
       style={style}
       {...rest}
     >

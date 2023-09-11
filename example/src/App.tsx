@@ -150,9 +150,9 @@ export default function App() {
           categoryBgColor={COLORS.primary}
           categoryTextColor={COLORS.white}
         >
-          'Bangladesh is the center of BD high-tech industry. The city is also
+          Bangladesh is the center of BD high-tech industry. The city is also
           known for its parks and nightlife Bangladesh is the center of BD
-          high-tech industry.
+          high-tech industry...
         </Card>
         <Div style={styles.radioBtnGroup}>
           <IconButton

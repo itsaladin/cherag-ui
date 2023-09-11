@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
 
 ## Documentation
 
-For more examples and usages, see [our documentation](https://aladdinstudios.github.io/cherag/ui)
+For more examples and usages, see [our documentation](https://aladdinstudios.github.io/cherag/)
 
 ## Development
 
